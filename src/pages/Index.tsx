@@ -59,6 +59,9 @@ const Index = () => {
               variant="outline"
               size="sm"
               className="border-primary text-primary hover:bg-primary hover:text-white"
+              onClick={() =>
+                window.open("https://vk.com/gorhon_official", "_blank")
+              }
             >
               <Icon name="MessageCircle" size={16} className="mr-2" />
               ВКонтакте
@@ -289,6 +292,32 @@ const Index = () => {
           <h2 className="text-4xl font-bold text-center mb-12">
             Отзывы подписчиков
           </h2>
+
+          {/* VK Widget */}
+          <div className="flex justify-center mb-12">
+            <div className="bg-white/5 border border-white/10 rounded-lg p-6 max-w-md">
+              <div className="text-center mb-4">
+                <h3 className="text-xl font-bold text-primary mb-2">
+                  Подпишитесь на нас
+                </h3>
+                <p className="text-gray-300 text-sm">
+                  Следите за новостями в нашем сообществе
+                </p>
+              </div>
+              <div className="flex justify-center">
+                <Button
+                  className="bg-primary hover:bg-primary/90 text-white w-full"
+                  onClick={() =>
+                    window.open("https://vk.com/gorhon_official", "_blank")
+                  }
+                >
+                  <Icon name="MessageCircle" size={20} className="mr-2" />
+                  Присоединиться к сообществу
+                </Button>
+              </div>
+            </div>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
@@ -356,6 +385,9 @@ const Index = () => {
                 variant="ghost"
                 size="sm"
                 className="text-primary hover:bg-primary/10"
+                onClick={() =>
+                  window.open("https://vk.com/gorhon_official", "_blank")
+                }
               >
                 <Icon name="MessageCircle" size={16} className="mr-2" />
                 ВКонтакте
