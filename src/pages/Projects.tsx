@@ -241,52 +241,6 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-black/20 backdrop-blur-sm">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-unbounded font-bold text-white mb-4">
-              Итоги нашей работы
-            </h2>
-            <p className="text-lg text-gray-300 font-unbounded">
-              Цифры, которые говорят о результатах
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              {
-                number: "50+",
-                label: "Завершенных проектов",
-                icon: "CheckCircle",
-              },
-              { number: "1.5M+", label: "Общих просмотров", icon: "Eye" },
-              { number: "15K+", label: "Подписчиков", icon: "Users" },
-              { number: "98%", label: "Довольных клиентов", icon: "ThumbsUp" },
-            ].map((stat, index) => (
-              <div
-                key={index}
-                className="text-center p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 transition-all duration-300"
-              >
-                <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Icon
-                    name={stat.icon as any}
-                    size={24}
-                    className="text-white"
-                  />
-                </div>
-                <div className="text-3xl font-unbounded font-bold text-white mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-gray-400 font-unbounded text-sm">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -299,7 +253,7 @@ const Projects = () => {
               интересная история или вы хотите заказать контент — давайте
               обсудим!
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <a
                 href="https://vk.com/gorhon_media"
                 target="_blank"
@@ -309,10 +263,6 @@ const Projects = () => {
                 <Icon name="ExternalLink" size={20} />
                 <span>Обсудить проект</span>
               </a>
-              <button className="inline-flex items-center justify-center space-x-2 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-unbounded font-semibold hover:bg-white/20 transition-all border border-white/20">
-                <Icon name="Download" size={20} />
-                <span>Скачать портфолио</span>
-              </button>
             </div>
           </div>
         </div>
