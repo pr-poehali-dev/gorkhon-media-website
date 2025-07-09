@@ -163,6 +163,41 @@
     }
   }
 
+  @keyframes liquid-move {
+    0%,
+    100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+      transform: translate(30px, -30px) rotate(120deg);
+    }
+    66% {
+      transform: translate(-20px, 20px) rotate(240deg);
+    }
+  }
+
+  @keyframes bubble-float {
+    0% {
+      transform: translateY(100vh) scale(0);
+    }
+    50% {
+      transform: translateY(50vh) scale(1);
+    }
+    100% {
+      transform: translateY(-100px) scale(0);
+    }
+  }
+
+  @keyframes wave {
+    0%,
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(-20px) translateY(-10px);
+    }
+  }
+
   .animate-marquee {
     animation: marquee 15s linear infinite;
   }
@@ -183,6 +218,18 @@
     animation: shake 0.5s ease-in-out;
   }
 
+  .animate-liquid {
+    animation: liquid-move 8s ease-in-out infinite;
+  }
+
+  .animate-bubble {
+    animation: bubble-float 6s ease-in-out infinite;
+  }
+
+  .animate-wave {
+    animation: wave 4s ease-in-out infinite;
+  }
+
   .gradient-text {
     background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
     -webkit-background-clip: text;
@@ -199,5 +246,54 @@
   .neon-border {
     border: 2px solid;
     border-image: linear-gradient(45deg, #ec4899, #a855f7) 1;
+  }
+
+  .liquid-glass {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .liquid-glass::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      45deg,
+      rgba(236, 72, 153, 0.1) 0%,
+      rgba(168, 85, 247, 0.1) 25%,
+      rgba(59, 130, 246, 0.1) 50%,
+      rgba(16, 185, 129, 0.1) 75%,
+      rgba(236, 72, 153, 0.1) 100%
+    );
+    backdrop-filter: blur(20px);
+    z-index: -1;
+  }
+
+  .liquid-bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle at 30% 30%,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(236, 72, 153, 0.2) 50%,
+      rgba(168, 85, 247, 0.1) 100%
+    );
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .liquid-wave {
+    position: absolute;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(236, 72, 153, 0.1) 50%,
+      transparent 100%
+    );
+    backdrop-filter: blur(15px);
+    border-radius: 50%;
   }
 }

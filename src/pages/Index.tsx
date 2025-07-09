@@ -120,8 +120,54 @@ const Index = () => {
       {/* Hero Section */}
       <section
         id="home"
-        className="relative py-20 overflow-hidden animate-pulse-bg"
+        className="relative py-20 overflow-hidden animate-pulse-bg liquid-glass"
       >
+        {/* Liquid Glass Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Animated Bubbles */}
+          <div
+            className="liquid-bubble w-32 h-32 top-20 left-20 animate-bubble"
+            style={{ animationDelay: "0s" }}
+          ></div>
+          <div
+            className="liquid-bubble w-24 h-24 top-40 right-32 animate-bubble"
+            style={{ animationDelay: "2s" }}
+          ></div>
+          <div
+            className="liquid-bubble w-20 h-20 bottom-32 left-40 animate-bubble"
+            style={{ animationDelay: "4s" }}
+          ></div>
+          <div
+            className="liquid-bubble w-28 h-28 bottom-20 right-20 animate-bubble"
+            style={{ animationDelay: "1s" }}
+          ></div>
+
+          {/* Liquid Waves */}
+          <div
+            className="liquid-wave w-64 h-16 top-32 left-1/4 animate-wave"
+            style={{ animationDelay: "0s" }}
+          ></div>
+          <div
+            className="liquid-wave w-48 h-12 bottom-40 right-1/4 animate-wave"
+            style={{ animationDelay: "2s" }}
+          ></div>
+          <div
+            className="liquid-wave w-56 h-14 top-1/2 left-10 animate-wave"
+            style={{ animationDelay: "1s" }}
+          ></div>
+
+          {/* Floating Liquid Shapes */}
+          <div className="absolute w-40 h-40 top-16 right-16 animate-liquid">
+            <div className="w-full h-full bg-gradient-to-br from-pink-500/20 to-purple-500/20 rounded-full backdrop-blur-sm border border-white/10"></div>
+          </div>
+          <div
+            className="absolute w-32 h-32 bottom-24 left-24 animate-liquid"
+            style={{ animationDelay: "3s" }}
+          >
+            <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-pink-500/20 rounded-full backdrop-blur-sm border border-white/10"></div>
+          </div>
+        </div>
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text animate-float">
