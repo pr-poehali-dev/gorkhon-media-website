@@ -93,6 +93,30 @@ const Index = () => {
         </div>
       </header>
 
+      {/* Running Line */}
+      <div className="bg-primary/20 border-y border-primary/30 py-2 overflow-hidden">
+        <div className="whitespace-nowrap animate-marquee">
+          <span className="text-primary font-bold text-lg mx-8">
+            Горхон - место встречи! 🚀
+          </span>
+          <span className="text-primary font-bold text-lg mx-8">
+            Горхон - место встречи! 🚀
+          </span>
+          <span className="text-primary font-bold text-lg mx-8">
+            Горхон - место встречи! 🚀
+          </span>
+          <span className="text-primary font-bold text-lg mx-8">
+            Горхон - место встречи! 🚀
+          </span>
+          <span className="text-primary font-bold text-lg mx-8">
+            Горхон - место встречи! 🚀
+          </span>
+          <span className="text-primary font-bold text-lg mx-8">
+            Горхон - место встречи! 🚀
+          </span>
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section id="home" className="relative py-20 overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
