@@ -276,7 +276,12 @@ const Index = () => {
           <h2 className="text-4xl font-bold text-center mb-12">Наши проекты</h2>
           <div className="flex justify-center">
             <div className="max-w-2xl w-full">
-              <Card className="bg-white/5 border-white/10 text-white hover:bg-white/10 transition-all hover:scale-105 overflow-hidden">
+              <Card
+                className="bg-white/5 border-white/10 text-white hover:bg-white/10 transition-all hover:scale-105 overflow-hidden cursor-pointer"
+                onClick={() =>
+                  window.open("https://vk.com/wall-214224996_1109", "_blank")
+                }
+              >
                 <div className="relative">
                   <img
                     src="https://cdn.poehali.dev/files/f2a81f21-5f1e-47e2-bdb9-4ca4cde573b6.png"
