@@ -7,10 +7,7 @@ const Projects = () => {
 
   const categories = [
     { id: "all", label: "Все проекты", icon: "Grid3X3" },
-    { id: "video", label: "Видео", icon: "Video" },
     { id: "photo", label: "Фотопроекты", icon: "Camera" },
-    { id: "podcast", label: "Подкасты", icon: "Mic" },
-    { id: "social", label: "SMM", icon: "Share2" },
   ];
 
   const projects = [
