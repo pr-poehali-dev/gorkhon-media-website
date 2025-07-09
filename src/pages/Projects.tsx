@@ -16,113 +16,22 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Люди Горхона",
-      category: "video",
-      description:
-        "Документальная серия о жителях нашего поселка, их историях и мечтах",
-      fullDescription:
-        'Проект "Люди Горхона" — это серия коротких документальных видео, в которых мы рассказываем истории обычных жителей нашего поселка. Каждый эпизод — это отдельная история о человеке, его работе, увлечениях и взглядах на жизнь.',
-      duration: "15-20 мин",
-      episodes: "12 эпизодов",
-      views: "250K",
-      image: "🎭",
-      tags: ["Документалистика", "Интервью", "Люди"],
-      achievements: [
-        "Победитель регионального конкурса",
-        "Более 250K просмотров",
-        "Отзыв в местных СМИ",
-      ],
-    },
-    {
-      id: 2,
-      title: "Горхон в кадре",
+      title: "По волнам школьной памяти",
       category: "photo",
       description:
-        "Фотопроект, показывающий красоту нашего поселка в разные времена года",
+        "А теперь можно и перелистнуть страницы школьных воспоминаний с выпускных и последних звонков.",
       fullDescription:
-        "Долгосрочный фотопроект, в котором мы документируем жизнь Горхона через призму времен года. От снежных зим до ярких летних дней — каждый кадр рассказывает свою историю.",
-      duration: "Весь год",
-      episodes: "365 фото",
-      views: "180K",
-      image: "📷",
-      tags: ["Фотография", "Природа", "Архитектура"],
+        "Фотопроект, посвященный школьным воспоминаниям выпускников. Собрали самые яркие и трогательные моменты выпускных вечеров и последних звонков, чтобы сохранить эти важные моменты жизни навсегда.",
+      duration: "Июнь 2024",
+      episodes: "Фотоальбом",
+      views: "560",
+      image: "/img/a9eeec3e-a13e-41cc-a054-1c82a3479d64.jpg",
+      url: "https://vk.com/wall-214224996_1109",
+      tags: ["Школа", "Выпускной", "Память"],
       achievements: [
-        "Выставка в местном музее",
-        "Публикация в региональном журнале",
-        "Календарь на 2024 год",
-      ],
-    },
-    {
-      id: 3,
-      title: 'Подкаст "Горхон FM"',
-      category: "podcast",
-      description:
-        "Еженедельный подкаст о новостях поселка и интересных событиях",
-      fullDescription:
-        "Еженедельный подкаст, в котором мы обсуждаем актуальные темы для жителей Горхона, приглашаем интересных гостей и рассказываем о предстоящих событиях.",
-      duration: "45-60 мин",
-      episodes: "48 выпусков",
-      views: "95K",
-      image: "🎙️",
-      tags: ["Подкаст", "Новости", "Интервью"],
-      achievements: [
-        "Топ-10 подкастов региона",
-        "Постоянная аудитория 2K+",
-        "Партнерство с радиостанцией",
-      ],
-    },
-    {
-      id: 4,
-      title: 'Фестиваль "Горхон Fest"',
-      category: "video",
-      description: "Организация и освещение ежегодного молодежного фестиваля",
-      fullDescription:
-        "Ежегодный молодежный фестиваль, который мы не только освещаем, но и активно участвуем в его организации. Три дня музыки, творчества и общения.",
-      duration: "3 дня",
-      episodes: "Прямые эфиры",
-      views: "500K",
-      image: "🎪",
-      tags: ["Фестиваль", "Музыка", "Молодежь"],
-      achievements: [
-        "Более 1000 участников",
-        "Освещение в федеральных СМИ",
-        "Грантовая поддержка",
-      ],
-    },
-    {
-      id: 5,
-      title: "История в лицах",
-      category: "video",
-      description: "Интервью с ветеранами и старожилами поселка",
-      fullDescription:
-        "Проект по сохранению исторической памяти. Мы записываем интервью с ветеранами войны и труда, старожилами поселка, которые помнят его историю.",
-      duration: "30-40 мин",
-      episodes: "8 интервью",
-      views: "120K",
-      image: "📚",
-      tags: ["История", "Память", "Ветераны"],
-      achievements: [
-        "Архив в местном музее",
-        "Благодарности от администрации",
-        "Образовательный контент",
-      ],
-    },
-    {
-      id: 6,
-      title: "SMM для бизнеса",
-      category: "social",
-      description: "Помогаем местному бизнесу развиваться в социальных сетях",
-      fullDescription:
-        "Образовательный проект, в рамках которого мы учим владельцев местного бизнеса эффективно использовать социальные сети для продвижения.",
-      duration: "Постоянно",
-      episodes: "20+ клиентов",
-      views: "300K",
-      image: "📈",
-      tags: ["SMM", "Бизнес", "Обучение"],
-      achievements: [
-        "Рост продаж клиентов на 40%",
-        "Мастер-классы для предпринимателей",
-        "Кейсы в портфолио",
+        "Более 560 просмотров",
+        "Благодарности от выпускников",
+        "Сохранение памяти о школьных годах",
       ],
     },
   ];
@@ -186,33 +95,63 @@ const Projects = () => {
             {filteredProjects.map((project) => (
               <div
                 key={project.id}
-                onClick={() =>
-                  setSelectedProject(
-                    selectedProject === project.id ? null : project.id,
-                  )
-                }
-                className="group cursor-pointer bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-300 hover:scale-105"
+                className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-300 hover:scale-105"
               >
+                {/* Project Image Background */}
+                <div 
+                  className="h-48 bg-cover bg-center relative"
+                  style={{ 
+                    backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${project.image})` 
+                  }}
+                >
+                  <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm rounded-lg px-3 py-2">
+                    <div className="text-white font-unbounded font-bold text-sm">
+                      {project.views}
+                    </div>
+                    <div className="text-gray-300 font-unbounded text-xs">
+                      просмотров
+                    </div>
+                  </div>
+                </div>
+
                 {/* Project Header */}
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center text-3xl">
-                      {project.image}
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+                      <Icon name="Camera" size={20} className="text-white" />
                     </div>
-                    <div className="text-right">
-                      <div className="text-2xl font-unbounded font-bold text-white">
-                        {project.views}
-                      </div>
-                      <div className="text-gray-400 font-unbounded text-sm">
-                        просмотров
-                      </div>
-                    </div>
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center space-x-2 bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg font-unbounded font-medium text-sm hover:scale-105 transition-all"
+                    >
+                      <Icon name="ExternalLink" size={16} />
+                      <span>Открыть пост</span>
+                    </a>
                   </div>
 
-                  <h3 className="text-xl font-unbounded font-bold text-white mb-2">
+                  </div>
+
+                  <h3 
+                    className="text-xl font-unbounded font-bold text-white mb-2 cursor-pointer"
+                    onClick={() =>
+                      setSelectedProject(
+                        selectedProject === project.id ? null : project.id,
+                      )
+                    }
+                  >
                     {project.title}
                   </h3>
-                  <p className="text-gray-300 font-unbounded text-sm mb-4 leading-relaxed">
+                  <p 
+                    className="text-gray-300 font-unbounded text-sm mb-4 leading-relaxed cursor-pointer"
+                    onClick={() =>
+                      setSelectedProject(
+                        selectedProject === project.id ? null : project.id,
+                      )
+                    }
+                  >
                     {project.description}
                   </p>
 
@@ -235,7 +174,14 @@ const Projects = () => {
                   </div>
 
                   {/* Expand Indicator */}
-                  <div className="flex items-center justify-center mt-4">
+                  <div 
+                    className="flex items-center justify-center mt-4 cursor-pointer"
+                    onClick={() =>
+                      setSelectedProject(
+                        selectedProject === project.id ? null : project.id,
+                      )
+                    }
+                  >
                     <Icon
                       name={
                         selectedProject === project.id
