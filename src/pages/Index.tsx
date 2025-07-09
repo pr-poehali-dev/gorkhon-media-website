@@ -15,10 +15,10 @@ const Index = () => {
   React.useEffect(() => {
     if (typeof window !== "undefined" && window.VK) {
       window.VK.Widgets.Post(
-        "vk_post_1_45616",
-        1,
-        45616,
-        "4WB1o2LHMUmWgoZNVNcbiucsJozO",
+        "vk_post_-214224996_1090",
+        -214224996,
+        1090,
+        "90X6pejxyaR6_3iGx5IWFot8cjVY",
       );
     }
   }, []);
@@ -60,6 +60,9 @@ const Index = () => {
                 className="hover:text-primary transition-colors"
               >
                 Проекты
+              </a>
+              <a href="#news" className="hover:text-primary transition-colors">
+                Новости
               </a>
               <a
                 href="#reviews"
@@ -292,6 +295,45 @@ const Index = () => {
         </div>
       </section>
 
+      {/* News Section */}
+      <section id="news" className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl font-bold text-center mb-12">Новости</h2>
+
+            {/* VK Widget */}
+            <div className="flex justify-center mb-12">
+              <div className="bg-white/5 border border-white/10 rounded-lg p-6">
+                <div className="text-center mb-4">
+                  <h3 className="text-xl font-bold text-primary mb-2">
+                    Последние новости
+                  </h3>
+                  <p className="text-gray-300 text-sm">
+                    Актуальные посты из нашего сообщества
+                  </p>
+                </div>
+                <div
+                  id="vk_post_-214224996_1090"
+                  className="flex justify-center"
+                ></div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <Button
+                className="bg-primary hover:bg-primary/90 text-white"
+                onClick={() =>
+                  window.open("https://vk.com/gorhon_official", "_blank")
+                }
+              >
+                <Icon name="MessageCircle" size={20} className="mr-2" />
+                Больше новостей в сообществе
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Reviews Section */}
       <section id="reviews" className="py-20 bg-slate-800 relative">
         <div className="absolute top-20 right-20 w-60 h-60 opacity-5 -rotate-12 pointer-events-none">
@@ -305,21 +347,6 @@ const Index = () => {
           <h2 className="text-4xl font-bold text-center mb-12">
             Отзывы подписчиков
           </h2>
-
-          {/* VK Widget */}
-          <div className="flex justify-center mb-12">
-            <div className="bg-white/5 border border-white/10 rounded-lg p-6">
-              <div className="text-center mb-4">
-                <h3 className="text-xl font-bold text-primary mb-2">
-                  Последние новости
-                </h3>
-                <p className="text-gray-300 text-sm">
-                  Актуальные посты из нашего сообщества
-                </p>
-              </div>
-              <div id="vk_post_1_45616" className="flex justify-center"></div>
-            </div>
-          </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             {[
