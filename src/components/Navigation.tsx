@@ -11,7 +11,6 @@ const Navigation = () => {
     { path: "/about", label: "О нас", icon: "Users" },
     { path: "/team", label: "Команда", icon: "UserCheck" },
     { path: "/projects", label: "Наши проекты", icon: "FolderOpen" },
-    { path: "/reviews", label: "Отзывы", icon: "MessageSquare" },
   ];
 
   return (
@@ -53,18 +52,6 @@ const Navigation = () => {
             })}
           </div>
 
-          {/* Social Links */}
-          <div className="hidden md:flex items-center space-x-4">
-            <a
-              href="https://vk.com/gorhon_media"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 text-white hover:text-white/80 hover:scale-110 transition-all"
-            >
-              <Icon name="ExternalLink" size={20} />
-            </a>
-          </div>
-
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -96,17 +83,6 @@ const Navigation = () => {
                   </Link>
                 );
               })}
-              <div className="pt-3 border-t border-white/10">
-                <a
-                  href="https://vk.com/gorhon_media"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-3 px-3 py-2 text-white hover:text-white/80 font-unbounded text-sm"
-                >
-                  <Icon name="ExternalLink" size={16} />
-                  <span>ВКонтакте</span>
-                </a>
-              </div>
             </div>
           </div>
         )}
