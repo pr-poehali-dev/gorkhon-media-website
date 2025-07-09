@@ -236,7 +236,7 @@ const Team = () => {
 
             <div className="flex flex-col gap-4 justify-center items-center">
               <a
-                href="https://vk.com/gorhon_media"
+                href="https://vk.com/im?sel=-214224996&entrypoint=community_page"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-xl font-unbounded font-semibold hover:scale-105 transition-all duration-200 shadow-lg shadow-primary/25"
