@@ -20,13 +20,15 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-              <span className="text-primary font-unbounded font-bold text-lg">
-                Г
-              </span>
+            <div className="h-8 group-hover:scale-110 transition-transform">
+              <img
+                src="https://cdn.poehali.dev/files/6ffd92ec-3432-4ca8-bb14-85125928e527.png"
+                alt="Горхон Медиа"
+                className="h-full object-contain"
+              />
             </div>
             <span className="text-white font-unbounded font-bold text-xl group-hover:text-white/80 transition-colors">
-              Горхон.Медиа
+              Медиа
             </span>
           </Link>
 

@@ -111,8 +111,12 @@ const Home = () => {
                   ></div>
                   <div className="absolute inset-4 bg-slate-900 rounded-full flex items-center justify-center">
                     <div className="text-center">
-                      <div className="text-6xl font-unbounded font-bold text-white mb-2">
-                        Г
+                      <div className="w-48 h-12 mb-4">
+                        <img
+                          src="https://cdn.poehali.dev/files/6ffd92ec-3432-4ca8-bb14-85125928e527.png"
+                          alt="Горхон"
+                          className="w-full h-full object-contain"
+                        />
                       </div>
                       <div className="text-lg font-unbounded font-medium bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                         МЕДИА
