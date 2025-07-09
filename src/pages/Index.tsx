@@ -41,6 +41,27 @@ const Index = () => {
         />
       </div>
 
+      {/* Hot News Running Line - Left to Right */}
+      <div className="bg-gradient-to-r from-red-600 via-orange-500 to-red-600 border-y border-orange-400 py-2 overflow-hidden animate-pulse shadow-lg shadow-red-500/20">
+        <div className="whitespace-nowrap animate-marquee-reverse">
+          <span className="text-white font-bold text-lg mx-8 animate-hot-glow">
+            🔥 Горячие новости только у нас! 🔥
+          </span>
+          <span className="text-white font-bold text-lg mx-8 animate-hot-glow">
+            🔥 Горячие новости только у нас! 🔥
+          </span>
+          <span className="text-white font-bold text-lg mx-8 animate-hot-glow">
+            🔥 Горячие новости только у нас! 🔥
+          </span>
+          <span className="text-white font-bold text-lg mx-8 animate-hot-glow">
+            🔥 Горячие новости только у нас! 🔥
+          </span>
+          <span className="text-white font-bold text-lg mx-8 animate-hot-glow">
+            🔥 Горячие новости только у нас! 🔥
+          </span>
+        </div>
+      </div>
+
       {/* Header */}
       <header className="sticky top-0 z-50 backdrop-blur-md bg-slate-900/80 border-b border-white/10">
         <div className="container mx-auto px-4 py-4">
@@ -480,6 +501,27 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Hot News Running Line - Right to Left */}
+      <div className="bg-gradient-to-l from-purple-600 via-pink-500 to-purple-600 border-y border-pink-400 py-2 overflow-hidden animate-pulse shadow-lg shadow-purple-500/20">
+        <div className="whitespace-nowrap animate-marquee">
+          <span className="text-white font-bold text-lg mx-8 animate-hot-glow">
+            🔥 Горячие новости только у нас! 🔥
+          </span>
+          <span className="text-white font-bold text-lg mx-8 animate-hot-glow">
+            🔥 Горячие новости только у нас! 🔥
+          </span>
+          <span className="text-white font-bold text-lg mx-8 animate-hot-glow">
+            🔥 Горячие новости только у нас! 🔥
+          </span>
+          <span className="text-white font-bold text-lg mx-8 animate-hot-glow">
+            🔥 Горячие новости только у нас! 🔥
+          </span>
+          <span className="text-white font-bold text-lg mx-8 animate-hot-glow">
+            🔥 Горячие новости только у нас! 🔥
+          </span>
+        </div>
+      </div>
+
       {/* Reviews Section */}
       <section
         id="reviews"
@@ -569,6 +611,27 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Hot News Running Line - Right to Left (Before Footer) */}
+      <div className="bg-gradient-to-l from-yellow-600 via-orange-500 to-yellow-600 border-y border-yellow-400 py-2 overflow-hidden animate-pulse shadow-lg shadow-yellow-500/20">
+        <div className="whitespace-nowrap animate-marquee">
+          <span className="text-white font-bold text-lg mx-8 animate-hot-glow">
+            🔥 Горячие новости только у нас! 🔥
+          </span>
+          <span className="text-white font-bold text-lg mx-8 animate-hot-glow">
+            🔥 Горячие новости только у нас! 🔥
+          </span>
+          <span className="text-white font-bold text-lg mx-8 animate-hot-glow">
+            🔥 Горячие новости только у нас! 🔥
+          </span>
+          <span className="text-white font-bold text-lg mx-8 animate-hot-glow">
+            🔥 Горячие новости только у нас! 🔥
+          </span>
+          <span className="text-white font-bold text-lg mx-8 animate-hot-glow">
+            🔥 Горячие новости только у нас! 🔥
+          </span>
+        </div>
+      </div>
+
       {/* Footer */}
       <footer className="py-12 border-t border-white/10 liquid-glass relative">
         {/* Liquid Glass Effects */}
@@ -640,6 +703,27 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      {/* Hot News Running Line - Left to Right (Bottom) */}
+      <div className="bg-gradient-to-r from-green-600 via-cyan-500 to-green-600 border-y border-cyan-400 py-2 overflow-hidden animate-pulse shadow-lg shadow-green-500/20">
+        <div className="whitespace-nowrap animate-marquee-reverse">
+          <span className="text-white font-bold text-lg mx-8 animate-hot-glow">
+            🔥 Горячие новости только у нас! 🔥
+          </span>
+          <span className="text-white font-bold text-lg mx-8 animate-hot-glow">
+            🔥 Горячие новости только у нас! 🔥
+          </span>
+          <span className="text-white font-bold text-lg mx-8 animate-hot-glow">
+            🔥 Горячие новости только у нас! 🔥
+          </span>
+          <span className="text-white font-bold text-lg mx-8 animate-hot-glow">
+            🔥 Горячие новости только у нас! 🔥
+          </span>
+          <span className="text-white font-bold text-lg mx-8 animate-hot-glow">
+            🔥 Горячие новости только у нас! 🔥
+          </span>
+        </div>
+      </div>
 
       {/* Floating Chat Button */}
       <div className="fixed bottom-8 right-8 z-50">
