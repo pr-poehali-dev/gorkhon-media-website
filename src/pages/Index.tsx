@@ -274,70 +274,42 @@ const Index = () => {
       <section id="projects" className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">Наши проекты</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Новости Горхон",
-                desc: "Еженедельная сводка событий",
-                tag: "Новости",
-                color: "primary",
-              },
-              {
-                title: "Молодежные интервью",
-                desc: "Истории успеха местных жителей",
-                tag: "Интервью",
-                color: "secondary",
-              },
-              {
-                title: "Культурные события",
-                desc: "Освещение праздников и фестивалей",
-                tag: "Культура",
-                color: "primary",
-              },
-              {
-                title: "Спортивные репортажи",
-                desc: "Трансляции местных соревнований",
-                tag: "Спорт",
-                color: "secondary",
-              },
-              {
-                title: "Образовательный контент",
-                desc: "Полезные материалы для учащихся",
-                tag: "Образование",
-                color: "primary",
-              },
-              {
-                title: "Экологические проекты",
-                desc: "Инициативы по защите природы",
-                tag: "Экология",
-                color: "secondary",
-              },
-            ].map((project, index) => (
-              <Card
-                key={index}
-                className="bg-white/5 border-white/10 text-white hover:bg-white/10 transition-all hover:scale-105"
-              >
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
+          <div className="flex justify-center">
+            <div className="max-w-2xl w-full">
+              <Card className="bg-white/5 border-white/10 text-white hover:bg-white/10 transition-all hover:scale-105 overflow-hidden">
+                <div className="relative">
+                  <img
+                    src="https://cdn.poehali.dev/files/f2a81f21-5f1e-47e2-bdb9-4ca4cde573b6.png"
+                    alt="По волнам школьной памяти"
+                    className="w-full h-64 object-cover"
+                  />
+                  <div className="absolute top-4 left-4">
                     <Badge
                       variant="outline"
-                      className={`${project.color === "primary" ? "border-primary text-primary" : "border-secondary text-secondary"}`}
+                      className="border-primary text-primary bg-black/50 backdrop-blur-sm"
                     >
-                      {project.tag}
+                      Проект
                     </Badge>
+                  </div>
+                </div>
+                <CardHeader>
+                  <div className="flex items-center justify-between mb-2">
+                    <CardTitle className="text-2xl">
+                      По волнам школьной памяти
+                    </CardTitle>
                     <Icon
                       name="ExternalLink"
-                      size={16}
+                      size={20}
                       className="text-gray-400"
                     />
                   </div>
-                  <CardTitle className="text-lg">{project.title}</CardTitle>
-                  <CardDescription className="text-gray-300">
-                    {project.desc}
+                  <CardDescription className="text-gray-300 text-lg">
+                    А теперь можно и перелистнуть страницы школьных воспоминаний
+                    с выпускных и последних звонков.
                   </CardDescription>
                 </CardHeader>
               </Card>
-            ))}
+            </div>
           </div>
         </div>
       </section>
