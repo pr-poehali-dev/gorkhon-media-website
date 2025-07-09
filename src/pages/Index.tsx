@@ -132,6 +132,38 @@ const Index = () => {
         id="home"
         className="relative py-20 overflow-hidden animate-pulse-bg liquid-glass"
       >
+        {/* Media Characters */}
+        <div
+          className="absolute top-10 left-10 w-32 h-40 media-overlay animate-slide-in-left animate-media-float pointer-events-none z-10"
+          style={{ animationDelay: "0.5s" }}
+        >
+          <img
+            src="/img/82885594-3675-4a2c-b489-c9e32a6d05ce.jpg"
+            alt="Photographer"
+            className="w-full h-full object-cover rounded-lg shadow-lg"
+          />
+        </div>
+        <div
+          className="absolute top-20 right-16 w-28 h-36 media-overlay animate-slide-in-right animate-media-float pointer-events-none z-10"
+          style={{ animationDelay: "1s" }}
+        >
+          <img
+            src="/img/66c08e5d-7a22-4467-93af-a2d485a63c1c.jpg"
+            alt="Journalist"
+            className="w-full h-full object-cover rounded-lg shadow-lg"
+          />
+        </div>
+        <div
+          className="absolute bottom-16 left-20 w-30 h-38 media-overlay animate-slide-in-left animate-media-float pointer-events-none z-10"
+          style={{ animationDelay: "2s" }}
+        >
+          <img
+            src="/img/e3f26487-b203-4300-8150-fdccd95ef330.jpg"
+            alt="Content Creator"
+            className="w-full h-full object-cover rounded-lg shadow-lg"
+          />
+        </div>
+
         {/* Liquid Glass Effects */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Animated Bubbles */}
@@ -444,6 +476,28 @@ const Index = () => {
 
       {/* News Section */}
       <section id="news" className="py-20 liquid-glass relative">
+        {/* Media Characters */}
+        <div
+          className="absolute top-12 left-12 w-28 h-36 media-overlay animate-slide-in-left animate-media-float pointer-events-none z-10"
+          style={{ animationDelay: "0.6s" }}
+        >
+          <img
+            src="/img/66c08e5d-7a22-4467-93af-a2d485a63c1c.jpg"
+            alt="Journalist"
+            className="w-full h-full object-cover rounded-lg shadow-lg"
+          />
+        </div>
+        <div
+          className="absolute bottom-24 right-16 w-24 h-32 media-overlay animate-slide-in-right animate-media-float pointer-events-none z-10"
+          style={{ animationDelay: "1.8s" }}
+        >
+          <img
+            src="/img/e3f26487-b203-4300-8150-fdccd95ef330.jpg"
+            alt="Content Creator"
+            className="w-full h-full object-cover rounded-lg shadow-lg"
+          />
+        </div>
+
         {/* Liquid Glass Effects */}
         <div className="absolute inset-0 pointer-events-none">
           <div
@@ -527,6 +581,28 @@ const Index = () => {
         id="reviews"
         className="py-20 bg-slate-800 liquid-glass relative"
       >
+        {/* Media Characters */}
+        <div
+          className="absolute top-16 right-12 w-24 h-32 media-overlay animate-slide-in-right animate-media-float pointer-events-none z-10"
+          style={{ animationDelay: "0.3s" }}
+        >
+          <img
+            src="/img/82885594-3675-4a2c-b489-c9e32a6d05ce.jpg"
+            alt="Photographer"
+            className="w-full h-full object-cover rounded-lg shadow-lg"
+          />
+        </div>
+        <div
+          className="absolute bottom-20 left-16 w-26 h-34 media-overlay animate-slide-in-left animate-media-float pointer-events-none z-10"
+          style={{ animationDelay: "1.5s" }}
+        >
+          <img
+            src="/img/66c08e5d-7a22-4467-93af-a2d485a63c1c.jpg"
+            alt="Journalist"
+            className="w-full h-full object-cover rounded-lg shadow-lg"
+          />
+        </div>
+
         {/* Liquid Glass Effects */}
         <div className="absolute inset-0 pointer-events-none">
           <div
@@ -634,6 +710,28 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="py-12 border-t border-white/10 liquid-glass relative">
+        {/* Media Characters */}
+        <div
+          className="absolute top-8 left-8 w-20 h-28 media-overlay animate-slide-in-left animate-media-float pointer-events-none z-10"
+          style={{ animationDelay: "0.8s" }}
+        >
+          <img
+            src="/img/e3f26487-b203-4300-8150-fdccd95ef330.jpg"
+            alt="Content Creator"
+            className="w-full h-full object-cover rounded-lg shadow-lg"
+          />
+        </div>
+        <div
+          className="absolute top-6 right-12 w-22 h-30 media-overlay animate-slide-in-right animate-media-float pointer-events-none z-10"
+          style={{ animationDelay: "1.2s" }}
+        >
+          <img
+            src="/img/82885594-3675-4a2c-b489-c9e32a6d05ce.jpg"
+            alt="Photographer"
+            className="w-full h-full object-cover rounded-lg shadow-lg"
+          />
+        </div>
+
         {/* Liquid Glass Effects */}
         <div className="absolute inset-0 pointer-events-none">
           <div
