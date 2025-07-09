@@ -198,9 +198,9 @@ const Home = () => {
               Хочешь стать частью нашей медиакоманды? У нас всегда есть место
               для творческих и активных людей!
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <a
-                href="https://vk.com/gorhon_media"
+                href="https://vk.com/im?entrypoint=community_page&media=&sel=-214224996"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-xl font-unbounded font-semibold hover:scale-105 transition-all duration-200 shadow-lg shadow-primary/25"
@@ -208,13 +208,6 @@ const Home = () => {
                 <Icon name="ExternalLink" size={20} />
                 <span>Написать в ВК</span>
               </a>
-              <Link
-                to="/team"
-                className="inline-flex items-center justify-center space-x-2 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-unbounded font-semibold hover:bg-white/20 transition-all border border-white/20"
-              >
-                <Icon name="Users" size={20} />
-                <span>Узнать больше о команде</span>
-              </Link>
             </div>
           </div>
         </div>
