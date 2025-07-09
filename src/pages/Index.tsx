@@ -118,14 +118,17 @@ const Index = () => {
       </div>
 
       {/* Hero Section */}
-      <section id="home" className="relative py-20 overflow-hidden">
+      <section
+        id="home"
+        className="relative py-20 overflow-hidden animate-pulse-bg"
+      >
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-primary">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text animate-float">
               Медиакоманда Горхон
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-300">
-              Создаем креативный контент для молодого поколения
+              Создаем креативный контент для молодого поколения ✨
             </p>
           </div>
         </div>
@@ -135,15 +138,17 @@ const Index = () => {
       <section id="about" className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-12">О нас</h2>
+            <h2 className="text-4xl font-bold text-center mb-12 gradient-text">
+              О нас
+            </h2>
             <div className="grid md:grid-cols-2 gap-8">
-              <Card className="bg-white/5 border-white/10 text-white hover:border-primary/50 transition-colors">
+              <Card className="glass-effect text-white hover:animate-glow transition-all duration-300 hover:scale-105">
                 <CardHeader>
                   <CardTitle className="flex items-center">
                     <Icon
                       name="Target"
                       size={24}
-                      className="mr-3 text-primary"
+                      className="mr-3 text-primary animate-float"
                     />
                     Наша миссия
                   </CardTitle>
@@ -156,13 +161,13 @@ const Index = () => {
                   </p>
                 </CardContent>
               </Card>
-              <Card className="bg-white/5 border-white/10 text-white hover:border-secondary/50 transition-colors">
+              <Card className="glass-effect text-white hover:animate-glow transition-all duration-300 hover:scale-105">
                 <CardHeader>
                   <CardTitle className="flex items-center">
                     <Icon
                       name="Zap"
                       size={24}
-                      className="mr-3 text-secondary"
+                      className="mr-3 text-secondary animate-float"
                     />
                     Наши принципы
                   </CardTitle>
@@ -187,7 +192,7 @@ const Index = () => {
                 />
               </div>
               <div className="lg:w-1/2 text-center lg:text-left">
-                <h3 className="text-3xl font-bold text-primary mb-4">
+                <h3 className="text-3xl font-bold gradient-text mb-4">
                   Наша команда
                 </h3>
                 <p className="text-gray-300 text-lg mb-6">
@@ -199,7 +204,7 @@ const Index = () => {
                 <div className="flex justify-center lg:justify-start">
                   <Button
                     variant="outline"
-                    className="border-primary text-primary hover:bg-primary hover:text-white"
+                    className="neon-border border-primary text-primary hover:bg-primary hover:text-white hover:animate-shake transition-all duration-300"
                     onClick={() =>
                       window.open("https://vk.com/gorhon_official", "_blank")
                     }
@@ -224,7 +229,9 @@ const Index = () => {
           />
         </div>
         <div className="container mx-auto px-4 relative z-10">
-          <h2 className="text-4xl font-bold text-center mb-12">Наша команда</h2>
+          <h2 className="text-4xl font-bold text-center mb-12 gradient-text">
+            Наша команда
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
@@ -254,11 +261,11 @@ const Index = () => {
             ].map((member, index) => (
               <Card
                 key={index}
-                className="bg-white/5 border-white/10 text-white hover:bg-white/10 transition-colors animate-scale-in"
+                className="glass-effect text-white hover:animate-glow transition-all duration-300 hover:scale-105 animate-scale-in"
               >
                 <CardHeader className="text-center">
                   <div
-                    className={`w-20 h-20 ${member.color === "primary" ? "bg-primary" : "bg-secondary"} rounded-full flex items-center justify-center mx-auto mb-4`}
+                    className={`w-20 h-20 ${member.color === "primary" ? "bg-primary" : "bg-secondary"} rounded-full flex items-center justify-center mx-auto mb-4 animate-float`}
                   >
                     <Icon
                       name={member.icon as any}
@@ -280,11 +287,13 @@ const Index = () => {
       {/* Projects Section */}
       <section id="projects" className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">Наши проекты</h2>
+          <h2 className="text-4xl font-bold text-center mb-12 gradient-text">
+            Наши проекты
+          </h2>
           <div className="flex justify-center">
             <div className="max-w-2xl w-full">
               <Card
-                className="bg-white/5 border-white/10 text-white hover:bg-white/10 transition-all hover:scale-105 overflow-hidden cursor-pointer"
+                className="glass-effect text-white hover:animate-glow transition-all duration-300 hover:scale-110 overflow-hidden cursor-pointer neon-border"
                 onClick={() =>
                   window.open("https://vk.com/wall-214224996_1109", "_blank")
                 }
@@ -330,13 +339,15 @@ const Index = () => {
       <section id="news" className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-12">Новости</h2>
+            <h2 className="text-4xl font-bold text-center mb-12 gradient-text">
+              Новости
+            </h2>
 
             {/* VK Group Widget - News */}
             <div className="flex justify-center mb-12">
-              <div className="bg-white/5 border border-white/10 rounded-lg p-6">
+              <div className="glass-effect rounded-lg p-6 hover:animate-glow transition-all duration-300">
                 <div className="text-center mb-4">
-                  <h3 className="text-xl font-bold text-primary mb-2">
+                  <h3 className="text-xl font-bold gradient-text mb-2">
                     Последние новости
                   </h3>
                   <p className="text-gray-300 text-sm">
@@ -349,7 +360,7 @@ const Index = () => {
 
             <div className="text-center">
               <Button
-                className="bg-primary hover:bg-primary/90 text-white"
+                className="bg-primary hover:bg-primary/90 text-white neon-border hover:animate-shake transition-all duration-300"
                 onClick={() =>
                   window.open("https://vk.com/gorhon_official", "_blank")
                 }
@@ -372,7 +383,7 @@ const Index = () => {
           />
         </div>
         <div className="container mx-auto px-4 relative z-10">
-          <h2 className="text-4xl font-bold text-center mb-12">
+          <h2 className="text-4xl font-bold text-center mb-12 gradient-text">
             Отзывы подписчиков
           </h2>
 
@@ -401,7 +412,7 @@ const Index = () => {
             ].map((review, index) => (
               <Card
                 key={index}
-                className="bg-white/5 border-white/10 text-white animate-fade-in hover:border-primary/30 transition-colors"
+                className="glass-effect text-white animate-fade-in hover:animate-glow transition-all duration-300 hover:scale-105"
               >
                 <CardHeader>
                   <div className="flex items-center justify-between">
@@ -412,7 +423,7 @@ const Index = () => {
                           key={i}
                           name="Star"
                           size={16}
-                          className="text-secondary fill-current"
+                          className="text-secondary fill-current animate-float"
                         />
                       ))}
                     </div>
