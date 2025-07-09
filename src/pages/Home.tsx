@@ -109,8 +109,8 @@ const Home = () => {
                     className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-primary rounded-full animate-spin"
                     style={{ animationDuration: "10s" }}
                   ></div>
-                  <div className="absolute inset-4 bg-slate-900 rounded-full flex items-center justify-center">
-                    <div className="w-80 h-24 px-4">
+                  <div className="absolute inset-4 bg-slate-900 rounded-full flex items-center justify-center p-8">
+                    <div className="w-full h-full">
                       <img
                         src="https://cdn.poehali.dev/files/6ffd92ec-3432-4ca8-bb14-85125928e527.png"
                         alt="Горхон"
