@@ -27,19 +27,6 @@ const Index = () => {
         },
         214224996,
       );
-      window.VK.Widgets.Group(
-        "vk_groups",
-        {
-          mode: 4,
-          no_cover: 1,
-          wide: 1,
-          height: 400,
-          color1: "FFFFFF",
-          color2: "000000",
-          color3: "2382ef",
-        },
-        214224996,
-      );
     }
   }, []);
 
@@ -333,21 +320,6 @@ const Index = () => {
                   </p>
                 </div>
                 <div id="vk_groups_news" className="flex justify-center"></div>
-              </div>
-            </div>
-
-            {/* VK Group Widget */}
-            <div className="flex justify-center mb-12">
-              <div className="bg-white/5 border border-white/10 rounded-lg p-6">
-                <div className="text-center mb-4">
-                  <h3 className="text-xl font-bold text-secondary mb-2">
-                    Наше сообщество
-                  </h3>
-                  <p className="text-gray-300 text-sm">
-                    Подпишитесь на наше сообщество ВКонтакте
-                  </p>
-                </div>
-                <div id="vk_groups" className="flex justify-center"></div>
               </div>
             </div>
 
