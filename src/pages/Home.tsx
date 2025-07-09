@@ -53,7 +53,7 @@ const Home = () => {
               <div className="grid grid-cols-3 gap-6 pt-8">
                 <div className="text-center">
                   <div className="text-3xl font-unbounded font-bold text-white">
-                    50+
+                    1+
                   </div>
                   <div className="text-gray-400 font-unbounded text-sm">
                     Проектов
@@ -61,7 +61,7 @@ const Home = () => {
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-unbounded font-bold text-white">
-                    10K+
+                    873+
                   </div>
                   <div className="text-gray-400 font-unbounded text-sm">
                     Подписчиков
