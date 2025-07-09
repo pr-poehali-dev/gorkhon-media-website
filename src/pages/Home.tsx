@@ -2,11 +2,39 @@ import { useState, useEffect } from "react";
 import Icon from "@/components/ui/icon";
 import { Link } from "react-router-dom";
 
+// Type declaration for VK API
+declare global {
+  interface Window {
+    VK: {
+      Widgets: {
+        Group: (elementId: string, options: any, groupId: number) => void;
+      };
+    };
+  }
+}
+
 const Home = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
+
+    // Initialize VK Widget after component mounts
+    if (window.VK) {
+      window.VK.Widgets.Group(
+        "vk_groups",
+        {
+          mode: 4,
+          no_cover: 1,
+          wide: 1,
+          height: 400,
+          color1: "FFFFFF",
+          color2: "000000",
+          color3: "2382ef",
+        },
+        214224996,
+      );
+    }
   }, []);
 
   return (
@@ -183,6 +211,24 @@ const Home = () => {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* VK Widget Section */}
+      <section className="py-20 bg-black/20 backdrop-blur-sm">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-4xl font-unbounded font-bold text-white mb-4">
+              Наша группа ВКонтакте
+            </h2>
+            <p className="text-xl text-gray-300 font-unbounded">
+              Следи за новостями и событиями медиакоманды
+            </p>
+          </div>
+
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 flex justify-center">
+            <div id="vk_groups"></div>
           </div>
         </div>
       </section>
