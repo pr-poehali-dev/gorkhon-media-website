@@ -25,7 +25,8 @@ const Projects = () => {
       duration: "Июнь 2024",
       episodes: "Фотоальбом",
       views: "560",
-      image: "https://cdn.poehali.dev/files/a863a0f2-70cf-4a7e-8b96-561c13a9bc1e.png",
+      image:
+        "https://cdn.poehali.dev/files/a863a0f2-70cf-4a7e-8b96-561c13a9bc1e.png",
       url: "https://vk.com/wall-214224996_1109",
       tags: ["Школа", "Выпускной", "Память"],
       achievements: [
@@ -98,10 +99,10 @@ const Projects = () => {
                 className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-300 hover:scale-105"
               >
                 {/* Project Image Background */}
-                <div 
+                <div
                   className="h-48 bg-cover bg-center relative"
-                  style={{ 
-                    backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${project.image})` 
+                  style={{
+                    backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${project.image})`,
                   }}
                 >
                   <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm rounded-lg px-3 py-2">
@@ -132,9 +133,7 @@ const Projects = () => {
                     </a>
                   </div>
 
-                  </div>
-
-                  <h3 
+                  <h3
                     className="text-xl font-unbounded font-bold text-white mb-2 cursor-pointer"
                     onClick={() =>
                       setSelectedProject(
@@ -144,7 +143,7 @@ const Projects = () => {
                   >
                     {project.title}
                   </h3>
-                  <p 
+                  <p
                     className="text-gray-300 font-unbounded text-sm mb-4 leading-relaxed cursor-pointer"
                     onClick={() =>
                       setSelectedProject(
@@ -174,7 +173,7 @@ const Projects = () => {
                   </div>
 
                   {/* Expand Indicator */}
-                  <div 
+                  <div
                     className="flex items-center justify-center mt-4 cursor-pointer"
                     onClick={() =>
                       setSelectedProject(
