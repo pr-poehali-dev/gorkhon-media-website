@@ -218,25 +218,31 @@ const Index = () => {
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-4xl font-bold text-center mb-12">Наша команда</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                name: "Анна Иванова",
+                name: "Скоро",
                 role: "Главный редактор",
                 icon: "Edit",
                 color: "primary",
               },
               {
-                name: "Максим Петров",
+                name: "Скоро",
                 role: "Видеограф",
                 icon: "Video",
                 color: "secondary",
               },
               {
-                name: "София Сидорова",
+                name: "Скоро",
                 role: "SMM-менеджер",
                 icon: "Share2",
                 color: "primary",
+              },
+              {
+                name: "Скоро",
+                role: "Менеджер по рекламе",
+                icon: "Megaphone",
+                color: "secondary",
               },
             ].map((member, index) => (
               <Card
