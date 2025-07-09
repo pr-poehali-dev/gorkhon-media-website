@@ -181,8 +181,29 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20">
-        <div className="container mx-auto px-4">
+      <section id="about" className="py-20 liquid-glass relative">
+        {/* Liquid Glass Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div
+            className="liquid-bubble w-28 h-28 top-16 left-16 animate-bubble"
+            style={{ animationDelay: "1s" }}
+          ></div>
+          <div
+            className="liquid-bubble w-20 h-20 top-32 right-24 animate-bubble"
+            style={{ animationDelay: "3s" }}
+          ></div>
+          <div
+            className="liquid-wave w-72 h-18 bottom-32 left-1/3 animate-wave"
+            style={{ animationDelay: "0.5s" }}
+          ></div>
+          <div
+            className="absolute w-36 h-36 top-24 right-32 animate-liquid"
+            style={{ animationDelay: "2s" }}
+          >
+            <div className="w-full h-full bg-gradient-to-br from-green-500/20 to-blue-500/20 rounded-full backdrop-blur-sm border border-white/10"></div>
+          </div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-bold text-center mb-12 gradient-text">
               О нас
@@ -266,7 +287,28 @@ const Index = () => {
       </section>
 
       {/* Team Section */}
-      <section id="team" className="py-20 bg-slate-800 relative">
+      <section id="team" className="py-20 bg-slate-800 liquid-glass relative">
+        {/* Liquid Glass Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div
+            className="liquid-bubble w-24 h-24 top-20 left-32 animate-bubble"
+            style={{ animationDelay: "0.5s" }}
+          ></div>
+          <div
+            className="liquid-bubble w-32 h-32 bottom-24 right-16 animate-bubble"
+            style={{ animationDelay: "2.5s" }}
+          ></div>
+          <div
+            className="liquid-wave w-80 h-20 top-1/2 right-1/4 animate-wave"
+            style={{ animationDelay: "1.5s" }}
+          ></div>
+          <div
+            className="absolute w-44 h-44 bottom-32 left-16 animate-liquid"
+            style={{ animationDelay: "3.5s" }}
+          >
+            <div className="w-full h-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full backdrop-blur-sm border border-white/10"></div>
+          </div>
+        </div>
         <div className="absolute bottom-0 left-0 w-80 h-80 opacity-5 rotate-45 pointer-events-none">
           <img
             src="https://cdn.poehali.dev/files/0c15c6a3-a1cb-4a2b-b13f-1b1c5f0c8289.png"
@@ -331,8 +373,29 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20">
-        <div className="container mx-auto px-4">
+      <section id="projects" className="py-20 liquid-glass relative">
+        {/* Liquid Glass Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div
+            className="liquid-bubble w-36 h-36 top-24 right-24 animate-bubble"
+            style={{ animationDelay: "2s" }}
+          ></div>
+          <div
+            className="liquid-bubble w-22 h-22 bottom-20 left-20 animate-bubble"
+            style={{ animationDelay: "4s" }}
+          ></div>
+          <div
+            className="liquid-wave w-64 h-16 top-40 left-1/4 animate-wave"
+            style={{ animationDelay: "3s" }}
+          ></div>
+          <div
+            className="absolute w-48 h-48 top-32 left-32 animate-liquid"
+            style={{ animationDelay: "1s" }}
+          >
+            <div className="w-full h-full bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-full backdrop-blur-sm border border-white/10"></div>
+          </div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-4xl font-bold text-center mb-12 gradient-text">
             Наши проекты
           </h2>
@@ -382,8 +445,29 @@ const Index = () => {
       </section>
 
       {/* News Section */}
-      <section id="news" className="py-20">
-        <div className="container mx-auto px-4">
+      <section id="news" className="py-20 liquid-glass relative">
+        {/* Liquid Glass Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div
+            className="liquid-bubble w-30 h-30 top-16 left-24 animate-bubble"
+            style={{ animationDelay: "1.5s" }}
+          ></div>
+          <div
+            className="liquid-bubble w-26 h-26 bottom-32 right-32 animate-bubble"
+            style={{ animationDelay: "3.5s" }}
+          ></div>
+          <div
+            className="liquid-wave w-68 h-18 top-1/2 left-1/2 animate-wave"
+            style={{ animationDelay: "2.5s" }}
+          ></div>
+          <div
+            className="absolute w-40 h-40 bottom-24 left-1/4 animate-liquid"
+            style={{ animationDelay: "4s" }}
+          >
+            <div className="w-full h-full bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 rounded-full backdrop-blur-sm border border-white/10"></div>
+          </div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-bold text-center mb-12 gradient-text">
               Новости
@@ -420,7 +504,31 @@ const Index = () => {
       </section>
 
       {/* Reviews Section */}
-      <section id="reviews" className="py-20 bg-slate-800 relative">
+      <section
+        id="reviews"
+        className="py-20 bg-slate-800 liquid-glass relative"
+      >
+        {/* Liquid Glass Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div
+            className="liquid-bubble w-34 h-34 top-20 left-16 animate-bubble"
+            style={{ animationDelay: "2.5s" }}
+          ></div>
+          <div
+            className="liquid-bubble w-28 h-28 bottom-16 right-20 animate-bubble"
+            style={{ animationDelay: "4.5s" }}
+          ></div>
+          <div
+            className="liquid-wave w-76 h-20 bottom-1/2 right-1/3 animate-wave"
+            style={{ animationDelay: "3.5s" }}
+          ></div>
+          <div
+            className="absolute w-42 h-42 top-1/3 right-1/4 animate-liquid"
+            style={{ animationDelay: "0.5s" }}
+          >
+            <div className="w-full h-full bg-gradient-to-br from-violet-500/20 to-rose-500/20 rounded-full backdrop-blur-sm border border-white/10"></div>
+          </div>
+        </div>
         <div className="absolute top-20 right-20 w-60 h-60 opacity-5 -rotate-12 pointer-events-none">
           <img
             src="https://cdn.poehali.dev/files/0c15c6a3-a1cb-4a2b-b13f-1b1c5f0c8289.png"
@@ -485,8 +593,29 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 border-t border-white/10">
-        <div className="container mx-auto px-4">
+      <footer className="py-12 border-t border-white/10 liquid-glass relative">
+        {/* Liquid Glass Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div
+            className="liquid-bubble w-24 h-24 top-8 left-24 animate-bubble"
+            style={{ animationDelay: "1s" }}
+          ></div>
+          <div
+            className="liquid-bubble w-20 h-20 bottom-8 right-32 animate-bubble"
+            style={{ animationDelay: "3s" }}
+          ></div>
+          <div
+            className="liquid-wave w-60 h-12 top-1/2 left-1/2 animate-wave"
+            style={{ animationDelay: "2s" }}
+          ></div>
+          <div
+            className="absolute w-32 h-32 top-4 right-16 animate-liquid"
+            style={{ animationDelay: "4s" }}
+          >
+            <div className="w-full h-full bg-gradient-to-br from-indigo-500/20 to-purple-500/20 rounded-full backdrop-blur-sm border border-white/10"></div>
+          </div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-3 mb-4 md:mb-0">
               <img
