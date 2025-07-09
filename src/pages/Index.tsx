@@ -14,11 +14,18 @@ const Index = () => {
   // Инициализация VK виджетов после загрузки компонента
   React.useEffect(() => {
     if (typeof window !== "undefined" && window.VK) {
-      window.VK.Widgets.Post(
-        "vk_post_-214224996_1090",
-        -214224996,
-        1090,
-        "90X6pejxyaR6_3iGx5IWFot8cjVY",
+      window.VK.Widgets.Group(
+        "vk_groups_news",
+        {
+          mode: 4,
+          no_cover: 1,
+          wide: 1,
+          height: 400,
+          color1: "FFFFFF",
+          color2: "000000",
+          color3: "2382ef",
+        },
+        214224996,
       );
       window.VK.Widgets.Group(
         "vk_groups",
@@ -314,7 +321,7 @@ const Index = () => {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-bold text-center mb-12">Новости</h2>
 
-            {/* VK Post Widget */}
+            {/* VK Group Widget - News */}
             <div className="flex justify-center mb-12">
               <div className="bg-white/5 border border-white/10 rounded-lg p-6">
                 <div className="text-center mb-4">
@@ -325,10 +332,7 @@ const Index = () => {
                     Актуальные посты из нашего сообщества
                   </p>
                 </div>
-                <div
-                  id="vk_post_-214224996_1090"
-                  className="flex justify-center"
-                ></div>
+                <div id="vk_groups_news" className="flex justify-center"></div>
               </div>
             </div>
 
