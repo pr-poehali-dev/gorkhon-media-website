@@ -146,56 +146,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-black/20 backdrop-blur-sm">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-unbounded font-bold text-white mb-4">
-              Наши достижения
-            </h2>
-            <p className="text-lg text-gray-300 font-unbounded">
-              Цифры, которые говорят сами за себя
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              {
-                number: "50+",
-                label: "Реализованных проектов",
-                icon: "FolderOpen",
-              },
-              {
-                number: "10K+",
-                label: "Подписчиков в соцсетях",
-                icon: "Users",
-              },
-              { number: "1M+", label: "Просмотров контента", icon: "Eye" },
-              { number: "3", label: "Года успешной работы", icon: "Award" },
-            ].map((stat, index) => (
-              <div
-                key={index}
-                className="text-center p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 transition-all duration-300"
-              >
-                <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Icon
-                    name={stat.icon as any}
-                    size={24}
-                    className="text-white"
-                  />
-                </div>
-                <div className="text-3xl font-unbounded font-bold text-white mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-gray-400 font-unbounded text-sm">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Contact CTA */}
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
