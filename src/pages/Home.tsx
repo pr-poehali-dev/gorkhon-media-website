@@ -41,8 +41,6 @@ const Home = () => {
                   <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                     Горхон
                   </span>
-                  <br />
-                  <span className="text-white">Медиа</span>
                 </h1>
                 <p className="text-xl text-gray-300 font-unbounded leading-relaxed">
                   Мы создаем контент, который вдохновляет и объединяет молодежь
