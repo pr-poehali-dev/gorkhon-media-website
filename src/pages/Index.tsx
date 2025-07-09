@@ -18,11 +18,10 @@ const Index = () => {
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <img
-                src="/img/bf3bc6bd-a53c-473d-b723-894df5535965.jpg"
+                src="https://cdn.poehali.dev/files/1cd14853-4eeb-4f4d-b81d-914b71f383f6.png"
                 alt="Медиакоманда Горхон"
-                className="w-10 h-10 rounded-lg object-cover"
+                className="h-8 object-contain"
               />
-              <span className="text-xl font-bold">Горхон Медиа</span>
             </div>
             <div className="hidden md:flex items-center space-x-6">
               <a href="#home" className="hover:text-primary transition-colors">
@@ -308,11 +307,10 @@ const Index = () => {
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-3 mb-4 md:mb-0">
               <img
-                src="/img/bf3bc6bd-a53c-473d-b723-894df5535965.jpg"
+                src="https://cdn.poehali.dev/files/1cd14853-4eeb-4f4d-b81d-914b71f383f6.png"
                 alt="Медиакоманда Горхон"
-                className="w-8 h-8 rounded object-cover"
+                className="h-6 object-contain"
               />
-              <span className="text-lg font-bold">Горхон Медиа</span>
             </div>
             <div className="flex items-center space-x-6">
               <Button
