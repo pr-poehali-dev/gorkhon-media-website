@@ -640,6 +640,36 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      {/* Floating Chat Button */}
+      <div className="fixed bottom-8 right-8 z-50">
+        <div className="relative">
+          {/* Pulsing Ring */}
+          <div className="absolute inset-0 animate-ping">
+            <div className="w-16 h-16 bg-primary/30 rounded-full"></div>
+          </div>
+
+          {/* Chat Button */}
+          <Button
+            className="relative w-16 h-16 bg-gradient-to-br from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white rounded-full shadow-2xl animate-float hover:animate-glow transition-all duration-300 hover:scale-110"
+            onClick={() =>
+              window.open("https://vk.com/gorhon_official", "_blank")
+            }
+          >
+            <Icon name="MessageCircle" size={24} />
+          </Button>
+
+          {/* Floating Particles */}
+          <div
+            className="absolute -top-2 -right-2 w-3 h-3 bg-secondary rounded-full animate-bounce"
+            style={{ animationDelay: "0.5s" }}
+          ></div>
+          <div
+            className="absolute -bottom-2 -left-2 w-2 h-2 bg-primary rounded-full animate-bounce"
+            style={{ animationDelay: "1s" }}
+          ></div>
+        </div>
+      </div>
     </div>
   );
 };
