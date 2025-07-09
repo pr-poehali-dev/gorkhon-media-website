@@ -25,7 +25,7 @@ const Projects = () => {
       duration: "Июнь 2024",
       episodes: "Фотоальбом",
       views: "560",
-      image: "/img/a9eeec3e-a13e-41cc-a054-1c82a3479d64.jpg",
+      image: "https://cdn.poehali.dev/files/a863a0f2-70cf-4a7e-8b96-561c13a9bc1e.png",
       url: "https://vk.com/wall-214224996_1109",
       tags: ["Школа", "Выпускной", "Память"],
       achievements: [
