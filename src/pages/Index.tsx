@@ -653,7 +653,10 @@ const Index = () => {
           <Button
             className="relative w-16 h-16 bg-gradient-to-br from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white rounded-full shadow-2xl animate-float hover:animate-glow transition-all duration-300 hover:scale-110"
             onClick={() =>
-              window.open("https://vk.com/gorhon_official", "_blank")
+              window.open(
+                "https://vk.com/im/convo/-214224996?entrypoint=community_page",
+                "_blank",
+              )
             }
           >
             <Icon name="MessageCircle" size={24} />
