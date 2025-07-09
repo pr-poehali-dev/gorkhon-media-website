@@ -49,23 +49,6 @@ const Home = () => {
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  to="/projects"
-                  className="inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-xl font-unbounded font-semibold hover:scale-105 transition-all duration-200 shadow-lg shadow-primary/25"
-                >
-                  <Icon name="Play" size={20} />
-                  <span>Наши проекты</span>
-                </Link>
-                <Link
-                  to="/team"
-                  className="inline-flex items-center justify-center space-x-2 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-unbounded font-semibold hover:bg-white/20 transition-all border border-white/20"
-                >
-                  <Icon name="Users" size={20} />
-                  <span>Познакомиться с командой</span>
-                </Link>
-              </div>
-
               {/* Stats */}
               <div className="grid grid-cols-3 gap-6 pt-8">
                 <div className="text-center">
