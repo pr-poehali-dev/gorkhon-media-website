@@ -19,7 +19,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="h-8 group-hover:scale-110 transition-transform">
+            <div className="h-12 group-hover:scale-110 transition-transform">
               <img
                 src="https://cdn.poehali.dev/files/6ffd92ec-3432-4ca8-bb14-85125928e527.png"
                 alt="Горхон Медиа"
