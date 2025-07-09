@@ -78,17 +78,6 @@ const Index = () => {
                 Отзывы
               </a>
             </div>
-            <Button
-              variant="outline"
-              size="sm"
-              className="border-primary text-primary hover:bg-primary hover:text-white"
-              onClick={() =>
-                window.open("https://vk.com/gorhon_official", "_blank")
-              }
-            >
-              <Icon name="MessageCircle" size={16} className="mr-2" />
-              ВКонтакте
-            </Button>
           </nav>
         </div>
       </header>
