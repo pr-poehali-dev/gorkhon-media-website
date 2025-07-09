@@ -268,18 +268,6 @@ const Index = () => {
                   Мы работаем с современными технологиями и следим за трендами,
                   чтобы наш контент был актуальным и интересным.
                 </p>
-                <div className="flex justify-center lg:justify-start">
-                  <Button
-                    variant="outline"
-                    className="neon-border border-primary text-primary hover:bg-primary hover:text-white hover:animate-shake transition-all duration-300"
-                    onClick={() =>
-                      window.open("https://vk.com/gorhon_official", "_blank")
-                    }
-                  >
-                    <Icon name="Users" size={20} className="mr-2" />
-                    Познакомиться с командой
-                  </Button>
-                </div>
               </div>
             </div>
           </div>
