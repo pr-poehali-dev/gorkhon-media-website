@@ -234,7 +234,7 @@ const Team = () => {
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col gap-4 justify-center items-center">
               <a
                 href="https://vk.com/gorhon_media"
                 target="_blank"
@@ -244,10 +244,10 @@ const Team = () => {
                 <Icon name="ExternalLink" size={20} />
                 <span>Связаться с нами</span>
               </a>
-              <button className="inline-flex items-center justify-center space-x-2 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-unbounded font-semibold hover:bg-white/20 transition-all border border-white/20">
-                <Icon name="FileText" size={20} />
-                <span>Отправить резюме</span>
-              </button>
+              <div className="flex items-center space-x-2 text-gray-300 font-unbounded text-sm">
+                <Icon name="Mail" size={16} />
+                <span>admin@gorhon.ru</span>
+              </div>
             </div>
           </div>
         </div>
