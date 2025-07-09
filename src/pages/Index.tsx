@@ -106,6 +106,30 @@ const Index = () => {
         </div>
       </div>
 
+      {/* Hot News Running Line */}
+      <div className="bg-gradient-to-r from-red-600 via-orange-500 to-red-600 border-y border-orange-400 py-3 overflow-hidden animate-pulse shadow-lg shadow-red-500/20">
+        <div className="whitespace-nowrap animate-marquee">
+          <span className="text-white font-bold text-xl mx-10 animate-hot-glow">
+            🔥 Горячие новости только у нас! 🔥
+          </span>
+          <span className="text-white font-bold text-xl mx-10 animate-hot-glow">
+            🔥 Горячие новости только у нас! 🔥
+          </span>
+          <span className="text-white font-bold text-xl mx-10 animate-hot-glow">
+            🔥 Горячие новости только у нас! 🔥
+          </span>
+          <span className="text-white font-bold text-xl mx-10 animate-hot-glow">
+            🔥 Горячие новости только у нас! 🔥
+          </span>
+          <span className="text-white font-bold text-xl mx-10 animate-hot-glow">
+            🔥 Горячие новости только у нас! 🔥
+          </span>
+          <span className="text-white font-bold text-xl mx-10 animate-hot-glow">
+            🔥 Горячие новости только у нас! 🔥
+          </span>
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section
         id="home"
