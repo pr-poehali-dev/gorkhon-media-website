@@ -429,10 +429,22 @@ const Index = () => {
               <Button
                 variant="ghost"
                 size="sm"
+                className="text-blue-400 hover:bg-blue-400/10"
+                onClick={() =>
+                  window.open("https://t.me/gorhon_official", "_blank")
+                }
+              >
+                <Icon name="Send" size={16} className="mr-2" />
+                Telegram
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
                 className="text-secondary hover:bg-secondary/10"
+                onClick={() => window.open("mailto:admin@gorhon.ru", "_blank")}
               >
                 <Icon name="Mail" size={16} className="mr-2" />
-                Связаться
+                admin@gorhon.ru
               </Button>
             </div>
           </div>
