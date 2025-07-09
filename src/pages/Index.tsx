@@ -11,9 +11,18 @@ import Icon from "@/components/ui/icon";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white font-unbounded">
+    <div className="min-h-screen bg-slate-900 text-white font-unbounded relative overflow-hidden">
+      {/* Декоративная графика */}
+      <div className="absolute top-10 right-10 w-96 h-96 opacity-10 pointer-events-none">
+        <img
+          src="https://cdn.poehali.dev/files/0c15c6a3-a1cb-4a2b-b13f-1b1c5f0c8289.png"
+          alt=""
+          className="w-full h-full object-contain"
+        />
+      </div>
+
       {/* Header */}
-      <header className="sticky top-0 z-50 backdrop-blur-md bg-white/5 border-b border-white/10">
+      <header className="sticky top-0 z-50 backdrop-blur-md bg-slate-900/80 border-b border-white/10">
         <div className="container mx-auto px-4 py-4">
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
@@ -49,7 +58,7 @@ const Index = () => {
             <Button
               variant="outline"
               size="sm"
-              className="border-white/20 text-white hover:bg-white/10"
+              className="border-primary text-primary hover:bg-primary hover:text-white"
             >
               <Icon name="MessageCircle" size={16} className="mr-2" />
               ВКонтакте
@@ -60,10 +69,9 @@ const Index = () => {
 
       {/* Hero Section */}
       <section id="home" className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 animate-gradient-shift bg-[size:400%_400%]"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-primary">
               Медиакоманда Горхон
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-300">
@@ -72,7 +80,7 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white"
+                className="bg-primary hover:bg-primary/90 text-white"
               >
                 <Icon name="Play" size={20} className="mr-2" />
                 Смотреть проекты
@@ -80,7 +88,7 @@ const Index = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white/20 text-white hover:bg-white/10"
+                className="border-secondary text-secondary hover:bg-secondary hover:text-white"
               >
                 <Icon name="Users" size={20} className="mr-2" />
                 Наша команда
@@ -96,7 +104,7 @@ const Index = () => {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-bold text-center mb-12">О нас</h2>
             <div className="grid md:grid-cols-2 gap-8">
-              <Card className="bg-white/5 border-white/10 text-white">
+              <Card className="bg-white/5 border-white/10 text-white hover:border-primary/50 transition-colors">
                 <CardHeader>
                   <CardTitle className="flex items-center">
                     <Icon
@@ -115,7 +123,7 @@ const Index = () => {
                   </p>
                 </CardContent>
               </Card>
-              <Card className="bg-white/5 border-white/10 text-white">
+              <Card className="bg-white/5 border-white/10 text-white hover:border-secondary/50 transition-colors">
                 <CardHeader>
                   <CardTitle className="flex items-center">
                     <Icon
@@ -140,24 +148,45 @@ const Index = () => {
       </section>
 
       {/* Team Section */}
-      <section
-        id="team"
-        className="py-20 bg-gradient-to-r from-slate-800 to-slate-900"
-      >
-        <div className="container mx-auto px-4">
+      <section id="team" className="py-20 bg-slate-800 relative">
+        <div className="absolute bottom-0 left-0 w-80 h-80 opacity-5 rotate-45 pointer-events-none">
+          <img
+            src="https://cdn.poehali.dev/files/0c15c6a3-a1cb-4a2b-b13f-1b1c5f0c8289.png"
+            alt=""
+            className="w-full h-full object-contain"
+          />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-4xl font-bold text-center mb-12">Наша команда</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { name: "Анна Иванова", role: "Главный редактор", icon: "Edit" },
-              { name: "Максим Петров", role: "Видеограф", icon: "Video" },
-              { name: "София Сидорова", role: "SMM-менеджер", icon: "Share2" },
+              {
+                name: "Анна Иванова",
+                role: "Главный редактор",
+                icon: "Edit",
+                color: "primary",
+              },
+              {
+                name: "Максим Петров",
+                role: "Видеограф",
+                icon: "Video",
+                color: "secondary",
+              },
+              {
+                name: "София Сидорова",
+                role: "SMM-менеджер",
+                icon: "Share2",
+                color: "primary",
+              },
             ].map((member, index) => (
               <Card
                 key={index}
                 className="bg-white/5 border-white/10 text-white hover:bg-white/10 transition-colors animate-scale-in"
               >
                 <CardHeader className="text-center">
-                  <div className="w-20 h-20 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div
+                    className={`w-20 h-20 ${member.color === "primary" ? "bg-primary" : "bg-secondary"} rounded-full flex items-center justify-center mx-auto mb-4`}
+                  >
                     <Icon
                       name={member.icon as any}
                       size={32}
@@ -185,31 +214,37 @@ const Index = () => {
                 title: "Новости Горхон",
                 desc: "Еженедельная сводка событий",
                 tag: "Новости",
+                color: "primary",
               },
               {
                 title: "Молодежные интервью",
                 desc: "Истории успеха местных жителей",
                 tag: "Интервью",
+                color: "secondary",
               },
               {
                 title: "Культурные события",
                 desc: "Освещение праздников и фестивалей",
                 tag: "Культура",
+                color: "primary",
               },
               {
                 title: "Спортивные репортажи",
                 desc: "Трансляции местных соревнований",
                 tag: "Спорт",
+                color: "secondary",
               },
               {
                 title: "Образовательный контент",
                 desc: "Полезные материалы для учащихся",
                 tag: "Образование",
+                color: "primary",
               },
               {
                 title: "Экологические проекты",
                 desc: "Инициативы по защите природы",
                 tag: "Экология",
+                color: "secondary",
               },
             ].map((project, index) => (
               <Card
@@ -220,7 +255,7 @@ const Index = () => {
                   <div className="flex items-center justify-between mb-2">
                     <Badge
                       variant="outline"
-                      className="border-primary text-primary"
+                      className={`${project.color === "primary" ? "border-primary text-primary" : "border-secondary text-secondary"}`}
                     >
                       {project.tag}
                     </Badge>
@@ -242,11 +277,15 @@ const Index = () => {
       </section>
 
       {/* Reviews Section */}
-      <section
-        id="reviews"
-        className="py-20 bg-gradient-to-r from-slate-800 to-slate-900"
-      >
-        <div className="container mx-auto px-4">
+      <section id="reviews" className="py-20 bg-slate-800 relative">
+        <div className="absolute top-20 right-20 w-60 h-60 opacity-5 -rotate-12 pointer-events-none">
+          <img
+            src="https://cdn.poehali.dev/files/0c15c6a3-a1cb-4a2b-b13f-1b1c5f0c8289.png"
+            alt=""
+            className="w-full h-full object-contain"
+          />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-4xl font-bold text-center mb-12">
             Отзывы подписчиков
           </h2>
@@ -275,7 +314,7 @@ const Index = () => {
             ].map((review, index) => (
               <Card
                 key={index}
-                className="bg-white/5 border-white/10 text-white animate-fade-in"
+                className="bg-white/5 border-white/10 text-white animate-fade-in hover:border-primary/30 transition-colors"
               >
                 <CardHeader>
                   <div className="flex items-center justify-between">
@@ -286,7 +325,7 @@ const Index = () => {
                           key={i}
                           name="Star"
                           size={16}
-                          className="text-yellow-400 fill-current"
+                          className="text-secondary fill-current"
                         />
                       ))}
                     </div>
@@ -316,7 +355,7 @@ const Index = () => {
               <Button
                 variant="ghost"
                 size="sm"
-                className="text-white hover:bg-white/10"
+                className="text-primary hover:bg-primary/10"
               >
                 <Icon name="MessageCircle" size={16} className="mr-2" />
                 ВКонтакте
@@ -324,7 +363,7 @@ const Index = () => {
               <Button
                 variant="ghost"
                 size="sm"
-                className="text-white hover:bg-white/10"
+                className="text-secondary hover:bg-secondary/10"
               >
                 <Icon name="Mail" size={16} className="mr-2" />
                 Связаться
