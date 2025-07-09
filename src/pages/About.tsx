@@ -157,7 +157,7 @@ const About = () => {
               Свяжитесь с нами в социальных сетях или напишите напрямую
             </p>
             <a
-              href="https://vk.com/gorhon_media"
+              href="https://vk.com/im?entrypoint=community_page&media=&sel=-214224996"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-xl font-unbounded font-semibold hover:scale-105 transition-all duration-200 shadow-lg shadow-primary/25"
