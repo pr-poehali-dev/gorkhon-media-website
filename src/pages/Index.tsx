@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Card,
   CardContent,
@@ -10,6 +11,18 @@ import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
 
 const Index = () => {
+  // Инициализация VK виджета после загрузки компонента
+  React.useEffect(() => {
+    if (typeof window !== "undefined" && window.VK) {
+      window.VK.Widgets.Post(
+        "vk_post_1_45616",
+        1,
+        45616,
+        "4WB1o2LHMUmWgoZNVNcbiucsJozO",
+      );
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-slate-900 text-white font-unbounded relative overflow-hidden">
       {/* Декоративная графика */}
@@ -295,26 +308,16 @@ const Index = () => {
 
           {/* VK Widget */}
           <div className="flex justify-center mb-12">
-            <div className="bg-white/5 border border-white/10 rounded-lg p-6 max-w-md">
+            <div className="bg-white/5 border border-white/10 rounded-lg p-6">
               <div className="text-center mb-4">
                 <h3 className="text-xl font-bold text-primary mb-2">
-                  Подпишитесь на нас
+                  Последние новости
                 </h3>
                 <p className="text-gray-300 text-sm">
-                  Следите за новостями в нашем сообществе
+                  Актуальные посты из нашего сообщества
                 </p>
               </div>
-              <div className="flex justify-center">
-                <Button
-                  className="bg-primary hover:bg-primary/90 text-white w-full"
-                  onClick={() =>
-                    window.open("https://vk.com/gorhon_official", "_blank")
-                  }
-                >
-                  <Icon name="MessageCircle" size={20} className="mr-2" />
-                  Присоединиться к сообществу
-                </Button>
-              </div>
+              <div id="vk_post_1_45616" className="flex justify-center"></div>
             </div>
           </div>
 
