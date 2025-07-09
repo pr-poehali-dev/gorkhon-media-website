@@ -169,6 +169,40 @@ const Index = () => {
                 </CardContent>
               </Card>
             </div>
+
+            {/* Team Member Highlight */}
+            <div className="mt-16 flex flex-col lg:flex-row items-center gap-12">
+              <div className="lg:w-1/2">
+                <img
+                  src="https://cdn.poehali.dev/files/757447b1-f2ef-424b-a08f-743f36a0141d.png"
+                  alt="Член команды Горхон Медиа"
+                  className="w-full max-w-md mx-auto rounded-2xl shadow-2xl"
+                />
+              </div>
+              <div className="lg:w-1/2 text-center lg:text-left">
+                <h3 className="text-3xl font-bold text-primary mb-4">
+                  Наша команда
+                </h3>
+                <p className="text-gray-300 text-lg mb-6">
+                  Молодые, креативные и полные энтузиазма профессионалы, которые
+                  создают качественный медиаконтент для жителей поселка Горхон.
+                  Мы работаем с современными технологиями и следим за трендами,
+                  чтобы наш контент был актуальным и интересным.
+                </p>
+                <div className="flex justify-center lg:justify-start">
+                  <Button
+                    variant="outline"
+                    className="border-primary text-primary hover:bg-primary hover:text-white"
+                    onClick={() =>
+                      window.open("https://vk.com/gorhon_official", "_blank")
+                    }
+                  >
+                    <Icon name="Users" size={20} className="mr-2" />
+                    Познакомиться с командой
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
