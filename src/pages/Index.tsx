@@ -449,7 +449,7 @@ const Index = () => {
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-white/10 text-center text-gray-400">
-            <p>&copy; 2024 Медиакоманда Горхон. Все права защищены.</p>
+            <p>&copy; 2025 Медиакоманда Горхон. Все права защищены.</p>
           </div>
         </div>
       </footer>
