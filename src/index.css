@@ -351,20 +351,12 @@
     letter-spacing: 1px;
   }
 
-  .gradient-text {
-    background: linear-gradient(135deg, #FF1177 0%, #0052FF 50%, #FF6B35 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .brand-text {
+    color: #005BFF;
   }
 
-  .gradient-text-vibrant {
-    background: linear-gradient(135deg, #FF1177 0%, #00D96F 50%, #FF6B35 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: gradient-shift 3s ease-in-out infinite;
-    background-size: 300% 300%;
+  .accent-text {
+    color: #F1117E;
   }
 
   .glass-effect {
