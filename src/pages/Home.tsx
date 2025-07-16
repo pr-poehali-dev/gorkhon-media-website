@@ -38,15 +38,19 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-800 via-purple-800 to-indigo-900">
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/40 rounded-full blur-3xl animate-pulse"></div>
           <div
-            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/20 rounded-full blur-3xl animate-pulse"
+            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/40 rounded-full blur-3xl animate-pulse"
             style={{ animationDelay: "1s" }}
+          ></div>
+          <div
+            className="absolute top-1/3 right-1/3 w-48 h-48 bg-accent/30 rounded-full blur-3xl animate-pulse"
+            style={{ animationDelay: "2s" }}
           ></div>
           <div
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-full blur-3xl animate-spin"
@@ -61,12 +65,12 @@ const Home = () => {
               className={`space-y-8 ${isLoaded ? "animate-fade-in" : "opacity-0"}`}
             >
               <div className="space-y-4">
-                <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-full text-sm font-unbounded font-medium">
+                <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-primary via-accent to-secondary text-white px-4 py-2 rounded-full text-sm font-unbounded font-medium shadow-lg shadow-primary/50">
                   <Icon name="Zap" size={16} />
                   <span>Медиакоманда поселка Горхон</span>
                 </div>
                 <h1 className="text-5xl lg:text-7xl font-unbounded font-bold text-white leading-tight">
-                  <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                  <span className="gradient-text-vibrant">
                     Горхон
                   </span>
                 </h1>
@@ -115,7 +119,7 @@ const Home = () => {
                 {/* Main Logo Circle */}
                 <div className="relative w-80 h-80 mx-auto">
                   <div
-                    className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-primary rounded-full animate-spin"
+                    className="absolute inset-0 bg-gradient-to-br from-primary via-accent to-secondary rounded-full animate-spin shadow-2xl shadow-primary/50"
                     style={{ animationDuration: "10s" }}
                   ></div>
                   <div className="absolute inset-4 bg-slate-900 rounded-full flex items-center justify-center p-8">
@@ -129,23 +133,23 @@ const Home = () => {
                   </div>
 
                   {/* Floating Elements */}
-                  <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center animate-bounce">
+                  <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center animate-bounce shadow-lg shadow-primary/50">
                     <Icon name="Camera" size={24} className="text-white" />
                   </div>
                   <div
-                    className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-secondary to-primary rounded-lg flex items-center justify-center animate-bounce"
+                    className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-secondary to-accent rounded-lg flex items-center justify-center animate-bounce shadow-lg shadow-secondary/50"
                     style={{ animationDelay: "0.5s" }}
                   >
                     <Icon name="Video" size={24} className="text-white" />
                   </div>
                   <div
-                    className="absolute top-1/2 -left-8 w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center animate-bounce"
+                    className="absolute top-1/2 -left-8 w-12 h-12 bg-gradient-to-br from-accent to-success rounded-full flex items-center justify-center animate-bounce shadow-lg shadow-accent/50"
                     style={{ animationDelay: "1s" }}
                   >
                     <Icon name="Mic" size={16} className="text-white" />
                   </div>
                   <div
-                    className="absolute top-1/4 -right-8 w-12 h-12 bg-gradient-to-br from-secondary to-primary rounded-full flex items-center justify-center animate-bounce"
+                    className="absolute top-1/4 -right-8 w-12 h-12 bg-gradient-to-br from-success to-primary rounded-full flex items-center justify-center animate-bounce shadow-lg shadow-success/50"
                     style={{ animationDelay: "1.5s" }}
                   >
                     <Icon name="Edit" size={16} className="text-white" />
@@ -158,7 +162,7 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-black/20 backdrop-blur-sm">
+      <section className="py-20 bg-gradient-to-r from-black/30 via-purple-900/20 to-black/30 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-unbounded font-bold text-white mb-4">
@@ -194,9 +198,9 @@ const Home = () => {
             ].map((feature, index) => (
               <div
                 key={index}
-                className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 hover:scale-105"
+                className="group bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md border border-white/20 rounded-xl p-6 hover:bg-gradient-to-br hover:from-white/20 hover:to-white/10 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/20"
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 bg-gradient-to-br from-primary via-accent to-secondary rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg shadow-primary/30">
                   <Icon
                     name={feature.icon as any}
                     size={24}
@@ -216,7 +220,7 @@ const Home = () => {
       </section>
 
       {/* VK Widget Section */}
-      <section className="py-20 bg-black/20 backdrop-blur-sm">
+      <section className="py-20 bg-gradient-to-l from-black/30 via-indigo-900/20 to-black/30 backdrop-blur-md">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <h2 className="text-4xl font-unbounded font-bold text-white mb-4">
@@ -227,7 +231,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 flex justify-center">
+          <div className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-lg border border-white/30 rounded-2xl p-8 flex justify-center shadow-2xl shadow-primary/10">
             <div id="vk_groups"></div>
           </div>
         </div>
@@ -236,7 +240,7 @@ const Home = () => {
       {/* CTA Section */}
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-gradient-to-r from-primary/20 to-secondary/20 backdrop-blur-sm border border-white/10 rounded-2xl p-12">
+          <div className="bg-gradient-to-br from-primary/30 via-accent/20 to-secondary/30 backdrop-blur-lg border border-white/30 rounded-2xl p-12 shadow-2xl shadow-primary/20">
             <h2 className="text-4xl font-unbounded font-bold text-white mb-4">
               Присоединяйся к нам!
             </h2>
@@ -249,7 +253,7 @@ const Home = () => {
                 href="https://vk.com/im?entrypoint=community_page&media=&sel=-214224996"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-xl font-unbounded font-semibold hover:scale-105 transition-all duration-200 shadow-lg shadow-primary/25"
+                className="inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-primary via-accent to-secondary text-white px-8 py-4 rounded-xl font-unbounded font-semibold hover:scale-105 transition-all duration-200 shadow-xl shadow-primary/50 hover:shadow-2xl hover:shadow-primary/70"
               >
                 <Icon name="ExternalLink" size={20} />
                 <span>Написать в ВК</span>
