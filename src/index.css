@@ -359,6 +359,53 @@
     color: #F1117E;
   }
 
+  .arrow-decoration {
+    position: relative;
+  }
+
+  .arrow-decoration::after {
+    content: "→";
+    color: #005BFF;
+    font-size: 1.2em;
+    margin-left: 8px;
+    transition: transform 0.2s ease;
+  }
+
+  .arrow-decoration:hover::after {
+    transform: translateX(4px);
+  }
+
+  .ribbon {
+    position: relative;
+    background: linear-gradient(135deg, #005BFF, #F1117E);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .ribbon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -10px;
+    width: 0;
+    height: 0;
+    border-top: 20px solid #001A34;
+    border-right: 10px solid transparent;
+  }
+
+  .ribbon::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -10px;
+    width: 0;
+    height: 0;
+    border-top: 20px solid #001A34;
+    border-left: 10px solid transparent;
+  }
+
   .glass-effect {
     backdrop-filter: blur(10px);
     background: rgba(255, 255, 255, 0.1);

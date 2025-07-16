@@ -68,16 +68,18 @@ const Home = () => {
                 <div className="inline-flex items-center space-x-2 bg-primary text-white px-4 py-2 rounded-full text-sm font-unbounded font-medium shadow-lg shadow-primary/50">
                   <Icon name="Zap" size={16} />
                   <span>Медиакоманда поселка Горхон</span>
+                  <span className="text-accent-orange ml-2">✨</span>
                 </div>
                 <h1 className="text-5xl lg:text-7xl font-unbounded font-bold text-white leading-tight">
                   <span className="text-primary">
                     Горхон
                   </span>
+                  <span className="text-accent-orange ml-4">🎬</span>
                 </h1>
                 <p className="text-xl text-gray-300 font-unbounded leading-relaxed">
-                  Мы создаем контент, который вдохновляет и объединяет молодежь
-                  нашего поселка. Наша миссия — показать красоту и уникальность
-                  Горхона всему миру.
+                  Мы создаём крутой контент, который вдохновляет ребят из нашего поселка! 🔥
+                  Наша цель — показать всем, какой у нас классный Горхон и как здесь интересно живётся.
+                  <span className="block mt-2 text-brand-light font-medium">→ Присоединяйся к нашей творческой команде!</span>
                 </p>
               </div>
 
@@ -166,10 +168,11 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-unbounded font-bold text-white mb-4">
-              Что мы делаем
+              Чем мы занимаемся? 🎯
             </h2>
             <p className="text-xl text-gray-300 font-unbounded">
-              Наши направления деятельности
+              Вот наши основные направления — и все они классные! 
+              <span className="text-accent-green ml-2">→</span>
             </p>
           </div>
 
@@ -177,23 +180,23 @@ const Home = () => {
             {[
               {
                 icon: "Video",
-                title: "Видео",
-                description: "Создаем качественные видео о жизни поселка",
+                title: "Видео 🎥",
+                description: "Снимаем крутые ролики о том, как мы тут живём и что делаем!",
               },
               {
                 icon: "Camera",
-                title: "Фото",
-                description: "Запечатлеваем важные моменты и события",
+                title: "Фото 📸",
+                description: "Ловим самые яркие моменты и красивые кадры нашего поселка",
               },
               {
                 icon: "Newspaper",
-                title: "Журналистика",
-                description: "Освещаем новости и интересные истории",
+                title: "Журналистика ✍️",
+                description: "Рассказываем интересные истории и делимся новостями",
               },
               {
                 icon: "Share2",
-                title: "SMM",
-                description: "Ведем социальные сети и продвигаем контент",
+                title: "SMM 📱",
+                description: "Ведём соцсети и делаем так, чтобы наш контент видели все!",
               },
             ].map((feature, index) => (
               <div
@@ -224,10 +227,11 @@ const Home = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <h2 className="text-4xl font-unbounded font-bold text-white mb-4">
-              Наша группа ВКонтакте
+              Наша группа ВКонтакте 💬
             </h2>
             <p className="text-xl text-gray-300 font-unbounded">
-              Следи за новостями и событиями медиакоманды
+              Подписывайся и следи за всеми нашими новостями и проектами!
+              <span className="text-accent-orange ml-2">→</span>
             </p>
           </div>
 
@@ -242,11 +246,12 @@ const Home = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-primary/20 backdrop-blur-lg border border-primary/40 rounded-2xl p-12 shadow-2xl shadow-primary/30">
             <h2 className="text-4xl font-unbounded font-bold text-white mb-4">
-              Присоединяйся к нам!
+              Хочешь к нам? 🚀
             </h2>
             <p className="text-xl text-gray-300 font-unbounded mb-8">
-              Хочешь стать частью нашей медиакоманды? У нас всегда есть место
-              для творческих и активных людей!
+              Если ты творческий, активный и хочешь делать крутые проекты — 
+              мы всегда рады новым людям в команде! 
+              <span className="block mt-2 text-accent-green font-medium">✨ Пиши нам прямо сейчас!</span>
             </p>
             <div className="flex justify-center">
               <a
