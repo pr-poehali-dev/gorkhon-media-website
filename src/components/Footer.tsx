@@ -6,42 +6,39 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Copyright */}
-          <div className="text-gray-300 font-unbounded text-sm text-center md:text-left">
-            © 2025 Сделано с <span className="text-accent-orange">❤️</span> в Горхоне
-            <span className="text-brand-light ml-2">→</span>
+          <div className="text-gray-300 font-unbounded text-xs md:text-sm text-center md:text-left">
+            © 2025 Медиакоманда Горхон. Все права защищены.
           </div>
 
           {/* Social Links */}
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
             <a
               href="https://vk.com/gorhon_official"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 bg-primary/20 hover:bg-primary text-white px-4 py-2 rounded-lg font-unbounded font-medium transition-all hover:scale-105"
+              className="flex items-center space-x-2 bg-primary/20 hover:bg-primary text-white px-3 md:px-4 py-2 rounded-lg font-unbounded font-medium text-sm transition-all hover:scale-105"
             >
               <Icon name="ExternalLink" size={16} />
               <span>ВКонтакте</span>
-              <span className="text-accent-orange ml-1">→</span>
             </a>
 
             <a
               href="https://t.me/gorhon_official"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 bg-primary/20 hover:bg-primary text-white px-4 py-2 rounded-lg font-unbounded font-medium transition-all hover:scale-105"
+              className="flex items-center space-x-2 bg-primary/20 hover:bg-primary text-white px-3 md:px-4 py-2 rounded-lg font-unbounded font-medium text-sm transition-all hover:scale-105"
             >
               <Icon name="MessageCircle" size={16} />
               <span>Телеграм</span>
-              <span className="text-accent-green ml-1">→</span>
             </a>
 
             <a
               href="mailto:admin@gorhon.ru"
-              className="flex items-center space-x-2 bg-primary/20 hover:bg-primary text-white px-4 py-2 rounded-lg font-unbounded font-medium transition-all hover:scale-105"
+              className="flex items-center space-x-2 bg-primary/20 hover:bg-primary text-white px-3 md:px-4 py-2 rounded-lg font-unbounded font-medium text-sm transition-all hover:scale-105"
             >
               <Icon name="Mail" size={16} />
-              <span>admin@gorhon.ru</span>
-              <span className="text-brand-light ml-1">✉</span>
+              <span className="hidden sm:inline">admin@gorhon.ru</span>
+              <span className="sm:hidden">E-mail</span>
             </a>
           </div>
         </div>
