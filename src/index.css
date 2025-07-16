@@ -359,6 +359,46 @@
     color: #F1117E;
   }
 
+  /* Декоративные элементы */
+  .decorative-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  .decorative-arrow:hover {
+    transform: translateX(5px);
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 5px rgba(0, 91, 255, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(0, 91, 255, 0.8), 0 0 30px rgba(241, 17, 126, 0.4);
+    }
+  }
+
+  .ribbon {
+    position: relative;
+    background: linear-gradient(45deg, #005BFF, #F1117E);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .ribbon:before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 0;
+    border: 16px solid transparent;
+    border-right-color: #001A34;
+  }
+
   .arrow-decoration {
     position: relative;
   }

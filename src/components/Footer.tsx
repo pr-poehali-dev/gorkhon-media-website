@@ -7,7 +7,8 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Copyright */}
           <div className="text-gray-300 font-unbounded text-sm text-center md:text-left">
-            © 2025 Медиакоманда Горхон. Все права защищены.
+            © 2025 Сделано с <span className="text-accent-orange">❤️</span> в Горхоне
+            <span className="text-brand-light ml-2">→</span>
           </div>
 
           {/* Social Links */}
@@ -20,6 +21,7 @@ const Footer = () => {
             >
               <Icon name="ExternalLink" size={16} />
               <span>ВКонтакте</span>
+              <span className="text-accent-orange ml-1">→</span>
             </a>
 
             <a
@@ -30,6 +32,7 @@ const Footer = () => {
             >
               <Icon name="MessageCircle" size={16} />
               <span>Телеграм</span>
+              <span className="text-accent-green ml-1">→</span>
             </a>
 
             <a
@@ -38,6 +41,7 @@ const Footer = () => {
             >
               <Icon name="Mail" size={16} />
               <span>admin@gorhon.ru</span>
+              <span className="text-brand-light ml-1">✉</span>
             </a>
           </div>
         </div>

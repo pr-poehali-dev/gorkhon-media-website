@@ -262,6 +262,7 @@ const Home = () => {
               >
                 <Icon name="ExternalLink" size={20} />
                 <span>Написать в ВК</span>
+                <span className="text-accent-orange text-xl ml-2">→</span>
               </a>
             </div>
           </div>
