@@ -37,12 +37,14 @@ export default {
           foreground: "#FFFFFF",
         },
         brand: {
-          dark: "#001A34",
-          light: "#00A2FF",
+          blue: "#005BFF",
+          pink: "#F1117E",
+          dark: "#0A0A0A",
+          light: "#F8F9FA",
         },
-        accent: {
-          green: "#00BE6C",
-          orange: "#FFA800",
+        teal: {
+          DEFAULT: "#008B8B",
+          dark: "#006B6B",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
