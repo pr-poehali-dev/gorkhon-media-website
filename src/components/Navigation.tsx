@@ -8,20 +8,20 @@ const Navigation = () => {
 
   const navItems = [
     { path: "/", label: "Главная", icon: "Home" },
-    { path: "/about", label: "О нас", icon: "Users" },
-    { path: "/team", label: "Команда", icon: "UserCheck" },
-    { path: "/projects", label: "Наши проекты", icon: "FolderOpen" },
+    { path: "/about", label: "О проекте", icon: "Info" },
+    { path: "/team", label: "Эксперты", icon: "Users" },
+    { path: "/projects", label: "Новости", icon: "Newspaper" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b-2 border-primary/10 shadow-lg">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-xl border-b-2 border-brand-blue/30 shadow-lg">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex justify-between items-center h-20">
           {/* Logo - proper display for white logo with blue background */}
           <Link to="/" className="flex items-center space-x-4 group">
             <div className="relative">
               {/* Blue background for white logo */}
-              <div className="bg-primary rounded-2xl p-3 group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-xl">
+              <div className="bg-brand-blue rounded-2xl p-3 group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-xl">
                 <div className="h-8 md:h-10 bg-white rounded-lg p-1.5 flex items-center justify-center">
                   <img
                     src="https://cdn.poehali.dev/files/6ffd92ec-3432-4ca8-bb14-85125928e527.png"
@@ -34,10 +34,10 @@ const Navigation = () => {
               <div className="absolute -top-1 -right-1 w-3 h-3 bg-secondary rounded-full"></div>
             </div>
             <div className="flex flex-col">
-              <span className="text-gray-900 font-unbounded font-black text-xl md:text-2xl group-hover:text-primary transition-colors leading-tight">
+              <span className="text-white font-unbounded font-black text-xl md:text-2xl group-hover:text-brand-blue transition-colors leading-tight">
                 Горхон
               </span>
-              <span className="text-gray-600 font-unbounded font-bold text-xs md:text-sm -mt-1">
+              <span className="text-gray-300 font-unbounded font-bold text-xs md:text-sm -mt-1">
                 Медиа
               </span>
             </div>
@@ -53,8 +53,8 @@ const Navigation = () => {
                   to={item.path}
                   className={`flex items-center space-x-2 px-4 py-3 rounded-2xl font-unbounded text-sm font-bold transition-all duration-300 ${
                     isActive
-                      ? "bg-primary text-white shadow-lg scale-105"
-                      : "text-gray-700 hover:bg-primary/10 hover:text-primary hover:scale-105"
+                      ? "bg-brand-blue text-white shadow-lg scale-105"
+                      : "text-gray-300 hover:bg-brand-blue/20 hover:text-white hover:scale-105"
                   }`}
                 >
                   <Icon name={item.icon as any} size={18} />
@@ -68,7 +68,7 @@ const Navigation = () => {
               href="https://vk.com/im?entrypoint=community_page&media=&sel=-214224996"
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-4 bg-secondary text-white px-5 py-3 rounded-2xl font-unbounded font-bold text-sm hover:bg-primary transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center space-x-2"
+              className="ml-4 bg-brand-pink text-white px-5 py-3 rounded-2xl font-unbounded font-bold text-sm hover:bg-brand-blue transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center space-x-2"
             >
               <Icon name="MessageCircle" size={16} />
               <span>Написать</span>
@@ -78,7 +78,7 @@ const Navigation = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-3 text-gray-700 hover:text-primary transition-colors bg-gray-100 rounded-2xl hover:bg-primary/10"
+            className="md:hidden p-3 text-gray-300 hover:text-white transition-colors bg-gray-800 rounded-2xl hover:bg-brand-blue/20"
           >
             <Icon name={isOpen ? "X" : "Menu"} size={24} />
           </button>
@@ -87,7 +87,7 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden">
-            <div className="px-4 pt-4 pb-6 space-y-3 bg-gray-50/95 backdrop-blur-sm rounded-3xl mt-4 mb-4 border-2 border-primary/10 shadow-xl">
+            <div className="px-4 pt-4 pb-6 space-y-3 bg-gray-900/95 backdrop-blur-sm rounded-3xl mt-4 mb-4 border-2 border-brand-blue/30 shadow-xl">
               {navItems.map((item) => {
                 const isActive = location.pathname === item.path;
                 return (
@@ -97,8 +97,8 @@ const Navigation = () => {
                     onClick={() => setIsOpen(false)}
                     className={`flex items-center space-x-3 px-4 py-3 rounded-2xl font-unbounded text-base font-bold transition-all ${
                       isActive
-                        ? "bg-primary text-white shadow-lg"
-                        : "text-gray-700 hover:bg-primary/10 hover:text-primary"
+                        ? "bg-brand-blue text-white shadow-lg"
+                        : "text-gray-300 hover:bg-brand-blue/20 hover:text-white"
                     }`}
                   >
                     <Icon name={item.icon as any} size={20} />
@@ -113,7 +113,7 @@ const Navigation = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
-                className="flex items-center space-x-3 px-4 py-3 rounded-2xl font-unbounded font-bold text-base bg-secondary text-white shadow-lg mt-4"
+                className="flex items-center space-x-3 px-4 py-3 rounded-2xl font-unbounded font-bold text-base bg-brand-pink text-white shadow-lg mt-4"
               >
                 <Icon name="MessageCircle" size={20} />
                 <span>Написать нам</span>
