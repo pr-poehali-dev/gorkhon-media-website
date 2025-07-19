@@ -8,56 +8,51 @@ const Navigation = () => {
 
   const navItems = [
     { path: "/", label: "Главная", icon: "Home" },
-    { path: "/about", label: "О проекте", icon: "Info" },
-    { path: "/team", label: "Эксперты", icon: "Users" },
-    { path: "/projects", label: "Новости", icon: "Newspaper" },
+    { path: "/about", label: "О нас", icon: "Users" },
+    { path: "/team", label: "Команда", icon: "UserCheck" },
+    { path: "/projects", label: "Наши проекты", icon: "FolderOpen" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-xl border-b-2 border-brand-blue/30 shadow-lg">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo - proper display for white logo with blue background */}
-          <Link to="/" className="flex items-center space-x-4 group">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-gray-200 shadow-sm">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
               {/* Blue background for white logo */}
-              <div className="bg-brand-blue rounded-2xl p-3 group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-xl">
-                <div className="h-8 md:h-10 bg-white rounded-lg p-1.5 flex items-center justify-center">
+              <div className="bg-primary rounded-lg p-2 group-hover:scale-105 transition-transform">
+                <div className="h-8 w-8 bg-white rounded flex items-center justify-center">
                   <img
                     src="https://cdn.poehali.dev/files/6ffd92ec-3432-4ca8-bb14-85125928e527.png"
                     alt="Горхон Медиа"
-                    className="h-full object-contain"
+                    className="h-6 w-6 object-contain"
                   />
                 </div>
               </div>
-              {/* Small accent */}
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-secondary rounded-full"></div>
             </div>
-            <div className="flex flex-col">
-              <span className="text-white font-unbounded font-black text-xl md:text-2xl group-hover:text-brand-blue transition-colors leading-tight">
-                Горхон
-              </span>
-              <span className="text-gray-300 font-unbounded font-bold text-xs md:text-sm -mt-1">
-                Медиа
+            <div className="hidden sm:block">
+              <span className="text-gray-900 font-bold text-xl">
+                Горхон.<span className="text-primary">Медиа</span>
               </span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-2">
+          <div className="hidden md:flex items-center space-x-1">
             {navItems.map((item) => {
               const isActive = location.pathname === item.path;
               return (
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`flex items-center space-x-2 px-4 py-3 rounded-2xl font-unbounded text-sm font-bold transition-all duration-300 ${
+                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     isActive
-                      ? "bg-brand-blue text-white shadow-lg scale-105"
-                      : "text-gray-300 hover:bg-brand-blue/20 hover:text-white hover:scale-105"
+                      ? "bg-primary text-white"
+                      : "text-gray-700 hover:text-primary hover:bg-gray-100"
                   }`}
                 >
-                  <Icon name={item.icon as any} size={18} />
+                  <Icon name={item.icon as any} size={16} />
                   <span>{item.label}</span>
                 </Link>
               );
@@ -68,17 +63,17 @@ const Navigation = () => {
               href="https://vk.com/im?entrypoint=community_page&media=&sel=-214224996"
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-4 bg-brand-pink text-white px-5 py-3 rounded-2xl font-unbounded font-bold text-sm hover:bg-brand-blue transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center space-x-2"
+              className="ml-4 bg-secondary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-secondary/90 transition-colors flex items-center space-x-2"
             >
               <Icon name="MessageCircle" size={16} />
-              <span>Написать</span>
+              <span>Связаться</span>
             </a>
           </div>
 
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-3 text-gray-300 hover:text-white transition-colors bg-gray-800 rounded-2xl hover:bg-brand-blue/20"
+            className="md:hidden p-2 text-gray-700 hover:text-primary transition-colors"
           >
             <Icon name={isOpen ? "X" : "Menu"} size={24} />
           </button>
@@ -87,7 +82,7 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden">
-            <div className="px-4 pt-4 pb-6 space-y-3 bg-gray-900/95 backdrop-blur-sm rounded-3xl mt-4 mb-4 border-2 border-brand-blue/30 shadow-xl">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
               {navItems.map((item) => {
                 const isActive = location.pathname === item.path;
                 return (
@@ -95,10 +90,10 @@ const Navigation = () => {
                     key={item.path}
                     to={item.path}
                     onClick={() => setIsOpen(false)}
-                    className={`flex items-center space-x-3 px-4 py-3 rounded-2xl font-unbounded text-base font-bold transition-all ${
+                    className={`flex items-center space-x-3 px-3 py-2 rounded-md text-base font-medium transition-colors ${
                       isActive
-                        ? "bg-brand-blue text-white shadow-lg"
-                        : "text-gray-300 hover:bg-brand-blue/20 hover:text-white"
+                        ? "bg-primary text-white"
+                        : "text-gray-700 hover:text-primary hover:bg-gray-100"
                     }`}
                   >
                     <Icon name={item.icon as any} size={20} />
@@ -113,10 +108,10 @@ const Navigation = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
-                className="flex items-center space-x-3 px-4 py-3 rounded-2xl font-unbounded font-bold text-base bg-brand-pink text-white shadow-lg mt-4"
+                className="flex items-center space-x-3 px-3 py-2 rounded-md text-base font-medium bg-secondary text-white mt-4"
               >
                 <Icon name="MessageCircle" size={20} />
-                <span>Написать нам</span>
+                <span>Связаться</span>
               </a>
             </div>
           </div>

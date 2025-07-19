@@ -1,294 +1,324 @@
-import Icon from '@/components/ui/icon';
+import { useState, useEffect } from "react";
+import Icon from "@/components/ui/icon";
+import { Link } from "react-router-dom";
+
+// Type declaration for VK API
+declare global {
+  interface Window {
+    VK: {
+      Widgets: {
+        Group: (elementId: string, options: any, groupId: number) => void;
+      };
+    };
+  }
+}
 
 const Home = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+
+    // Initialize VK Widget after component mounts
+    if (window.VK) {
+      window.VK.Widgets.Group(
+        "vk_groups",
+        {
+          mode: 4,
+          no_cover: 1,
+          wide: 1,
+          height: 400,
+          color1: "FFFFFF",
+          color2: "000000",
+          color3: "2382ef",
+        },
+        214224996,
+      );
+    }
+  }, []);
+
   return (
-    <div className="min-h-screen bg-black text-white font-unbounded overflow-x-hidden">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-between px-8 lg:px-16">
-        {/* Grid Background */}
-        <div className="absolute inset-0 opacity-20">
-          <div 
-            className="w-full h-full"
-            style={{
-              backgroundImage: `
-                linear-gradient(rgba(0, 91, 255, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 91, 255, 0.1) 1px, transparent 1px)
-              `,
-              backgroundSize: '40px 40px'
-            }}
-          />
-        </div>
-
-        {/* Geometric Shapes */}
-        <div className="absolute inset-0 overflow-hidden">
-          {/* Blue geometric shape */}
-          <div className="absolute top-20 left-0 w-80 h-80 bg-brand-blue rounded-full transform -translate-x-1/2 opacity-80" />
-          <div className="absolute top-40 left-20 w-60 h-40 bg-brand-pink transform rotate-45 opacity-60" />
+    <div className="min-h-screen bg-white">
+      {/* Hero Section - Clean Blog Style */}
+      <section className="relative py-20 md:py-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           
-          {/* Teal curved shape */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-teal transform translate-x-1/4 -translate-y-1/4 rounded-full opacity-70" />
-          
-          {/* Pink accent shapes */}
-          <div className="absolute bottom-20 left-1/4 w-32 h-32 bg-brand-pink rounded-full opacity-50" />
-          <div className="absolute top-1/3 right-1/3 w-20 h-20 bg-brand-pink transform rotate-45" />
-        </div>
-
-        {/* Left Content */}
-        <div className="relative z-10 max-w-2xl">
-          <div className="mb-6">
-            <span className="text-sm font-medium tracking-wider text-brand-blue uppercase">
-              Горхон
-            </span>
-            <div className="text-xs text-gray-400 mt-1">
-              Медиакоманда поселка возможностей
-            </div>
-          </div>
-
-          <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
-            <span className="text-white">«Горхон» — твой старт</span>
-            <br />
-            <span className="text-white">в мир медиавозможностей</span>
-          </h1>
-
-          <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-            Пройди путь от начинающего автора
-            <br />
-            до лидера общественного мнения
-          </p>
-
-          <button className="bg-white text-black px-8 py-4 rounded-full font-medium text-lg hover:bg-gray-100 transition-colors">
-            <span className="text-brand-pink font-bold">ПРИСОЕДИНИТЬСЯ К КОМАНДЕ</span>
-          </button>
-        </div>
-
-        {/* Right Content - Photos */}
-        <div className="relative z-10 hidden lg:block">
-          <div className="relative">
-            {/* Star decoration */}
-            <div className="absolute -top-10 -right-10 text-white text-6xl">
-              ✦
-            </div>
+          {/* Hero Content */}
+          <div className="max-w-4xl mx-auto text-center">
             
-            {/* Photo cards */}
-            <div className="relative space-y-4">
-              <div className="bg-white p-2 rounded-lg transform rotate-3 shadow-xl">
-                <img 
-                  src="https://cdn.poehali.dev/files/cee6492e-c2f4-42f9-9f0a-d4ce3c6b5e20.png" 
-                  alt="Команда Горхон" 
-                  className="w-64 h-40 object-cover rounded"
-                />
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-medium mb-8">
+              <div className="w-2 h-2 bg-primary rounded-full"></div>
+              Медиакоманда поселка Горхон
+            </div>
+
+            {/* Main Heading */}
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+              Горхон.<span className="text-primary">Медиа</span>
+            </h1>
+
+            {/* Subtitle */}
+            <p className="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto">
+              Рассказываем истории нашего поселка простыми словами. 
+              Потому что каждая история важна, каждый момент достоин внимания.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+              <a
+                href="https://vk.com/public214224996"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+              >
+                <Icon name="Users" size={20} />
+                Наша группа
+              </a>
+              <Link
+                to="/projects"
+                className="inline-flex items-center justify-center gap-2 border-2 border-gray-200 text-gray-700 px-8 py-4 rounded-lg font-semibold hover:border-primary hover:text-primary transition-colors"
+              >
+                <Icon name="Folder" size={20} />
+                Наши проекты
+              </Link>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-8 max-w-md mx-auto">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-gray-900">1+</div>
+                <div className="text-sm text-gray-600">проекта</div>
               </div>
-              <div className="bg-white p-2 rounded-lg transform -rotate-2 shadow-xl ml-8">
-                <img 
-                  src="https://cdn.poehali.dev/files/77d59907-f9df-4a26-9b4d-4a3bca732b61.png" 
-                  alt="Медиа Горхон" 
-                  className="w-64 h-40 object-cover rounded"
-                />
+              <div className="text-center">
+                <div className="text-3xl font-bold text-gray-900">873+</div>
+                <div className="text-sm text-gray-600">подписчика</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-gray-900">3</div>
+                <div className="text-sm text-gray-600">года</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Gorkhon Section */}
-      <section className="relative py-20 px-8 lg:px-16">
-        {/* Pink background with grid */}
-        <div className="absolute inset-0 bg-brand-pink">
-          <div 
-            className="w-full h-full opacity-30"
-            style={{
-              backgroundImage: `
-                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)
-              `,
-              backgroundSize: '30px 30px'
-            }}
-          />
+      {/* What We Do Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          
+          {/* Section Header */}
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Чем мы занимаемся
+            </h2>
+            <p className="text-xl text-gray-600">
+              Каждое направление — это способ рассказать историю нашего поселка
+            </p>
+          </div>
+
+          {/* Services Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: "Video",
+                title: "Видеосъемка",
+                description: "Снимаем документальные ролики о людях и событиях. Каждое видео — это маленький фильм о большой жизни."
+              },
+              {
+                icon: "Camera", 
+                title: "Фотография",
+                description: "Ловим моменты, которые завтра станут воспоминаниями. От семейных праздников до природных красот."
+              },
+              {
+                icon: "Newspaper",
+                title: "Журналистика", 
+                description: "Рассказываем новости и истории языком, понятным каждому. Без сложных терминов и канцеляризмов."
+              },
+              {
+                icon: "Share2",
+                title: "Соцсети",
+                description: "Ведем группы в ВК и других платформах. Общаемся с подписчиками как с друзьями."
+              }
+            ].map((service, index) => (
+              <div key={index} className="bg-white rounded-xl p-8 hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                  <Icon name={service.icon as any} size={24} className="text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
+      </section>
 
-        <div className="relative z-10 max-w-6xl mx-auto">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-16 text-white">
-            Почему «Горхон» — это ТОП?
-          </h2>
+      {/* Featured Content Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Наши последние работы
+            </h2>
+            <p className="text-xl text-gray-600">
+              Познакомьтесь с нашими проектами и историями
+            </p>
+          </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Feature cards */}
-            <div className="space-y-6">
-              <div className="bg-teal-dark text-white p-6 rounded-lg transform -rotate-1">
-                <p className="text-lg">
-                  Бесплатно обучаем созданию качественного,
-                  модного и полезного контента
-                </p>
+          {/* Featured Project */}
+          <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+            <div className="grid grid-cols-1 lg:grid-cols-2">
+              <div className="relative h-64 lg:h-auto">
+                <img
+                  src="https://cdn.poehali.dev/files/a863a0f2-70cf-4a7e-8b96-561c13a9bc1e.png"
+                  alt="По волнам школьной памяти"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+                  Фотопроект
+                </div>
               </div>
-              
-              <div className="bg-white text-black p-6 rounded-lg transform rotate-2 ml-8">
-                <p className="text-lg">
-                  Даем возможности карьерного роста,
-                  продюсирования и продвижения
+              <div className="p-8 lg:p-12 flex flex-col justify-center">
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                  По волнам школьной памяти
+                </h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  Перелистываем страницы школьных воспоминаний с выпускных и последних звонков. 
+                  Каждый кадр — это целая история, которую хочется сохранить навсегда!
                 </p>
-              </div>
-
-              <div className="bg-white text-black p-6 rounded-lg transform -rotate-1">
-                <p className="text-lg">
-                  Делаем из начинающих авторов лидеров
-                  общественного мнения
-                </p>
-              </div>
-
-              <div className="bg-teal-dark text-white p-6 rounded-lg transform rotate-1 ml-8">
-                <p className="text-lg">
-                  С нами — пять поколений блогеров
-                  от 10 до 93 лет
-                </p>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="text-sm text-gray-500">Июнь 2025</div>
+                  <div className="text-sm text-gray-500">560+ просмотров</div>
+                </div>
+                <a
+                  href="https://vk.com/wall-214224996_1109"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary/80 transition-colors"
+                >
+                  Смотреть проект
+                  <Icon name="ArrowRight" size={16} />
+                </a>
               </div>
             </div>
+          </div>
 
-            <div className="space-y-6">
-              <div className="bg-white text-black p-6 rounded-lg transform rotate-1">
-                <p className="text-lg">
-                  Лидеры медиа и популярные блогеры дают
-                  менторскую поддержку
-                </p>
-              </div>
+          {/* View All Projects Link */}
+          <div className="text-center mt-12">
+            <Link
+              to="/projects"
+              className="inline-flex items-center gap-2 bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
+            >
+              Все проекты
+              <Icon name="ArrowRight" size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
 
-              <div className="bg-teal-dark text-white p-6 rounded-lg transform -rotate-2 ml-8">
-                <p className="text-lg">
-                  Более 50 компаний-партнеров помогают
-                  участникам в профессиональном развитии
-                </p>
-              </div>
+      {/* VK Community Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Мы в ВКонтакте
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              В группе всегда что-то происходит: новые видео, фотоотчеты с мероприятий, 
+              обсуждения и просто хорошее настроение
+            </p>
+          </div>
 
-              <div className="bg-white text-black p-6 rounded-lg transform rotate-2">
-                <p className="text-lg">
-                  Объединили масштабное блогерское комьюнити
-                  из 89 регионов России и более 50 стран мира
-                </p>
-              </div>
+          {/* VK Widget Container */}
+          <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+            <div className="flex justify-center">
+              <div id="vk_groups" className="w-full max-w-md"></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Mission Section */}
-      <section className="relative py-20 px-8 lg:px-16 bg-gray-100 text-black">
-        {/* Mountain silhouette background */}
-        <div className="absolute top-0 left-0 right-0 h-40 bg-brand-pink">
-          <svg 
-            className="absolute bottom-0 w-full h-20" 
-            viewBox="0 0 1200 120" 
-            fill="none"
-          >
-            <path 
-              d="M0,60 Q150,0 300,60 T600,60 T900,60 T1200,60 L1200,120 L0,120 Z" 
-              fill="#f3f4f6"
-            />
-          </svg>
+      {/* Team Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Познакомьтесь с командой
+            </h2>
+            <p className="text-xl text-gray-600">
+              Талантливые люди, которые создают контент для Горхон.Медиа
+            </p>
+          </div>
+
+          {/* Team Preview */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+            {[
+              { emoji: "🎬", role: "Режиссер" },
+              { emoji: "📹", role: "Оператор" },
+              { emoji: "✂️", role: "Монтажер" },
+              { emoji: "📱", role: "SMM" }
+            ].map((member, index) => (
+              <div key={index} className="text-center">
+                <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">{member.emoji}</span>
+                </div>
+                <div className="text-sm font-medium text-gray-600">{member.role}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link
+              to="/team"
+              className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+            >
+              Узнать больше о команде
+              <Icon name="ArrowRight" size={16} />
+            </Link>
+          </div>
         </div>
+      </section>
 
-        <div className="relative z-10 max-w-4xl mx-auto pt-20">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-8 text-teal-dark">
-            Блогинг с миссией и смыслом!
+      {/* CTA Section */}
+      <section className="py-20 bg-primary">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8 text-center">
+          
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Присоединяйтесь к нам
           </h2>
-
-          <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-            Единственный в России проект, ставший отправной точкой
-            для масштабирования и развития сотен тысяч блогов. Наша
-            миссия — сделать социально значимый контент модным
-            и популярным
+          
+          <p className="text-xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed">
+            Если вы творческий, активный и хочете рассказывать истории — 
+            мы всегда рады новым людям в команде
           </p>
 
-          <div className="relative inline-block">
-            <div className="bg-brand-pink text-white px-8 py-4 rounded-full transform rotate-3">
-              <span className="font-bold text-lg">+ 230 тыс. авторов</span>
-              <br />
-              <span className="text-sm">контента и блогеров</span>
-              <br />
-              <span className="text-sm">уже с нами</span>
-              <br />
-              <span className="font-bold">Ждем тебя в команды!</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Large text decoration */}
-        <div className="absolute bottom-0 left-0 right-0 overflow-hidden">
-          <div className="text-teal-dark text-[20rem] font-bold opacity-10 whitespace-nowrap transform -translate-y-1/2">
-            ГОРХОН
-          </div>
-        </div>
-      </section>
-
-      {/* Photo Gallery Section */}
-      <section className="relative py-20 px-8 lg:px-16 bg-brand-blue">
-        {/* Grid background */}
-        <div className="absolute inset-0 opacity-20">
-          <div 
-            className="w-full h-full"
-            style={{
-              backgroundImage: `
-                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)
-              `,
-              backgroundSize: '40px 40px'
-            }}
-          />
-        </div>
-
-        <div className="relative z-10 max-w-6xl mx-auto">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-8 text-white">
-            Место встречи — «Горхон»!
-          </h2>
-
-          <p className="text-xl text-blue-100 mb-12 max-w-3xl">
-            В 2025 году «Горхон» станет пространством для встреч, обмена опытом
-            и совместной работы над важными задачами
-          </p>
-
-          {/* Film strip with photos */}
-          <div className="relative">
-            <div className="bg-black p-4 rounded-lg">
-              <div className="flex space-x-4 overflow-x-auto">
-                {/* Film holes */}
-                <div className="flex-shrink-0 w-8 bg-black">
-                  <div className="space-y-2 py-2">
-                    {[...Array(8)].map((_, i) => (
-                      <div key={i} className="w-4 h-4 bg-gray-800 rounded-full mx-auto" />
-                    ))}
-                  </div>
-                </div>
-
-                {/* Photos */}
-                <div className="flex space-x-2">
-                  {[1, 2, 3, 4, 5].map((num) => (
-                    <div key={num} className="flex-shrink-0 w-48 h-32 bg-gray-700 rounded overflow-hidden">
-                      <img 
-                        src={`https://cdn.poehali.dev/files/a8e5ef85-89bd-40b5-b4df-885c034de6cd.png`}
-                        alt={`Команда ${num}`}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  ))}
-                </div>
-
-                {/* Film holes */}
-                <div className="flex-shrink-0 w-8 bg-black">
-                  <div className="space-y-2 py-2">
-                    {[...Array(8)].map((_, i) => (
-                      <div key={i} className="w-4 h-4 bg-gray-800 rounded-full mx-auto" />
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Film frame numbers */}
-              <div className="flex justify-between text-yellow-400 text-sm font-mono mt-2 px-12">
-                <span>21</span>
-                <span>21</span>
-                <span>21</span>
-                <span>21</span>
-                <span>21</span>
-              </div>
-            </div>
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://vk.com/im?entrypoint=community_page&media=&sel=-214224996"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+            >
+              <Icon name="MessageCircle" size={20} />
+              Написать нам
+            </a>
+            
+            <a
+              href="https://vk.com/public214224996"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-secondary text-white px-8 py-4 rounded-lg font-semibold hover:bg-secondary/90 transition-colors"
+            >
+              <Icon name="Heart" size={20} />
+              Подписаться
+            </a>
           </div>
         </div>
       </section>
