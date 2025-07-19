@@ -16,9 +16,9 @@ const Projects = () => {
       title: "По волнам школьной памяти",
       category: "photo",
       description:
-        "А теперь можно перелистнуть страницы школьных воспоминаний с выпускных и последних звонков! 📸✨",
+        "Перелистываем страницы школьных воспоминаний с выпускных и последних звонков",
       fullDescription:
-        "Этот фотопроект близок нашему сердцу! Мы собрали самые яркие и трогательные моменты выпускных и последних звонков. Каждый кадр — это целая история, которую хочется сохранить навсегда! 🎓💕",
+        "Этот фотопроект близок нашему сердцу! Мы собрали самые яркие и трогательные моменты выпускных и последних звонков. Каждый кадр — это целая история, которую хочется сохранить навсегда!",
       duration: "Июнь 2025",
       episodes: "Фотоальбом",
       views: "560",
@@ -40,42 +40,49 @@ const Projects = () => {
       : projects.filter((project) => project.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-brand-dark pt-24">
+    <div className="min-h-screen bg-gray-50 pt-24">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-16 bg-white">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
-          <div
-            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/20 rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "1s" }}
-          ></div>
+          <div className="absolute top-20 left-8 w-3 h-20 bg-primary transform rotate-12 opacity-20"></div>
+          <div className="absolute bottom-20 right-8 w-3 h-24 bg-secondary transform -rotate-12 opacity-20"></div>
+          <div className="absolute top-1/2 right-1/4 text-8xl text-primary/5 font-unbounded font-black transform rotate-12">П</div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center mb-16">
-            <h1 className="text-5xl lg:text-6xl font-unbounded font-bold text-white mb-6">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative">
+          <div className="text-center">
+            <div className="inline-block mb-6">
+              <div className="flex items-center space-x-2 text-sm font-unbounded font-bold text-secondary uppercase tracking-wider">
+                <div className="w-8 h-0.5 bg-secondary"></div>
+                <span>Портфолио наших работ</span>
+                <div className="w-8 h-0.5 bg-secondary"></div>
+              </div>
+            </div>
+            
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-unbounded font-black text-gray-900 mb-8">
               Наши проекты
             </h1>
-            <p className="text-xl text-gray-300 font-unbounded max-w-3xl mx-auto">
-              Познакомьтесь с нашими работами — от документальных фильмов до
-              образовательных программ
+            
+            <p className="text-xl md:text-2xl text-gray-600 font-unbounded max-w-4xl mx-auto leading-relaxed">
+              Познакомьтесь с нашими работами — от фотопроектов до образовательных программ. 
+              <span className="text-primary font-bold"> Каждый проект рассказывает свою историю</span>
             </p>
           </div>
         </div>
       </section>
 
       {/* Category Filter */}
-      <section className="py-8">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+      <section className="py-8 bg-gray-100">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`flex items-center space-x-2 px-6 py-3 rounded-xl font-unbounded font-medium transition-all duration-200 ${
+                className={`flex items-center space-x-2 px-6 py-4 rounded-2xl font-unbounded font-bold transition-all duration-300 ${
                   selectedCategory === category.id
-                    ? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg"
-                    : "bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white"
+                    ? "bg-primary text-white shadow-lg scale-105"
+                    : "bg-white text-gray-700 hover:bg-primary/10 hover:text-primary hover:scale-105 shadow-sm"
                 }`}
               >
                 <Icon name={category.icon as any} size={20} />
@@ -87,67 +94,58 @@ const Projects = () => {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-gray-100">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project) => (
               <div
                 key={project.id}
-                className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-300 hover:scale-105"
+                className="group bg-white rounded-3xl overflow-hidden shadow-lg border-2 border-gray-100 hover:border-primary/20 hover:shadow-xl transition-all duration-300 hover:scale-105"
               >
-                {/* Project Image Background */}
-                <div
-                  className="h-48 bg-cover bg-center relative"
-                  style={{
-                    backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${project.image})`,
-                  }}
-                >
-                  <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm rounded-lg px-3 py-2">
-                    <div className="text-white font-unbounded font-bold text-sm">
+                {/* Project Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                  
+                  {/* Views Badge */}
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-2xl px-3 py-2">
+                    <div className="text-gray-900 font-unbounded font-black text-sm">
                       {project.views}
                     </div>
-                    <div className="text-gray-300 font-unbounded text-xs">
+                    <div className="text-gray-600 font-unbounded text-xs -mt-1">
                       просмотров
                     </div>
                   </div>
+
+                  {/* Category Badge */}
+                  <div className="absolute top-4 left-4 bg-primary text-white rounded-2xl p-3">
+                    <Icon name="Camera" size={20} />
+                  </div>
                 </div>
 
-                {/* Project Header */}
+                {/* Project Content */}
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-                      <Icon name="Camera" size={20} className="text-white" />
-                    </div>
+                    <h3 className="text-xl font-unbounded font-black text-gray-900">
+                      {project.title}
+                    </h3>
                     <a
                       href={project.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center space-x-2 bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg font-unbounded font-medium text-sm hover:scale-105 transition-all"
+                      className="inline-flex items-center space-x-2 bg-secondary text-white px-4 py-2 rounded-xl font-unbounded font-bold text-sm hover:scale-105 transition-all shadow-lg"
                     >
                       <Icon name="ExternalLink" size={16} />
-                      <span>Открыть пост</span>
+                      <span>Смотреть</span>
                     </a>
                   </div>
 
-                  <h3
-                    className="text-xl font-unbounded font-bold text-white mb-2 cursor-pointer"
-                    onClick={() =>
-                      setSelectedProject(
-                        selectedProject === project.id ? null : project.id,
-                      )
-                    }
-                  >
-                    {project.title}
-                  </h3>
-                  <p
-                    className="text-gray-300 font-unbounded text-sm mb-4 leading-relaxed cursor-pointer"
-                    onClick={() =>
-                      setSelectedProject(
-                        selectedProject === project.id ? null : project.id,
-                      )
-                    }
-                  >
+                  <p className="text-gray-700 font-unbounded text-sm mb-4 leading-relaxed">
                     {project.description}
                   </p>
 
@@ -156,22 +154,27 @@ const Projects = () => {
                     {project.tags.slice(0, 2).map((tag, index) => (
                       <span
                         key={index}
-                        className="bg-white/10 text-gray-300 px-3 py-1 rounded-lg text-xs font-unbounded"
+                        className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-unbounded font-medium"
                       >
                         {tag}
                       </span>
                     ))}
+                    {project.tags.length > 2 && (
+                      <span className="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-unbounded font-medium">
+                        +{project.tags.length - 2}
+                      </span>
+                    )}
                   </div>
 
                   {/* Project Stats */}
-                  <div className="flex items-center justify-between text-sm font-unbounded text-gray-400">
-                    <span>{project.duration}</span>
-                    <span>{project.episodes}</span>
+                  <div className="flex items-center justify-between text-sm font-unbounded text-gray-500 mb-4">
+                    <span className="font-medium">{project.duration}</span>
+                    <span className="font-medium">{project.episodes}</span>
                   </div>
 
                   {/* Expand Indicator */}
                   <div
-                    className="flex items-center justify-center mt-4 cursor-pointer"
+                    className="flex items-center justify-center cursor-pointer"
                     onClick={() =>
                       setSelectedProject(
                         selectedProject === project.id ? null : project.id,
@@ -185,7 +188,7 @@ const Projects = () => {
                           : "ChevronDown"
                       }
                       size={20}
-                      className="text-gray-400 group-hover:text-white transition-colors"
+                      className="text-gray-400 group-hover:text-primary transition-colors"
                     />
                   </div>
                 </div>
@@ -193,29 +196,31 @@ const Projects = () => {
                 {/* Expanded Content */}
                 {selectedProject === project.id && (
                   <div className="px-6 pb-6 animate-fade-in">
-                    <div className="pt-4 border-t border-white/10">
-                      <h4 className="text-white font-unbounded font-semibold mb-3">
+                    <div className="pt-4 border-t-2 border-primary/10">
+                      <h4 className="text-gray-900 font-unbounded font-black mb-3">
                         Подробнее о проекте:
                       </h4>
-                      <p className="text-gray-300 font-unbounded text-sm mb-4 leading-relaxed">
+                      <p className="text-gray-700 font-unbounded text-sm mb-4 leading-relaxed">
                         {project.fullDescription}
                       </p>
 
-                      <h4 className="text-white font-unbounded font-semibold mb-3">
+                      <h4 className="text-gray-900 font-unbounded font-black mb-3">
                         Достижения:
                       </h4>
                       <ul className="space-y-2 mb-4">
                         {project.achievements.map((achievement, index) => (
                           <li
                             key={index}
-                            className="flex items-start space-x-2"
+                            className="flex items-start space-x-3"
                           >
-                            <Icon
-                              name="Check"
-                              size={16}
-                              className="text-primary mt-0.5 flex-shrink-0"
-                            />
-                            <span className="text-gray-300 font-unbounded text-sm">
+                            <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <Icon
+                                name="Check"
+                                size={14}
+                                className="text-white"
+                              />
+                            </div>
+                            <span className="text-gray-700 font-unbounded text-sm">
                               {achievement}
                             </span>
                           </li>
@@ -226,7 +231,7 @@ const Projects = () => {
                         {project.tags.map((tag, index) => (
                           <span
                             key={index}
-                            className="bg-gradient-to-r from-primary/20 to-secondary/20 text-white px-3 py-1 rounded-lg text-xs font-unbounded border border-white/10"
+                            className="bg-primary/5 text-primary px-3 py-2 rounded-2xl text-xs font-unbounded font-medium border border-primary/10"
                           >
                             {tag}
                           </span>
@@ -242,28 +247,44 @@ const Projects = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-gradient-to-r from-primary/20 to-secondary/20 backdrop-blur-sm border border-white/10 rounded-2xl p-12">
-            <h2 className="text-4xl font-unbounded font-bold text-white mb-6">
-              Есть идея для проекта?
-            </h2>
-            <p className="text-xl text-gray-300 font-unbounded mb-8 leading-relaxed">
-              Мы всегда открыты для новых идей и сотрудничества. Если у вас есть
-              интересная история или вы хотите заказать контент — давайте
-              обсудим!
-            </p>
-            <div className="flex justify-center">
-              <a
-                href="https://vk.com/im?sel=-214224996&entrypoint=community_page"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-xl font-unbounded font-semibold hover:scale-105 transition-all duration-200 shadow-lg shadow-primary/25"
-              >
-                <Icon name="ExternalLink" size={20} />
-                <span>Обсудить проект</span>
-              </a>
+      <section className="py-16 bg-primary">
+        <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
+          <div className="mb-8">
+            <div className="inline-block bg-white/10 px-6 py-3 rounded-full mb-6">
+              <span className="text-white font-unbounded font-bold">Есть идея?</span>
             </div>
+            
+            <h2 className="text-4xl md:text-5xl font-unbounded font-black text-white mb-6">
+              Давайте создадим что-то вместе!
+            </h2>
+            
+            <p className="text-xl text-white/90 font-unbounded max-w-4xl mx-auto leading-relaxed mb-12">
+              Мы всегда открыты для новых идей и сотрудничества. Если у вас есть интересная история или вы хотите заказать контент — давайте обсудим! 
+              <span className="block mt-2 font-bold">Каждый проект начинается с простого разговора</span>
+            </p>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row justify-center gap-6">
+            <a
+              href="https://vk.com/im?entrypoint=community_page&media=&sel=-214224996"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center space-x-3 bg-white text-primary px-8 py-4 rounded-2xl font-unbounded font-bold hover:bg-secondary hover:text-white transition-all duration-300 shadow-lg text-lg group"
+            >
+              <Icon name="MessageCircle" size={24} className="group-hover:animate-bounce" />
+              <span>Обсудить проект</span>
+            </a>
+            
+            <a
+              href="https://vk.com/public214224996"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center space-x-3 bg-secondary text-white px-8 py-4 rounded-2xl font-unbounded font-bold hover:bg-white hover:text-secondary transition-all duration-300 shadow-lg text-lg group"
+            >
+              <Icon name="Users" size={24} className="group-hover:animate-pulse" />
+              <span>Смотреть ещё работы</span>
+            </a>
           </div>
         </div>
       </section>

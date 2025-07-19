@@ -14,48 +14,71 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-primary backdrop-blur-lg border-b border-brand-light/30 shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <div className="h-10 md:h-12 group-hover:scale-110 transition-transform">
-              <img
-                src="https://cdn.poehali.dev/files/6ffd92ec-3432-4ca8-bb14-85125928e527.png"
-                alt="Горхон Медиа"
-                className="h-full object-contain"
-              />
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b-2 border-primary/10 shadow-lg">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="flex justify-between items-center h-20">
+          {/* Logo - proper display for white logo with blue background */}
+          <Link to="/" className="flex items-center space-x-4 group">
+            <div className="relative">
+              {/* Blue background for white logo */}
+              <div className="bg-primary rounded-2xl p-3 group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-xl">
+                <div className="h-8 md:h-10 bg-white rounded-lg p-1.5 flex items-center justify-center">
+                  <img
+                    src="https://cdn.poehali.dev/files/6ffd92ec-3432-4ca8-bb14-85125928e527.png"
+                    alt="Горхон Медиа"
+                    className="h-full object-contain"
+                  />
+                </div>
+              </div>
+              {/* Small accent */}
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-secondary rounded-full"></div>
             </div>
-            <span className="text-white font-unbounded font-bold text-lg md:text-xl group-hover:text-brand-light transition-colors">
-              Медиа
-            </span>
+            <div className="flex flex-col">
+              <span className="text-gray-900 font-unbounded font-black text-xl md:text-2xl group-hover:text-primary transition-colors leading-tight">
+                Горхон
+              </span>
+              <span className="text-gray-600 font-unbounded font-bold text-xs md:text-sm -mt-1">
+                Медиа
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-2">
             {navItems.map((item) => {
               const isActive = location.pathname === item.path;
               return (
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`flex items-center space-x-2 px-3 py-2 rounded-lg font-unbounded text-sm font-medium transition-all duration-200 ${
+                  className={`flex items-center space-x-2 px-4 py-3 rounded-2xl font-unbounded text-sm font-bold transition-all duration-300 ${
                     isActive
-                      ? "bg-white text-primary shadow-md"
-                      : "text-white hover:bg-secondary hover:scale-105 hover:shadow-md"
+                      ? "bg-primary text-white shadow-lg scale-105"
+                      : "text-gray-700 hover:bg-primary/10 hover:text-primary hover:scale-105"
                   }`}
                 >
-                  <Icon name={item.icon as any} size={16} />
+                  <Icon name={item.icon as any} size={18} />
                   <span>{item.label}</span>
                 </Link>
               );
             })}
+            
+            {/* Contact CTA */}
+            <a
+              href="https://vk.com/im?entrypoint=community_page&media=&sel=-214224996"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-4 bg-secondary text-white px-5 py-3 rounded-2xl font-unbounded font-bold text-sm hover:bg-primary transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center space-x-2"
+            >
+              <Icon name="MessageCircle" size={16} />
+              <span>Написать</span>
+            </a>
           </div>
 
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-white hover:text-white/80 transition-colors"
+            className="md:hidden p-3 text-gray-700 hover:text-primary transition-colors bg-gray-100 rounded-2xl hover:bg-primary/10"
           >
             <Icon name={isOpen ? "X" : "Menu"} size={24} />
           </button>
@@ -64,7 +87,7 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-brand-dark/90 backdrop-blur-sm rounded-lg mt-2 mb-4 border border-brand-light/20">
+            <div className="px-4 pt-4 pb-6 space-y-3 bg-gray-50/95 backdrop-blur-sm rounded-3xl mt-4 mb-4 border-2 border-primary/10 shadow-xl">
               {navItems.map((item) => {
                 const isActive = location.pathname === item.path;
                 return (
@@ -72,17 +95,29 @@ const Navigation = () => {
                     key={item.path}
                     to={item.path}
                     onClick={() => setIsOpen(false)}
-                    className={`flex items-center space-x-3 px-3 py-2 rounded-lg font-unbounded text-sm font-medium transition-all ${
+                    className={`flex items-center space-x-3 px-4 py-3 rounded-2xl font-unbounded text-base font-bold transition-all ${
                       isActive
-                        ? "bg-white text-primary shadow-md"
-                        : "text-white hover:bg-secondary hover:shadow-md"
+                        ? "bg-primary text-white shadow-lg"
+                        : "text-gray-700 hover:bg-primary/10 hover:text-primary"
                     }`}
                   >
-                    <Icon name={item.icon as any} size={16} />
+                    <Icon name={item.icon as any} size={20} />
                     <span>{item.label}</span>
                   </Link>
                 );
               })}
+              
+              {/* Mobile Contact CTA */}
+              <a
+                href="https://vk.com/im?entrypoint=community_page&media=&sel=-214224996"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="flex items-center space-x-3 px-4 py-3 rounded-2xl font-unbounded font-bold text-base bg-secondary text-white shadow-lg mt-4"
+              >
+                <Icon name="MessageCircle" size={20} />
+                <span>Написать нам</span>
+              </a>
             </div>
           </div>
         )}

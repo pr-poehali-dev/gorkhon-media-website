@@ -115,30 +115,39 @@ const Home = () => {
             {/* Visual Content */}
             <div className="lg:col-span-5">
               <div className="relative">
-                {/* Main Image */}
-                <div className="relative bg-white rounded-3xl p-4 shadow-lg transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                  <img
-                    src="https://cdn.poehali.dev/files/6ffd92ec-3432-4ca8-bb14-85125928e527.png"
-                    alt="Горхон"
-                    className="w-full h-auto rounded-2xl"
-                  />
-                  
-                  {/* Photo corner effect */}
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-secondary rounded-full shadow-lg"></div>
-                  <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-primary rounded-full shadow-lg"></div>
+                {/* Main Logo Display - accounting for white logo with blue */}
+                <div className="relative">
+                  {/* Blue background circle for white logo */}
+                  <div className="relative bg-primary rounded-3xl p-8 shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                    <div className="bg-white rounded-2xl p-6 flex items-center justify-center">
+                      <img
+                        src="https://cdn.poehali.dev/files/6ffd92ec-3432-4ca8-bb14-85125928e527.png"
+                        alt="Горхон"
+                        className="w-full h-auto max-w-xs"
+                      />
+                    </div>
+                    
+                    {/* Corner accents */}
+                    <div className="absolute -top-3 -right-3 w-8 h-8 bg-secondary rounded-full shadow-lg"></div>
+                    <div className="absolute -bottom-3 -left-3 w-6 h-6 bg-white rounded-full shadow-lg"></div>
+                  </div>
                 </div>
 
-                {/* Sticky Notes */}
-                <div className="absolute -top-4 -left-8 bg-yellow-200 p-3 rounded-lg transform -rotate-12 shadow-lg z-10">
-                  <Icon name="Camera" size={20} className="text-gray-700" />
+                {/* Creative floating elements */}
+                <div className="absolute -top-6 -left-8 bg-white border-2 border-primary p-4 rounded-2xl transform -rotate-12 shadow-xl z-10">
+                  <Icon name="Camera" size={24} className="text-primary" />
                 </div>
                 
-                <div className="absolute -bottom-6 -right-6 bg-blue-200 p-3 rounded-lg transform rotate-12 shadow-lg z-10">
-                  <Icon name="Video" size={20} className="text-gray-700" />
+                <div className="absolute -bottom-8 -right-8 bg-secondary p-4 rounded-2xl transform rotate-12 shadow-xl z-10">
+                  <Icon name="Video" size={24} className="text-white" />
                 </div>
 
-                <div className="absolute top-1/2 -left-6 bg-pink-200 p-2 rounded-full transform -rotate-45 shadow-lg z-10">
-                  <Icon name="Mic" size={16} className="text-gray-700" />
+                <div className="absolute top-1/2 -left-4 bg-white border-2 border-secondary p-3 rounded-full transform -rotate-45 shadow-lg z-10">
+                  <Icon name="Mic" size={20} className="text-secondary" />
+                </div>
+
+                <div className="absolute top-1/4 -right-4 bg-primary p-3 rounded-full transform rotate-45 shadow-lg z-10">
+                  <Icon name="Edit" size={20} className="text-white" />
                 </div>
               </div>
             </div>
@@ -253,15 +262,18 @@ const Home = () => {
 
           {/* VK Widget Container */}
           <div className="relative">
-            <div className="bg-gray-50 rounded-3xl p-8 md:p-12 border-2 border-primary/10">
-              <div className="flex justify-center">
-                <div id="vk_groups" className="w-full max-w-md"></div>
+            <div className="bg-primary/5 rounded-3xl p-8 md:p-12 border-3 border-primary/20">
+              <div className="bg-white rounded-2xl p-6 shadow-inner">
+                <div className="flex justify-center">
+                  <div id="vk_groups" className="w-full max-w-md"></div>
+                </div>
               </div>
             </div>
             
-            {/* Decorative elements */}
-            <div className="absolute -top-4 -left-4 w-8 h-8 bg-secondary rounded-full opacity-70"></div>
-            <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-primary rounded-full opacity-70"></div>
+            {/* Creative decorative elements */}
+            <div className="absolute -top-6 -left-6 w-12 h-12 bg-secondary rounded-2xl opacity-80 transform rotate-12"></div>
+            <div className="absolute -bottom-6 -right-6 w-10 h-10 bg-primary rounded-2xl opacity-80 transform -rotate-12"></div>
+            <div className="absolute top-1/2 -right-4 w-6 h-6 bg-white border-2 border-secondary rounded-full shadow-lg"></div>
           </div>
         </div>
       </section>
