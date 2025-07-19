@@ -39,111 +39,106 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="relative pt-16 pb-20 overflow-hidden bg-white">
-        {/* Playful Background Elements */}
+      {/* Hero Section - Magazine Style */}
+      <section className="relative py-12 md:py-20 bg-white">
+        {/* Simple decorative elements */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 left-8 w-24 h-24 bg-primary/10 rounded-3xl rotate-12 animate-pulse"></div>
-          <div className="absolute bottom-32 right-12 w-32 h-32 bg-secondary/10 rounded-full animate-bounce" style={{animationDelay: '0.5s'}}></div>
-          <div className="absolute top-1/2 right-1/5 w-16 h-16 bg-primary/5 rounded-2xl rotate-45"></div>
-          <div className="absolute bottom-1/4 left-1/5 w-20 h-20 bg-secondary/5 rounded-full"></div>
-          {/* Organic shapes */}
-          <div className="absolute top-40 left-1/3 w-40 h-40 bg-primary/5 rounded-full transform skew-x-12"></div>
-          <div className="absolute bottom-40 right-1/3 w-36 h-36 bg-secondary/5 rounded-full transform skew-y-12"></div>
+          <div className="absolute top-10 left-4 w-2 h-16 bg-secondary transform rotate-12"></div>
+          <div className="absolute bottom-10 right-4 w-2 h-20 bg-primary transform -rotate-12"></div>
+          <div className="absolute top-1/3 right-8 text-6xl text-primary/5 font-unbounded font-black transform rotate-12">Г</div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Content */}
-            <div
-              className={`space-y-8 ${isLoaded ? "animate-fade-in" : "opacity-0"}`}
-            >
-              <div className="space-y-6">
-                <div className="inline-flex items-center space-x-3 bg-primary/10 text-primary px-8 py-4 rounded-full text-base font-unbounded font-medium border-2 border-primary/20 backdrop-blur-sm">
-                  <Icon name="Heart" size={20} className="text-secondary" />
-                  <span>Медиакоманда поселка Горхон</span>
-                </div>
-                <h1 className="text-6xl sm:text-7xl lg:text-9xl font-unbounded font-black text-primary leading-none tracking-tight">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative">
+          
+          {/* Header Tag */}
+          <div className="text-center mb-12">
+            <div className="inline-block">
+              <div className="flex items-center space-x-2 text-sm font-unbounded font-bold text-secondary uppercase tracking-wider mb-4">
+                <div className="w-8 h-0.5 bg-secondary"></div>
+                <span>Медиакоманда поселка</span>
+                <div className="w-8 h-0.5 bg-secondary"></div>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            {/* Main Content */}
+            <div className="lg:col-span-7 space-y-8">
+              <div>
+                <h1 className="text-6xl md:text-7xl lg:text-8xl font-unbounded font-black text-gray-900 leading-none mb-6">
                   Горхон
-                  <span className="block text-4xl sm:text-5xl lg:text-6xl text-secondary font-bold mt-2">в сердце</span>
                 </h1>
-                <p className="text-xl md:text-2xl text-gray-700 font-unbounded leading-relaxed font-medium">
-                  Мы рассказываем истории нашего поселка языком, понятным каждому.
-                  <span className="block mt-2 text-primary font-bold">Потому что каждый момент важен, каждая история достойна внимания.</span>
+                
+                {/* Subheading with handwritten feel */}
+                <div className="relative mb-8">
+                  <h2 className="text-2xl md:text-3xl font-unbounded font-bold text-primary transform -rotate-1 inline-block bg-yellow-100 px-4 py-2 rounded-lg shadow-sm">
+                    Истории нашего дома
+                  </h2>
+                  <div className="absolute -bottom-2 -right-2 text-secondary">
+                    <Icon name="Heart" size={24} />
+                  </div>
+                </div>
+
+                <p className="text-xl md:text-2xl text-gray-700 font-unbounded leading-relaxed mb-8">
+                  Мы рассказываем о жизни нашего поселка простыми словами. 
+                  <span className="text-primary font-bold"> Потому что каждая история важна</span>, 
+                  каждый момент достоин внимания.
                 </p>
               </div>
 
-              {/* Stats with personality */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-12">
-                <div className="text-center sm:text-left bg-primary/5 rounded-3xl p-6 border-2 border-primary/10">
-                  <div className="text-5xl md:text-6xl font-unbounded font-black text-primary mb-2">
-                    1+
-                  </div>
-                  <div className="text-gray-700 font-unbounded text-lg font-semibold">
-                    Проектов делаем с душой
-                  </div>
+              {/* Quote Block */}
+              <div className="relative bg-primary/5 border-l-4 border-primary p-6 rounded-r-xl">
+                <Icon name="Quote" size={32} className="text-primary/30 absolute top-2 left-2" />
+                <p className="text-lg font-unbounded italic text-gray-800 pl-8">
+                  "Наша цель — показать красоту обычной жизни и найти что-то особенное в каждом дне"
+                </p>
+              </div>
+
+              {/* Stats Cards */}
+              <div className="grid grid-cols-3 gap-4 mt-12">
+                <div className="text-center bg-white border-2 border-primary/10 rounded-2xl p-6 transform rotate-1 shadow-sm hover:shadow-lg transition-all hover:rotate-0">
+                  <div className="text-4xl font-unbounded font-black text-primary mb-2">1+</div>
+                  <div className="text-gray-600 font-unbounded text-sm">проекта<br/>с душой</div>
                 </div>
-                <div className="text-center sm:text-left bg-secondary/5 rounded-3xl p-6 border-2 border-secondary/10">
-                  <div className="text-5xl md:text-6xl font-unbounded font-black text-secondary mb-2">
-                    873+
-                  </div>
-                  <div className="text-gray-700 font-unbounded text-lg font-semibold">
-                    Человек нам доверяют
-                  </div>
+                <div className="text-center bg-white border-2 border-secondary/10 rounded-2xl p-6 transform -rotate-1 shadow-sm hover:shadow-lg transition-all hover:rotate-0">
+                  <div className="text-4xl font-unbounded font-black text-secondary mb-2">873+</div>
+                  <div className="text-gray-600 font-unbounded text-sm">друзей<br/>рядом</div>
                 </div>
-                <div className="text-center sm:text-left bg-primary/5 rounded-3xl p-6 border-2 border-primary/10">
-                  <div className="text-5xl md:text-6xl font-unbounded font-black text-primary mb-2">
-                    3
-                  </div>
-                  <div className="text-gray-700 font-unbounded text-lg font-semibold">
-                    Года растем вместе
-                  </div>
+                <div className="text-center bg-white border-2 border-primary/10 rounded-2xl p-6 transform rotate-1 shadow-sm hover:shadow-lg transition-all hover:rotate-0">
+                  <div className="text-4xl font-unbounded font-black text-primary mb-2">3</div>
+                  <div className="text-gray-600 font-unbounded text-sm">года<br/>вместе</div>
                 </div>
               </div>
             </div>
 
-            {/* Logo/Visual */}
-            <div
-              className={`relative ${isLoaded ? "animate-scale-in" : "opacity-0"}`}
-              style={{ animationDelay: "0.3s" }}
-            >
-              <div className="relative w-full max-w-md mx-auto">
-                {/* Friendly Logo Design */}
-                <div className="relative w-80 h-80 md:w-96 md:h-96 mx-auto">
-                  {/* Organic background shape */}
-                  <div className="absolute inset-0 bg-secondary rounded-full transform rotate-3 shadow-2xl"></div>
-                  <div className="absolute inset-0 bg-primary rounded-full transform -rotate-2 shadow-xl opacity-90"></div>
-                  <div className="absolute inset-6 bg-white rounded-full flex items-center justify-center p-8 md:p-10 border-4 border-gray-100">
-                    <div className="w-full h-full">
-                      <img
-                        src="https://cdn.poehali.dev/files/6ffd92ec-3432-4ca8-bb14-85125928e527.png"
-                        alt="Горхон"
-                        className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  </div>
+            {/* Visual Content */}
+            <div className="lg:col-span-5">
+              <div className="relative">
+                {/* Main Image */}
+                <div className="relative bg-white rounded-3xl p-4 shadow-lg transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                  <img
+                    src="https://cdn.poehali.dev/files/6ffd92ec-3432-4ca8-bb14-85125928e527.png"
+                    alt="Горхон"
+                    className="w-full h-auto rounded-2xl"
+                  />
+                  
+                  {/* Photo corner effect */}
+                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-secondary rounded-full shadow-lg"></div>
+                  <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-primary rounded-full shadow-lg"></div>
+                </div>
 
-                  {/* Playful Floating Elements */}
-                  <div className="absolute -top-6 -right-6 w-18 h-18 md:w-20 md:h-20 bg-white border-4 border-primary rounded-3xl flex items-center justify-center shadow-xl hover:scale-110 transition-all duration-300 hover:rotate-12">
-                    <Icon name="Camera" size={28} className="text-primary" />
-                  </div>
-                  <div className="absolute -bottom-6 -left-6 w-18 h-18 md:w-20 md:h-20 bg-white border-4 border-secondary rounded-3xl flex items-center justify-center shadow-xl hover:scale-110 transition-all duration-300 hover:-rotate-12">
-                    <Icon name="Video" size={28} className="text-secondary" />
-                  </div>
-                  <div className="absolute top-1/2 -left-8 md:-left-10 w-14 h-14 md:w-16 md:h-16 bg-secondary rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 hover:rotate-180">
-                    <Icon name="Mic" size={20} className="text-white" />
-                  </div>
-                  <div className="absolute top-1/4 -right-8 md:-right-10 w-14 h-14 md:w-16 md:h-16 bg-primary rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 hover:-rotate-180">
-                    <Icon name="Edit" size={20} className="text-white" />
-                  </div>
+                {/* Sticky Notes */}
+                <div className="absolute -top-4 -left-8 bg-yellow-200 p-3 rounded-lg transform -rotate-12 shadow-lg z-10">
+                  <Icon name="Camera" size={20} className="text-gray-700" />
+                </div>
+                
+                <div className="absolute -bottom-6 -right-6 bg-blue-200 p-3 rounded-lg transform rotate-12 shadow-lg z-10">
+                  <Icon name="Video" size={20} className="text-gray-700" />
+                </div>
 
-                  {/* Emotional touch elements */}
-                  <div className="absolute top-12 left-12 w-6 h-6 bg-secondary rounded-full animate-pulse opacity-60 flex items-center justify-center">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                  </div>
-                  <div className="absolute bottom-12 right-12 w-6 h-6 bg-primary rounded-full animate-pulse opacity-60 flex items-center justify-center" style={{ animationDelay: "1s" }}>
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                  </div>
+                <div className="absolute top-1/2 -left-6 bg-pink-200 p-2 rounded-full transform -rotate-45 shadow-lg z-10">
+                  <Icon name="Mic" size={16} className="text-gray-700" />
                 </div>
               </div>
             </div>
@@ -151,147 +146,172 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 md:py-28 bg-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 md:mb-20">
-            <div className="inline-flex items-center space-x-3 bg-primary/10 px-8 py-4 rounded-full mb-8 border-2 border-primary/20">
-              <Icon name="Sparkles" size={24} className="text-primary" />
-              <span className="text-primary font-unbounded font-bold text-lg">Что мы делаем с любовью</span>
+      {/* What We Do Section */}
+      <section className="py-16 md:py-24 bg-gray-100">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+          
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-block mb-6">
+              <span className="bg-secondary text-white px-6 py-2 rounded-full font-unbounded font-bold text-sm uppercase tracking-wider">
+                Чем занимаемся
+              </span>
             </div>
-            <h2 className="text-5xl md:text-6xl font-unbounded font-black text-gray-900 mb-8 leading-tight">
-              Каждый день создаём
-              <span className="block text-secondary">что-то особенное</span>
+            <h2 className="text-4xl md:text-5xl font-unbounded font-black text-gray-900 mb-6">
+              Делаем то, что любим
             </h2>
-            <p className="text-xl md:text-2xl text-gray-600 font-unbounded max-w-4xl mx-auto leading-relaxed">
-              Мы не просто делаем контент — мы рассказываем истории, которые важны людям
+            <p className="text-xl text-gray-600 font-unbounded max-w-3xl mx-auto">
+              Каждое направление — это способ рассказать историю нашего поселка
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+          {/* Activities Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
                 icon: "Video",
                 title: "Видео",
-                description: "Создаём качественные видеоролики о жизни поселка",
-                color: "primary"
+                description: "Снимаем документальные ролики о людях и событиях. Каждое видео — это маленький фильм о большой жизни.",
+                accent: "primary",
+                number: "01"
               },
               {
-                icon: "Camera",
+                icon: "Camera", 
                 title: "Фотография",
-                description: "Фиксируем яркие моменты и красивые кадры нашего поселка",
-                color: "secondary"
+                description: "Ловим моменты, которые завтра станут воспоминаниями. От семейных праздников до природных красот.",
+                accent: "secondary",
+                number: "02"
               },
               {
                 icon: "Newspaper",
-                title: "Журналистика",
-                description: "Освещаем новости и рассказываем интересные истории",
-                color: "primary"
+                title: "Журналистика", 
+                description: "Рассказываем новости и истории языком, понятным каждому. Без сложных терминов и канцеляризмов.",
+                accent: "primary",
+                number: "03"
               },
               {
                 icon: "Share2",
-                title: "Продвижение",
-                description: "Ведём соцсети и продвигаем контент",
-                color: "secondary"
-              },
-            ].map((feature, index) => (
-              <div
-                key={index}
-                className={`group bg-white rounded-3xl p-8 md:p-10 hover:scale-105 transition-all duration-500 shadow-lg hover:shadow-2xl cursor-pointer border-4 ${
-                  feature.color === 'primary' ? 'hover:border-primary border-primary/10' : 'hover:border-secondary border-secondary/10'
-                }`}
-              >
-                <div className={`w-20 h-20 ${
-                  feature.color === 'primary' ? 'bg-primary/10 group-hover:bg-primary' : 'bg-secondary/10 group-hover:bg-secondary'
-                } rounded-2xl flex items-center justify-center mb-8 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3`}>
-                  <Icon
-                    name={feature.icon as any}
-                    size={32}
-                    className={`${
-                      feature.color === 'primary' ? 'text-primary group-hover:text-white' : 'text-secondary group-hover:text-white'
-                    } transition-colors duration-300`}
-                  />
+                title: "Соцсети",
+                description: "Ведем группы в ВК и других платформах. Общаемся с подписчиками как с друзьями.",
+                accent: "secondary", 
+                number: "04"
+              }
+            ].map((item, index) => (
+              <div key={index} className="relative">
+                {/* Card */}
+                <div className="bg-white rounded-3xl p-8 shadow-sm border-2 border-gray-100 hover:shadow-lg transition-all hover:border-primary/20 group">
+                  
+                  {/* Number */}
+                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-gray-900 text-white rounded-full flex items-center justify-center font-unbounded font-bold text-sm">
+                    {item.number}
+                  </div>
+
+                  {/* Icon */}
+                  <div className={`w-16 h-16 ${item.accent === 'primary' ? 'bg-primary' : 'bg-secondary'} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                    <Icon name={item.icon as any} size={28} className="text-white" />
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-2xl font-unbounded font-black text-gray-900 mb-4">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 font-unbounded leading-relaxed">
+                    {item.description}
+                  </p>
+
+                  {/* Decorative element */}
+                  <div className={`absolute bottom-4 right-4 w-2 h-2 ${item.accent === 'primary' ? 'bg-primary' : 'bg-secondary'} rounded-full opacity-50`}></div>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-unbounded font-black text-gray-900 mb-4">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 font-unbounded text-lg leading-relaxed">
-                  {feature.description}
-                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* VK Widget Section */}
-      <section className="py-20 md:py-28 bg-primary">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-3 bg-white/10 px-8 py-4 rounded-full mb-8 border-2 border-white/20">
-              <Icon name="Users" size={24} className="text-white" />
-              <span className="text-white font-unbounded font-bold text-lg">Мы здесь каждый день</span>
+      {/* VK Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
+          
+          <div className="text-center mb-12">
+            <div className="inline-block mb-6">
+              <div className="flex items-center space-x-3">
+                <Icon name="Users" size={24} className="text-primary" />
+                <span className="font-unbounded font-bold text-primary text-lg">Мы в ВКонтакте</span>
+                <Icon name="Users" size={24} className="text-primary" />
+              </div>
             </div>
-            <h2 className="text-5xl md:text-6xl font-unbounded font-black text-white mb-8 leading-tight">
-              Заходи к нам
-              <span className="block text-secondary">в гости</span>
+            
+            <h2 className="text-4xl md:text-5xl font-unbounded font-black text-gray-900 mb-6">
+              Заходите к нам в гости
             </h2>
-            <p className="text-xl md:text-2xl text-white/90 font-unbounded max-w-3xl mx-auto leading-relaxed">
-              В нашей группе всегда что-то происходит — новые видео, фото и истории из жизни Горхона
+            
+            <p className="text-xl text-gray-600 font-unbounded max-w-3xl mx-auto mb-8">
+              В группе всегда что-то происходит: новые видео, фотоотчеты с мероприятий, 
+              обсуждения и просто хорошее настроение
             </p>
           </div>
 
-          <div className="bg-white rounded-3xl p-8 md:p-12 flex justify-center shadow-2xl border-4 border-secondary transform hover:scale-105 transition-transform duration-300">
-            <div id="vk_groups"></div>
+          {/* VK Widget Container */}
+          <div className="relative">
+            <div className="bg-gray-50 rounded-3xl p-8 md:p-12 border-2 border-primary/10">
+              <div className="flex justify-center">
+                <div id="vk_groups" className="w-full max-w-md"></div>
+              </div>
+            </div>
+            
+            {/* Decorative elements */}
+            <div className="absolute -top-4 -left-4 w-8 h-8 bg-secondary rounded-full opacity-70"></div>
+            <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-primary rounded-full opacity-70"></div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-28 bg-white relative overflow-hidden">
-        {/* Organic background elements */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-primary/5 rounded-full transform rotate-12"></div>
-          <div className="absolute bottom-20 right-10 w-40 h-40 bg-secondary/5 rounded-full transform -rotate-12"></div>
-          <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-primary/3 rounded-full"></div>
-        </div>
-        
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <div className="inline-flex items-center space-x-3 bg-secondary/10 px-8 py-4 rounded-full mb-8 border-2 border-secondary/20">
-            <Icon name="HandHeart" size={24} className="text-secondary" />
-            <span className="text-secondary font-unbounded font-bold text-lg">Стань частью команды</span>
+      <section className="py-16 md:py-24 bg-primary">
+        <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
+          
+          <div className="mb-8">
+            <div className="inline-block bg-white/10 px-6 py-3 rounded-full mb-6">
+              <span className="text-white font-unbounded font-bold">Хочешь стать частью команды?</span>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl font-unbounded font-black text-white mb-6 leading-tight">
+              Присоединяйся!
+            </h2>
+            
+            <p className="text-xl text-white/90 font-unbounded max-w-3xl mx-auto leading-relaxed mb-12">
+              Если ты творческий, активный и хочешь рассказывать истории — 
+              <span className="block mt-2 font-bold">мы всегда рады новым людям в команде</span>
+            </p>
           </div>
-          
-          <h2 className="text-5xl md:text-6xl font-unbounded font-black text-gray-900 mb-8 leading-tight">
-            Присоединяйся к нам
-            <span className="block text-primary">просто напиши</span>
-          </h2>
-          
-          <p className="text-xl md:text-2xl text-gray-600 font-unbounded mb-16 max-w-4xl mx-auto leading-relaxed">
-            Если ты творческий и активный — мы всегда рады новым людям в команде. 
-            <span className="block mt-2 text-secondary font-bold">Твои идеи могут изменить то, как люди видят наш поселок</span>
-          </p>
-          
+
+          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <a
               href="https://vk.com/im?entrypoint=community_page&media=&sel=-214224996"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center space-x-4 bg-primary text-white px-10 py-6 rounded-3xl font-unbounded font-black hover:bg-secondary transition-all duration-300 shadow-xl hover:shadow-2xl text-xl hover:scale-105 border-4 border-primary hover:border-secondary"
+              className="inline-flex items-center justify-center space-x-3 bg-white text-primary px-8 py-4 rounded-2xl font-unbounded font-bold hover:bg-secondary hover:text-white transition-all duration-300 shadow-lg text-lg group"
             >
-              <Icon name="MessageCircle" size={28} className="group-hover:animate-bounce" />
-              <span>Написать в ВК</span>
+              <Icon name="MessageCircle" size={24} className="group-hover:animate-bounce" />
+              <span>Написать нам</span>
             </a>
+            
             <a
               href="https://vk.com/public214224996"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center space-x-4 bg-white text-primary px-10 py-6 rounded-3xl font-unbounded font-black hover:bg-primary hover:text-white transition-all duration-300 shadow-xl hover:shadow-2xl text-xl hover:scale-105 border-4 border-primary"
+              className="inline-flex items-center justify-center space-x-3 bg-secondary text-white px-8 py-4 rounded-2xl font-unbounded font-bold hover:bg-white hover:text-secondary transition-all duration-300 shadow-lg text-lg group"
             >
-              <Icon name="Heart" size={28} className="group-hover:animate-pulse" />
+              <Icon name="Heart" size={24} className="group-hover:animate-pulse" />
               <span>Подписаться</span>
             </a>
           </div>
+
+          {/* Friendly note */}
+          <p className="text-white/80 font-unbounded text-sm mt-8 italic">
+            "Не стесняйтесь — мы не кусаемся 😊"
+          </p>
         </div>
       </section>
     </div>
