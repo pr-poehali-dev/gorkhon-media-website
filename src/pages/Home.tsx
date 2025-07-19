@@ -38,117 +38,64 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section - Magazine Style */}
-      <section className="relative py-12 md:py-20 bg-white">
-        {/* Simple decorative elements */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-10 left-4 w-2 h-16 bg-secondary transform rotate-12"></div>
-          <div className="absolute bottom-10 right-4 w-2 h-20 bg-primary transform -rotate-12"></div>
-          <div className="absolute top-1/3 right-8 text-6xl text-primary/5 font-unbounded font-black transform rotate-12">Г</div>
-        </div>
-
-        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative">
+    <div className="min-h-screen bg-white">
+      {/* Hero Section - Clean Blog Style */}
+      <section className="relative py-20 md:py-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           
-          {/* Header Tag */}
-          <div className="text-center mb-12">
-            <div className="inline-block">
-              <div className="flex items-center space-x-2 text-sm font-unbounded font-bold text-secondary uppercase tracking-wider mb-4">
-                <div className="w-8 h-0.5 bg-secondary"></div>
-                <span>Медиакоманда поселка</span>
-                <div className="w-8 h-0.5 bg-secondary"></div>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          {/* Hero Content */}
+          <div className="max-w-4xl mx-auto text-center">
             
-            {/* Main Content */}
-            <div className="lg:col-span-7 space-y-8">
-              <div>
-                <h1 className="text-6xl md:text-7xl lg:text-8xl font-unbounded font-black text-gray-900 leading-none mb-6">
-                  Горхон
-                </h1>
-                
-                {/* Subheading with handwritten feel */}
-                <div className="relative mb-8">
-                  <h2 className="text-2xl md:text-3xl font-unbounded font-bold text-primary transform -rotate-1 inline-block bg-yellow-100 px-4 py-2 rounded-lg shadow-sm">
-                    Истории нашего дома
-                  </h2>
-                  <div className="absolute -bottom-2 -right-2 text-secondary">
-                    <Icon name="Heart" size={24} />
-                  </div>
-                </div>
-
-                <p className="text-xl md:text-2xl text-gray-700 font-unbounded leading-relaxed mb-8">
-                  Мы рассказываем о жизни нашего поселка простыми словами. 
-                  <span className="text-primary font-bold"> Потому что каждая история важна</span>, 
-                  каждый момент достоин внимания.
-                </p>
-              </div>
-
-              {/* Quote Block */}
-              <div className="relative bg-primary/5 border-l-4 border-primary p-6 rounded-r-xl">
-                <Icon name="Quote" size={32} className="text-primary/30 absolute top-2 left-2" />
-                <p className="text-lg font-unbounded italic text-gray-800 pl-8">
-                  "Наша цель — показать красоту обычной жизни и найти что-то особенное в каждом дне"
-                </p>
-              </div>
-
-              {/* Stats Cards */}
-              <div className="grid grid-cols-3 gap-4 mt-12">
-                <div className="text-center bg-white border-2 border-primary/10 rounded-2xl p-6 transform rotate-1 shadow-sm hover:shadow-lg transition-all hover:rotate-0">
-                  <div className="text-4xl font-unbounded font-black text-primary mb-2">1+</div>
-                  <div className="text-gray-600 font-unbounded text-sm">проекта<br/>с душой</div>
-                </div>
-                <div className="text-center bg-white border-2 border-secondary/10 rounded-2xl p-6 transform -rotate-1 shadow-sm hover:shadow-lg transition-all hover:rotate-0">
-                  <div className="text-4xl font-unbounded font-black text-secondary mb-2">873+</div>
-                  <div className="text-gray-600 font-unbounded text-sm">друзей<br/>рядом</div>
-                </div>
-                <div className="text-center bg-white border-2 border-primary/10 rounded-2xl p-6 transform rotate-1 shadow-sm hover:shadow-lg transition-all hover:rotate-0">
-                  <div className="text-4xl font-unbounded font-black text-primary mb-2">3</div>
-                  <div className="text-gray-600 font-unbounded text-sm">года<br/>вместе</div>
-                </div>
-              </div>
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-medium mb-8">
+              <div className="w-2 h-2 bg-primary rounded-full"></div>
+              Медиакоманда поселка Горхон
             </div>
 
-            {/* Visual Content */}
-            <div className="lg:col-span-5">
-              <div className="relative">
-                {/* Main Logo Display - accounting for white logo with blue */}
-                <div className="relative">
-                  {/* Blue background circle for white logo */}
-                  <div className="relative bg-primary rounded-3xl p-8 shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                    <div className="bg-white rounded-2xl p-6 flex items-center justify-center">
-                      <img
-                        src="https://cdn.poehali.dev/files/6ffd92ec-3432-4ca8-bb14-85125928e527.png"
-                        alt="Горхон"
-                        className="w-full h-auto max-w-xs"
-                      />
-                    </div>
-                    
-                    {/* Corner accents */}
-                    <div className="absolute -top-3 -right-3 w-8 h-8 bg-secondary rounded-full shadow-lg"></div>
-                    <div className="absolute -bottom-3 -left-3 w-6 h-6 bg-white rounded-full shadow-lg"></div>
-                  </div>
-                </div>
+            {/* Main Heading */}
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+              Горхон.<span className="text-primary">Медиа</span>
+            </h1>
 
-                {/* Creative floating elements */}
-                <div className="absolute -top-6 -left-8 bg-white border-2 border-primary p-4 rounded-2xl transform -rotate-12 shadow-xl z-10">
-                  <Icon name="Camera" size={24} className="text-primary" />
-                </div>
-                
-                <div className="absolute -bottom-8 -right-8 bg-secondary p-4 rounded-2xl transform rotate-12 shadow-xl z-10">
-                  <Icon name="Video" size={24} className="text-white" />
-                </div>
+            {/* Subtitle */}
+            <p className="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto">
+              Рассказываем истории нашего поселка простыми словами. 
+              Потому что каждая история важна, каждый момент достоин внимания.
+            </p>
 
-                <div className="absolute top-1/2 -left-4 bg-white border-2 border-secondary p-3 rounded-full transform -rotate-45 shadow-lg z-10">
-                  <Icon name="Mic" size={20} className="text-secondary" />
-                </div>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+              <a
+                href="https://vk.com/public214224996"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+              >
+                <Icon name="Users" size={20} />
+                Наша группа
+              </a>
+              <Link
+                to="/projects"
+                className="inline-flex items-center justify-center gap-2 border-2 border-gray-200 text-gray-700 px-8 py-4 rounded-lg font-semibold hover:border-primary hover:text-primary transition-colors"
+              >
+                <Icon name="Folder" size={20} />
+                Наши проекты
+              </Link>
+            </div>
 
-                <div className="absolute top-1/4 -right-4 bg-primary p-3 rounded-full transform rotate-45 shadow-lg z-10">
-                  <Icon name="Edit" size={20} className="text-white" />
-                </div>
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-8 max-w-md mx-auto">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-gray-900">1+</div>
+                <div className="text-sm text-gray-600">проекта</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-gray-900">873+</div>
+                <div className="text-sm text-gray-600">подписчика</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-gray-900">3</div>
+                <div className="text-sm text-gray-600">года</div>
               </div>
             </div>
           </div>
@@ -156,174 +103,223 @@ const Home = () => {
       </section>
 
       {/* What We Do Section */}
-      <section className="py-16 md:py-24 bg-gray-100">
-        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <div className="inline-block mb-6">
-              <span className="bg-secondary text-white px-6 py-2 rounded-full font-unbounded font-bold text-sm uppercase tracking-wider">
-                Чем занимаемся
-              </span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-unbounded font-black text-gray-900 mb-6">
-              Делаем то, что любим
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Чем мы занимаемся
             </h2>
-            <p className="text-xl text-gray-600 font-unbounded max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600">
               Каждое направление — это способ рассказать историю нашего поселка
             </p>
           </div>
 
-          {/* Activities Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Services Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 icon: "Video",
-                title: "Видео",
-                description: "Снимаем документальные ролики о людях и событиях. Каждое видео — это маленький фильм о большой жизни.",
-                accent: "primary",
-                number: "01"
+                title: "Видеосъемка",
+                description: "Снимаем документальные ролики о людях и событиях. Каждое видео — это маленький фильм о большой жизни."
               },
               {
                 icon: "Camera", 
                 title: "Фотография",
-                description: "Ловим моменты, которые завтра станут воспоминаниями. От семейных праздников до природных красот.",
-                accent: "secondary",
-                number: "02"
+                description: "Ловим моменты, которые завтра станут воспоминаниями. От семейных праздников до природных красот."
               },
               {
                 icon: "Newspaper",
                 title: "Журналистика", 
-                description: "Рассказываем новости и истории языком, понятным каждому. Без сложных терминов и канцеляризмов.",
-                accent: "primary",
-                number: "03"
+                description: "Рассказываем новости и истории языком, понятным каждому. Без сложных терминов и канцеляризмов."
               },
               {
                 icon: "Share2",
                 title: "Соцсети",
-                description: "Ведем группы в ВК и других платформах. Общаемся с подписчиками как с друзьями.",
-                accent: "secondary", 
-                number: "04"
+                description: "Ведем группы в ВК и других платформах. Общаемся с подписчиками как с друзьями."
               }
-            ].map((item, index) => (
-              <div key={index} className="relative">
-                {/* Card */}
-                <div className="bg-white rounded-3xl p-8 shadow-sm border-2 border-gray-100 hover:shadow-lg transition-all hover:border-primary/20 group">
-                  
-                  {/* Number */}
-                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-gray-900 text-white rounded-full flex items-center justify-center font-unbounded font-bold text-sm">
-                    {item.number}
-                  </div>
-
-                  {/* Icon */}
-                  <div className={`w-16 h-16 ${item.accent === 'primary' ? 'bg-primary' : 'bg-secondary'} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                    <Icon name={item.icon as any} size={28} className="text-white" />
-                  </div>
-
-                  {/* Content */}
-                  <h3 className="text-2xl font-unbounded font-black text-gray-900 mb-4">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-600 font-unbounded leading-relaxed">
-                    {item.description}
-                  </p>
-
-                  {/* Decorative element */}
-                  <div className={`absolute bottom-4 right-4 w-2 h-2 ${item.accent === 'primary' ? 'bg-primary' : 'bg-secondary'} rounded-full opacity-50`}></div>
+            ].map((service, index) => (
+              <div key={index} className="bg-white rounded-xl p-8 hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                  <Icon name={service.icon as any} size={24} className="text-primary" />
                 </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {service.description}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* VK Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
+      {/* Featured Content Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           
-          <div className="text-center mb-12">
-            <div className="inline-block mb-6">
-              <div className="flex items-center space-x-3">
-                <Icon name="Users" size={24} className="text-primary" />
-                <span className="font-unbounded font-bold text-primary text-lg">Мы в ВКонтакте</span>
-                <Icon name="Users" size={24} className="text-primary" />
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Наши последние работы
+            </h2>
+            <p className="text-xl text-gray-600">
+              Познакомьтесь с нашими проектами и историями
+            </p>
+          </div>
+
+          {/* Featured Project */}
+          <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+            <div className="grid grid-cols-1 lg:grid-cols-2">
+              <div className="relative h-64 lg:h-auto">
+                <img
+                  src="https://cdn.poehali.dev/files/a863a0f2-70cf-4a7e-8b96-561c13a9bc1e.png"
+                  alt="По волнам школьной памяти"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+                  Фотопроект
+                </div>
+              </div>
+              <div className="p-8 lg:p-12 flex flex-col justify-center">
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                  По волнам школьной памяти
+                </h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  Перелистываем страницы школьных воспоминаний с выпускных и последних звонков. 
+                  Каждый кадр — это целая история, которую хочется сохранить навсегда!
+                </p>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="text-sm text-gray-500">Июнь 2025</div>
+                  <div className="text-sm text-gray-500">560+ просмотров</div>
+                </div>
+                <a
+                  href="https://vk.com/wall-214224996_1109"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary/80 transition-colors"
+                >
+                  Смотреть проект
+                  <Icon name="ArrowRight" size={16} />
+                </a>
               </div>
             </div>
-            
-            <h2 className="text-4xl md:text-5xl font-unbounded font-black text-gray-900 mb-6">
-              Заходите к нам в гости
+          </div>
+
+          {/* View All Projects Link */}
+          <div className="text-center mt-12">
+            <Link
+              to="/projects"
+              className="inline-flex items-center gap-2 bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
+            >
+              Все проекты
+              <Icon name="ArrowRight" size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* VK Community Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Мы в ВКонтакте
             </h2>
-            
-            <p className="text-xl text-gray-600 font-unbounded max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               В группе всегда что-то происходит: новые видео, фотоотчеты с мероприятий, 
               обсуждения и просто хорошее настроение
             </p>
           </div>
 
           {/* VK Widget Container */}
-          <div className="relative">
-            <div className="bg-primary/5 rounded-3xl p-8 md:p-12 border-3 border-primary/20">
-              <div className="bg-white rounded-2xl p-6 shadow-inner">
-                <div className="flex justify-center">
-                  <div id="vk_groups" className="w-full max-w-md"></div>
-                </div>
-              </div>
+          <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+            <div className="flex justify-center">
+              <div id="vk_groups" className="w-full max-w-md"></div>
             </div>
-            
-            {/* Creative decorative elements */}
-            <div className="absolute -top-6 -left-6 w-12 h-12 bg-secondary rounded-2xl opacity-80 transform rotate-12"></div>
-            <div className="absolute -bottom-6 -right-6 w-10 h-10 bg-primary rounded-2xl opacity-80 transform -rotate-12"></div>
-            <div className="absolute top-1/2 -right-4 w-6 h-6 bg-white border-2 border-secondary rounded-full shadow-lg"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Познакомьтесь с командой
+            </h2>
+            <p className="text-xl text-gray-600">
+              Талантливые люди, которые создают контент для Горхон.Медиа
+            </p>
+          </div>
+
+          {/* Team Preview */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+            {[
+              { emoji: "🎬", role: "Режиссер" },
+              { emoji: "📹", role: "Оператор" },
+              { emoji: "✂️", role: "Монтажер" },
+              { emoji: "📱", role: "SMM" }
+            ].map((member, index) => (
+              <div key={index} className="text-center">
+                <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">{member.emoji}</span>
+                </div>
+                <div className="text-sm font-medium text-gray-600">{member.role}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link
+              to="/team"
+              className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+            >
+              Узнать больше о команде
+              <Icon name="ArrowRight" size={16} />
+            </Link>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-primary">
-        <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
+      <section className="py-20 bg-primary">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8 text-center">
           
-          <div className="mb-8">
-            <div className="inline-block bg-white/10 px-6 py-3 rounded-full mb-6">
-              <span className="text-white font-unbounded font-bold">Хочешь стать частью команды?</span>
-            </div>
-            
-            <h2 className="text-4xl md:text-5xl font-unbounded font-black text-white mb-6 leading-tight">
-              Присоединяйся!
-            </h2>
-            
-            <p className="text-xl text-white/90 font-unbounded max-w-3xl mx-auto leading-relaxed mb-12">
-              Если ты творческий, активный и хочешь рассказывать истории — 
-              <span className="block mt-2 font-bold">мы всегда рады новым людям в команде</span>
-            </p>
-          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Присоединяйтесь к нам
+          </h2>
+          
+          <p className="text-xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed">
+            Если вы творческий, активный и хочете рассказывать истории — 
+            мы всегда рады новым людям в команде
+          </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row justify-center gap-6">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="https://vk.com/im?entrypoint=community_page&media=&sel=-214224996"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center space-x-3 bg-white text-primary px-8 py-4 rounded-2xl font-unbounded font-bold hover:bg-secondary hover:text-white transition-all duration-300 shadow-lg text-lg group"
+              className="inline-flex items-center justify-center gap-2 bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
             >
-              <Icon name="MessageCircle" size={24} className="group-hover:animate-bounce" />
-              <span>Написать нам</span>
+              <Icon name="MessageCircle" size={20} />
+              Написать нам
             </a>
             
             <a
               href="https://vk.com/public214224996"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center space-x-3 bg-secondary text-white px-8 py-4 rounded-2xl font-unbounded font-bold hover:bg-white hover:text-secondary transition-all duration-300 shadow-lg text-lg group"
+              className="inline-flex items-center justify-center gap-2 bg-secondary text-white px-8 py-4 rounded-lg font-semibold hover:bg-secondary/90 transition-colors"
             >
-              <Icon name="Heart" size={24} className="group-hover:animate-pulse" />
-              <span>Подписаться</span>
+              <Icon name="Heart" size={20} />
+              Подписаться
             </a>
           </div>
-
-          {/* Friendly note */}
-          <p className="text-white/80 font-unbounded text-sm mt-8 italic">
-            "Не стесняйтесь — мы не кусаемся 😊"
-          </p>
         </div>
       </section>
     </div>

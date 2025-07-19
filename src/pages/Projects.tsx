@@ -40,34 +40,24 @@ const Projects = () => {
       : projects.filter((project) => project.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-24">
+    <div className="min-h-screen bg-white pt-16">
       {/* Hero Section */}
-      <section className="relative py-16 bg-white">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 left-8 w-3 h-20 bg-primary transform rotate-12 opacity-20"></div>
-          <div className="absolute bottom-20 right-8 w-3 h-24 bg-secondary transform -rotate-12 opacity-20"></div>
-          <div className="absolute top-1/2 right-1/4 text-8xl text-primary/5 font-unbounded font-black transform rotate-12">П</div>
-        </div>
+      <section className="py-20">
 
-        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative">
-          <div className="text-center">
-            <div className="inline-block mb-6">
-              <div className="flex items-center space-x-2 text-sm font-unbounded font-bold text-secondary uppercase tracking-wider">
-                <div className="w-8 h-0.5 bg-secondary"></div>
-                <span>Портфолио наших работ</span>
-                <div className="w-8 h-0.5 bg-secondary"></div>
-              </div>
-            </div>
-            
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-unbounded font-black text-gray-900 mb-8">
-              Наши проекты
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-gray-600 font-unbounded max-w-4xl mx-auto leading-relaxed">
-              Познакомьтесь с нашими работами — от фотопроектов до образовательных программ. 
-              <span className="text-primary font-bold"> Каждый проект рассказывает свою историю</span>
-            </p>
+        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center gap-2 bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-medium mb-8">
+            <div className="w-2 h-2 bg-primary rounded-full"></div>
+            Портфолио наших работ
           </div>
+
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8">
+            Наши проекты
+          </h1>
+
+          <p className="text-xl text-gray-600 leading-relaxed">
+            Познакомьтесь с нашими работами — от фотопроектов до образовательных программ. 
+            Каждый проект рассказывает свою историю.
+          </p>
         </div>
       </section>
 
