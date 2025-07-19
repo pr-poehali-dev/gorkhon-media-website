@@ -1,254 +1,331 @@
 import { useState, useEffect } from "react";
 import Icon from "@/components/ui/icon";
-import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+
+// Type declaration for VK API
+declare global {
+  interface Window {
+    VK: {
+      Widgets: {
+        Group: (elementId: string, options: any, groupId: number) => void;
+      };
+    };
+  }
+}
 
 const Home = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
+
+    // Initialize VK Widget after component mounts
+    if (window.VK) {
+      window.VK.Widgets.Group(
+        "vk_groups",
+        {
+          mode: 4,
+          no_cover: 1,
+          wide: 1,
+          height: 400,
+          color1: "FFFFFF",
+          color2: "000000",
+          color3: "2382ef",
+        },
+        214224996,
+      );
+    }
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-hidden">
-      {/* Grid Pattern Background */}
-      <div className="fixed inset-0 opacity-20">
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" strokeWidth="1"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
-      </div>
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero Section - Magazine Style */}
+      <section className="relative py-12 md:py-20 bg-white">
+        {/* Simple decorative elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-10 left-4 w-2 h-16 bg-secondary transform rotate-12"></div>
+          <div className="absolute bottom-10 right-4 w-2 h-20 bg-primary transform -rotate-12"></div>
+          <div className="absolute top-1/3 right-8 text-6xl text-primary/5 font-unbounded font-black transform rotate-12">Г</div>
+        </div>
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center pt-20">
-        {/* Geometric Shapes */}
-        <div className="absolute top-10 left-10 w-32 h-32 bg-teal-dark rounded-full opacity-30"></div>
-        <div className="absolute top-40 right-20 w-24 h-24 bg-primary/40 rotate-45"></div>
-        <div className="absolute bottom-20 left-20 w-48 h-48 bg-secondary/20 clip-polygon-triangle"></div>
-        
-        {/* Color Shapes like TopBlog */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-teal-dark via-primary to-transparent rounded-full opacity-20 -translate-x-20 -translate-y-20"></div>
-        <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-secondary via-primary to-transparent rounded-full opacity-15 translate-x-20 translate-y-20"></div>
-
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Hero Content */}
-          <div className="relative z-10">
-            {/* Logo */}
-            <div className="flex items-center gap-3 mb-8">
-              <div className="text-white font-bold text-2xl tracking-tight">
-                ТОП<span className="text-primary">БЛОГ</span>
-              </div>
-              <div className="text-xs text-gray-400 bg-gray-800 px-2 py-1 rounded">
-                РОССИЯ — СТРАНА ВОЗМОЖНОСТЕЙ
+        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative">
+          
+          {/* Header Tag */}
+          <div className="text-center mb-12">
+            <div className="inline-block">
+              <div className="flex items-center space-x-2 text-sm font-unbounded font-bold text-secondary uppercase tracking-wider mb-4">
+                <div className="w-8 h-0.5 bg-secondary"></div>
+                <span>Медиакоманда поселка</span>
+                <div className="w-8 h-0.5 bg-secondary"></div>
               </div>
             </div>
-
-            {/* Main Heading */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              «ТопБЛОГ» — твой старт<br />
-              в мир медиавозможностей
-            </h1>
-
-            {/* Subtitle */}
-            <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed max-w-2xl">
-              Пройди путь от начинающего автора<br />
-              до лидера общественного мнения
-            </p>
-
-            {/* CTA Button */}
-            <Button 
-              className="bg-white text-secondary px-8 py-6 text-lg font-bold rounded-full hover:bg-gray-100 transition-all transform hover:scale-105"
-            >
-              ЗАРЕГИСТРИРОВАТЬСЯ В 5 СЕЗОН
-            </Button>
           </div>
 
-          {/* Hero Images */}
-          <div className="relative z-10">
-            {/* Star decoration */}
-            <div className="absolute -top-10 -right-10 w-24 h-24">
-              <svg viewBox="0 0 100 100" className="w-full h-full text-white">
-                <path d="M50,10 L60,40 L90,40 L68,58 L78,88 L50,70 L22,88 L32,58 L10,40 L40,40 Z" fill="currentColor"/>
-              </svg>
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
-            {/* Polaroid-style images */}
-            <div className="relative">
-              <div className="absolute top-0 right-20 transform rotate-12 bg-white p-4 rounded-lg shadow-xl z-20">
-                <img 
-                  src="https://cdn.poehali.dev/files/4b3e09ed-a04a-4215-96ff-07db50eba718.png"
-                  alt="TopBlog участники" 
-                  className="w-48 h-32 object-cover rounded"
-                />
+            {/* Main Content */}
+            <div className="lg:col-span-7 space-y-8">
+              <div>
+                <h1 className="text-6xl md:text-7xl lg:text-8xl font-unbounded font-black text-gray-900 leading-none mb-6">
+                  Горхон
+                </h1>
+                
+                {/* Subheading with handwritten feel */}
+                <div className="relative mb-8">
+                  <h2 className="text-2xl md:text-3xl font-unbounded font-bold text-primary transform -rotate-1 inline-block bg-yellow-100 px-4 py-2 rounded-lg shadow-sm">
+                    Истории нашего дома
+                  </h2>
+                  <div className="absolute -bottom-2 -right-2 text-secondary">
+                    <Icon name="Heart" size={24} />
+                  </div>
+                </div>
+
+                <p className="text-xl md:text-2xl text-gray-700 font-unbounded leading-relaxed mb-8">
+                  Мы рассказываем о жизни нашего поселка простыми словами. 
+                  <span className="text-primary font-bold"> Потому что каждая история важна</span>, 
+                  каждый момент достоин внимания.
+                </p>
               </div>
-              <div className="absolute top-20 left-10 transform -rotate-6 bg-white p-4 rounded-lg shadow-xl z-10">
-                <img 
-                  src="https://cdn.poehali.dev/files/4b3e09ed-a04a-4215-96ff-07db50eba718.png"
-                  alt="TopBlog команда" 
-                  className="w-56 h-36 object-cover rounded"
-                />
+
+              {/* Quote Block */}
+              <div className="relative bg-primary/5 border-l-4 border-primary p-6 rounded-r-xl">
+                <Icon name="Quote" size={32} className="text-primary/30 absolute top-2 left-2" />
+                <p className="text-lg font-unbounded italic text-gray-800 pl-8">
+                  "Наша цель — показать красоту обычной жизни и найти что-то особенное в каждом дне"
+                </p>
+              </div>
+
+              {/* Stats Cards */}
+              <div className="grid grid-cols-3 gap-4 mt-12">
+                <div className="text-center bg-white border-2 border-primary/10 rounded-2xl p-6 transform rotate-1 shadow-sm hover:shadow-lg transition-all hover:rotate-0">
+                  <div className="text-4xl font-unbounded font-black text-primary mb-2">1+</div>
+                  <div className="text-gray-600 font-unbounded text-sm">проекта<br/>с душой</div>
+                </div>
+                <div className="text-center bg-white border-2 border-secondary/10 rounded-2xl p-6 transform -rotate-1 shadow-sm hover:shadow-lg transition-all hover:rotate-0">
+                  <div className="text-4xl font-unbounded font-black text-secondary mb-2">873+</div>
+                  <div className="text-gray-600 font-unbounded text-sm">друзей<br/>рядом</div>
+                </div>
+                <div className="text-center bg-white border-2 border-primary/10 rounded-2xl p-6 transform rotate-1 shadow-sm hover:shadow-lg transition-all hover:rotate-0">
+                  <div className="text-4xl font-unbounded font-black text-primary mb-2">3</div>
+                  <div className="text-gray-600 font-unbounded text-sm">года<br/>вместе</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Visual Content */}
+            <div className="lg:col-span-5">
+              <div className="relative">
+                {/* Main Logo Display - accounting for white logo with blue */}
+                <div className="relative">
+                  {/* Blue background circle for white logo */}
+                  <div className="relative bg-primary rounded-3xl p-8 shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                    <div className="bg-white rounded-2xl p-6 flex items-center justify-center">
+                      <img
+                        src="https://cdn.poehali.dev/files/6ffd92ec-3432-4ca8-bb14-85125928e527.png"
+                        alt="Горхон"
+                        className="w-full h-auto max-w-xs"
+                      />
+                    </div>
+                    
+                    {/* Corner accents */}
+                    <div className="absolute -top-3 -right-3 w-8 h-8 bg-secondary rounded-full shadow-lg"></div>
+                    <div className="absolute -bottom-3 -left-3 w-6 h-6 bg-white rounded-full shadow-lg"></div>
+                  </div>
+                </div>
+
+                {/* Creative floating elements */}
+                <div className="absolute -top-6 -left-8 bg-white border-2 border-primary p-4 rounded-2xl transform -rotate-12 shadow-xl z-10">
+                  <Icon name="Camera" size={24} className="text-primary" />
+                </div>
+                
+                <div className="absolute -bottom-8 -right-8 bg-secondary p-4 rounded-2xl transform rotate-12 shadow-xl z-10">
+                  <Icon name="Video" size={24} className="text-white" />
+                </div>
+
+                <div className="absolute top-1/2 -left-4 bg-white border-2 border-secondary p-3 rounded-full transform -rotate-45 shadow-lg z-10">
+                  <Icon name="Mic" size={20} className="text-secondary" />
+                </div>
+
+                <div className="absolute top-1/4 -right-4 bg-primary p-3 rounded-full transform rotate-45 shadow-lg z-10">
+                  <Icon name="Edit" size={20} className="text-white" />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why TopBlog Section */}
-      <section className="py-20 bg-secondary relative overflow-hidden">
-        {/* Grid overlay */}
-        <div className="absolute inset-0 opacity-30">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="grid2" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" strokeWidth="1"/>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#grid2)" />
-          </svg>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      {/* What We Do Section */}
+      <section className="py-16 md:py-24 bg-gray-100">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+          
+          {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-              Почему «ТопБЛОГ» — это ТОП?
+            <div className="inline-block mb-6">
+              <span className="bg-secondary text-white px-6 py-2 rounded-full font-unbounded font-bold text-sm uppercase tracking-wider">
+                Чем занимаемся
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-unbounded font-black text-gray-900 mb-6">
+              Делаем то, что любим
             </h2>
+            <p className="text-xl text-gray-600 font-unbounded max-w-3xl mx-auto">
+              Каждое направление — это способ рассказать историю нашего поселка
+            </p>
           </div>
 
-          {/* Diagonal Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Activities Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              "Бесплатно обучаем созданию качественного, модного и полезного контента",
-              "Лидеры медиа и популярные блогеры дают менторскую поддержку",
-              "Дарим возможности карьерного роста, Продюсирования и продвижения",
-              "Делаем из начинающих авторов лидеров общественного мнения",
-              "С нами — пять поколений блогеров от 10 до 93 лет",
-              "Более 50 компаний-партнеров помогают участникам в профессиональном развитии",
-              "Объединили масштабное блогерское комьюнити из 89 регионов России и более 50 стран мира"
-            ].map((text, index) => (
-              <div 
-                key={index} 
-                className={`bg-white text-black p-6 rounded-lg transform ${
-                  index % 2 === 0 ? 'rotate-2' : '-rotate-2'
-                } hover:rotate-0 transition-transform duration-300 shadow-lg`}
-              >
-                <p className="font-medium">{text}</p>
+              {
+                icon: "Video",
+                title: "Видео",
+                description: "Снимаем документальные ролики о людях и событиях. Каждое видео — это маленький фильм о большой жизни.",
+                accent: "primary",
+                number: "01"
+              },
+              {
+                icon: "Camera", 
+                title: "Фотография",
+                description: "Ловим моменты, которые завтра станут воспоминаниями. От семейных праздников до природных красот.",
+                accent: "secondary",
+                number: "02"
+              },
+              {
+                icon: "Newspaper",
+                title: "Журналистика", 
+                description: "Рассказываем новости и истории языком, понятным каждому. Без сложных терминов и канцеляризмов.",
+                accent: "primary",
+                number: "03"
+              },
+              {
+                icon: "Share2",
+                title: "Соцсети",
+                description: "Ведем группы в ВК и других платформах. Общаемся с подписчиками как с друзьями.",
+                accent: "secondary", 
+                number: "04"
+              }
+            ].map((item, index) => (
+              <div key={index} className="relative">
+                {/* Card */}
+                <div className="bg-white rounded-3xl p-8 shadow-sm border-2 border-gray-100 hover:shadow-lg transition-all hover:border-primary/20 group">
+                  
+                  {/* Number */}
+                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-gray-900 text-white rounded-full flex items-center justify-center font-unbounded font-bold text-sm">
+                    {item.number}
+                  </div>
+
+                  {/* Icon */}
+                  <div className={`w-16 h-16 ${item.accent === 'primary' ? 'bg-primary' : 'bg-secondary'} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                    <Icon name={item.icon as any} size={28} className="text-white" />
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-2xl font-unbounded font-black text-gray-900 mb-4">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 font-unbounded leading-relaxed">
+                    {item.description}
+                  </p>
+
+                  {/* Decorative element */}
+                  <div className={`absolute bottom-4 right-4 w-2 h-2 ${item.accent === 'primary' ? 'bg-primary' : 'bg-secondary'} rounded-full opacity-50`}></div>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Mission Section */}
-      <section className="py-20 bg-gray-100 text-black relative overflow-hidden">
-        {/* Wavy decoration */}
-        <div className="absolute top-0 left-0 w-full h-32 bg-secondary">
-          <svg viewBox="0 0 1200 120" className="absolute bottom-0 w-full h-full">
-            <path d="M0,120 C300,60 600,60 900,120 C1050,150 1150,90 1200,120 L1200,0 L0,0 Z" fill="#F5F5F5"/>
-          </svg>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 pt-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-teal-dark mb-8">
-                Блогинг с миссией и смыслом!
-              </h2>
-              <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-                Единственный в России проект, ставший отправной точкой 
-                для масштабирования и развития сотен тысяч блогов. Наша 
-                миссия — сделать социально значимый контент модным 
-                и популярным
-              </p>
-              
-              {/* Highlighted text bubble */}
-              <div className="inline-block bg-secondary text-white px-6 py-3 rounded-full text-lg font-bold transform rotate-3">
-                + 230 тыс. авторов контента и блогеров
-                <br />
-                Уже с нами!
-                <br />
-                Ждем тебя в команде!
+      {/* VK Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
+          
+          <div className="text-center mb-12">
+            <div className="inline-block mb-6">
+              <div className="flex items-center space-x-3">
+                <Icon name="Users" size={24} className="text-primary" />
+                <span className="font-unbounded font-bold text-primary text-lg">Мы в ВКонтакте</span>
+                <Icon name="Users" size={24} className="text-primary" />
               </div>
             </div>
-
-            {/* Large decorative text */}
-            <div className="relative">
-              <div className="text-9xl font-bold text-teal-dark/20 leading-none">
-                ТОПБЛОГ
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Meeting Section */}
-      <section className="py-20 bg-primary relative overflow-hidden">
-        {/* Grid pattern */}
-        <div className="absolute inset-0 opacity-20">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="grid3" width="30" height="30" patternUnits="userSpaceOnUse">
-                <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#ffffff" strokeWidth="1"/>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#grid3)" />
-          </svg>
-        </div>
-
-        {/* Wavy top decoration */}
-        <div className="absolute top-0 left-0 w-full h-32 bg-gray-100">
-          <svg viewBox="0 0 1200 120" className="absolute bottom-0 w-full h-full">
-            <path d="M0,0 C300,60 600,60 900,0 C1050,-30 1150,30 1200,0 L1200,120 L0,120 Z" fill="#005BFF"/>
-          </svg>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 pt-20">
-          <div className="text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-              Место встречи — «ТопБЛОГ»!
+            
+            <h2 className="text-4xl md:text-5xl font-unbounded font-black text-gray-900 mb-6">
+              Заходите к нам в гости
             </h2>
-            <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-              В 2025 году «ТопБЛОГ» станет пространством для встреч, обмена опытом
-              и совместной работы над важными задачами
+            
+            <p className="text-xl text-gray-600 font-unbounded max-w-3xl mx-auto mb-8">
+              В группе всегда что-то происходит: новые видео, фотоотчеты с мероприятий, 
+              обсуждения и просто хорошее настроение
             </p>
           </div>
 
-          {/* Film strip decoration */}
-          <div className="mt-16 relative">
-            <div className="bg-black h-32 rounded-lg overflow-hidden relative">
-              <div className="absolute inset-0 flex items-center">
-                {/* Film frames */}
-                {[1,2,3,4,5,6].map((frame) => (
-                  <div key={frame} className="flex-shrink-0 w-24 h-16 bg-gray-800 border-2 border-yellow-400 mx-1 rounded flex items-center justify-center text-yellow-400 font-bold">
-                    {frame}
-                  </div>
-                ))}
-              </div>
-              
-              {/* Film holes */}
-              <div className="absolute top-2 left-0 right-0 flex justify-between">
-                {Array.from({length: 20}).map((_, i) => (
-                  <div key={i} className="w-3 h-3 bg-black rounded-full"></div>
-                ))}
-              </div>
-              <div className="absolute bottom-2 left-0 right-0 flex justify-between">
-                {Array.from({length: 20}).map((_, i) => (
-                  <div key={i} className="w-3 h-3 bg-black rounded-full"></div>
-                ))}
+          {/* VK Widget Container */}
+          <div className="relative">
+            <div className="bg-primary/5 rounded-3xl p-8 md:p-12 border-3 border-primary/20">
+              <div className="bg-white rounded-2xl p-6 shadow-inner">
+                <div className="flex justify-center">
+                  <div id="vk_groups" className="w-full max-w-md"></div>
+                </div>
               </div>
             </div>
+            
+            {/* Creative decorative elements */}
+            <div className="absolute -top-6 -left-6 w-12 h-12 bg-secondary rounded-2xl opacity-80 transform rotate-12"></div>
+            <div className="absolute -bottom-6 -right-6 w-10 h-10 bg-primary rounded-2xl opacity-80 transform -rotate-12"></div>
+            <div className="absolute top-1/2 -right-4 w-6 h-6 bg-white border-2 border-secondary rounded-full shadow-lg"></div>
           </div>
         </div>
       </section>
 
-      <style jsx>{`
-        .clip-polygon-triangle {
-          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-        }
-      `}</style>
+      {/* CTA Section */}
+      <section className="py-16 md:py-24 bg-primary">
+        <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
+          
+          <div className="mb-8">
+            <div className="inline-block bg-white/10 px-6 py-3 rounded-full mb-6">
+              <span className="text-white font-unbounded font-bold">Хочешь стать частью команды?</span>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl font-unbounded font-black text-white mb-6 leading-tight">
+              Присоединяйся!
+            </h2>
+            
+            <p className="text-xl text-white/90 font-unbounded max-w-3xl mx-auto leading-relaxed mb-12">
+              Если ты творческий, активный и хочешь рассказывать истории — 
+              <span className="block mt-2 font-bold">мы всегда рады новым людям в команде</span>
+            </p>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row justify-center gap-6">
+            <a
+              href="https://vk.com/im?entrypoint=community_page&media=&sel=-214224996"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center space-x-3 bg-white text-primary px-8 py-4 rounded-2xl font-unbounded font-bold hover:bg-secondary hover:text-white transition-all duration-300 shadow-lg text-lg group"
+            >
+              <Icon name="MessageCircle" size={24} className="group-hover:animate-bounce" />
+              <span>Написать нам</span>
+            </a>
+            
+            <a
+              href="https://vk.com/public214224996"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center space-x-3 bg-secondary text-white px-8 py-4 rounded-2xl font-unbounded font-bold hover:bg-white hover:text-secondary transition-all duration-300 shadow-lg text-lg group"
+            >
+              <Icon name="Heart" size={24} className="group-hover:animate-pulse" />
+              <span>Подписаться</span>
+            </a>
+          </div>
+
+          {/* Friendly note */}
+          <p className="text-white/80 font-unbounded text-sm mt-8 italic">
+            "Не стесняйтесь — мы не кусаемся 😊"
+          </p>
+        </div>
+      </section>
     </div>
   );
 };
